@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"}],"uuid":"0172a813488c4271bea2d4e1b2e1305c","collectionName":"ai_codegen_runs","type":"collection"}

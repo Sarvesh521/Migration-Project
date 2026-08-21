@@ -1,0 +1,46 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: admissions-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: admissions
+      MYSQL_USER: admissions
+      MYSQL_PASSWORD: admissions
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "admissions", "-padmissions"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+
+  etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /work
+    volumes:
+      - .:/work
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command:
+      [
+        "python",
+        "run_etl.py",
+        "--dump-root",
+        ".",
+        "--output-dir",
+        "output/csv",
+        "--db-uri",
+        "mysql+pymysql://admissions:admissions@mysql:3306/admissions",
+        "--recreate-schema",
+        "--enforce-fks"
+      ]
+
+volumes:
+  mysql_data:
