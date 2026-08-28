@@ -355,6 +355,7 @@ function handleNavigation(newUrl, trigger) {
 
         trigger: trigger
             ? {
+                interactionId: trigger.id,
                 type: trigger.type,
                 element: trigger.element,
                 name: trigger.name

@@ -191,6 +191,9 @@
         <button id="playbackReset" title="Reset" class="playback-btn w-10 h-10 flex items-center justify-center rounded-full bg-slate-700 text-white">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M5.5 13a8 8 0 0013.4 3.4M18.5 11A8 8 0 005.1 7.6"/></svg>
         </button>
+        <button id="playbackJumpEnd" title="Jump to End (skip to last step)" class="playback-btn w-10 h-10 flex items-center justify-center rounded-full bg-slate-700 text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5 4l9 8-9 8V4zm10 0h2v16h-2V4zm4 0h2v16h-2V4z"/></svg>
+        </button>
         <div class="text-xs font-mono text-slate-200 border-l border-slate-600 pl-4">
           <span class="text-[var(--muted-foreground)]">Step</span>
           <span id="playbackStep" class="text-blue-400 font-bold mx-1">0</span>
@@ -269,6 +272,7 @@
     const playbackPlay = document.getElementById('playbackPlay');
     const playbackPause = document.getElementById('playbackPause');
     const playbackReset = document.getElementById('playbackReset');
+    const playbackJumpEnd = document.getElementById('playbackJumpEnd');
     const playbackStep = document.getElementById('playbackStep');
     const playbackTotal = document.getElementById('playbackTotal');
     const playbackSpeed = document.getElementById('playbackSpeed');
@@ -808,6 +812,10 @@
             <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)]">Triggering Action</label>
             <div class="bg-slate-900 border border-[var(--border)] p-4 rounded-xl space-y-4">
               <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-3">
+                <span class="text-[var(--muted-foreground)]">Interaction ID:</span>
+                <span class="font-mono text-blue-400 text-xs font-semibold">${trigger.interactionId || '<em><automated navigation></em>'}</span>
+              </div>
+              <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-3">
                 <span class="text-[var(--muted-foreground)]">Action Event Type:</span>
                 <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-900 rounded font-semibold text-[10px] uppercase">${trigger.type || 'direct'}</span>
               </div>
@@ -1108,6 +1116,56 @@
       playbackReset.addEventListener('click', () => {
         resetPlayback();
       });
+    }
+    if (playbackJumpEnd) {
+      playbackJumpEnd.addEventListener('click', () => {
+        jumpToEnd();
+      });
+    }
+
+    // Skip the chronological replay and reveal the final state of the
+    // user journey: every node and edge visible, with the very last
+    // step (typically the final page) selected in the inspector.
+    function jumpToEnd() {
+      if (playbackState.traversal.length === 0) return;
+
+      // Stop any running playback first
+      stopPlaybackTimer();
+      playbackState.active = false;
+      playbackState.paused = false;
+      playbackState.stepIndex = playbackState.traversal.length;
+
+      // Reveal every node and edge without animation, in their final state
+      graphData.nodes.forEach(n => {
+        if (n.groupElement) {
+          n.groupElement.classList.remove('playback-hidden');
+          n.groupElement.classList.remove('edge-drawing');
+          n.groupElement.classList.add('playback-visible');
+        }
+      });
+      graphData.edges.forEach(e => {
+        if (e.element) {
+          e.element.classList.remove('playback-hidden');
+          e.element.classList.remove('edge-drawing');
+          e.element.classList.add('playback-visible');
+        }
+      });
+
+      // Select the final step in the inspector so the right pane matches
+      // the end of the journey (usually the last page visited).
+      const lastStep = playbackState.traversal[playbackState.traversal.length - 1];
+      if (lastStep) {
+        if (lastStep.type === 'node' && lastStep.ref.coreElement) {
+          selectItem('node', lastStep.ref, lastStep.ref.coreElement);
+        } else if (lastStep.type === 'edge' && lastStep.ref.element) {
+          selectItem('edge', lastStep.ref, lastStep.ref.element);
+        }
+      }
+
+      playbackStep.textContent = String(playbackState.stepIndex);
+      playbackTotal.textContent = String(playbackState.traversal.length);
+      playbackPlay.disabled = false;
+      playbackPause.disabled = true;
     }
     if (playbackSpeed) {
       playbackSpeed.addEventListener('change', () => {

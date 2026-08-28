@@ -2,7 +2,7 @@
   "nodes": [
     {
       "url": "https://admissions.staging.iiitb.net/",
-      "visitCount": 10,
+      "visitCount": 9,
       "interactions": [
         {
           "id": "I0001",
@@ -31,106 +31,92 @@
         {
           "id": "I0005",
           "type": "click",
-          "element": "button",
-          "name": "Login"
+          "element": "input",
+          "name": "Enter Email ID"
         },
         {
           "id": "I0006",
-          "type": "submit",
-          "element": "form",
-          "name": "Login Login Don't have an account? Register Forgot Password? Reset Password"
+          "type": "change",
+          "element": "input",
+          "name": "Enter Email ID"
         },
         {
           "id": "I0007",
           "type": "click",
-          "element": "input",
-          "name": "Enter Password"
-        },
-        {
-          "id": "I0035",
-          "type": "click",
-          "element": "input",
-          "name": "Enter Email ID"
-        },
-        {
-          "id": "I0036",
-          "type": "change",
-          "element": "input",
-          "name": "Enter Email ID"
-        },
-        {
-          "id": "I0037",
-          "type": "click",
-          "element": "input",
-          "name": "Enter Password"
-        },
-        {
-          "id": "I0038",
-          "type": "change",
-          "element": "input",
-          "name": "Enter Password"
-        },
-        {
-          "id": "I0039",
-          "type": "click",
           "element": "button",
           "name": "Login"
         },
         {
-          "id": "I0040",
+          "id": "I0008",
           "type": "submit",
           "element": "form",
           "name": "Login Login Don't have an account? Register Forgot Password? Reset Password"
         },
         {
-          "id": "I0041",
-          "type": "click",
-          "element": "input",
-          "name": "Enter Password"
-        },
-        {
-          "id": "I0042",
-          "type": "click",
-          "element": "div",
-          "name": "Login Login Invalid credentials Don't have an account? Register Forgot Password? Reset Password"
-        },
-        {
-          "id": "I0043",
+          "id": "I0100",
           "type": "click",
           "element": "input",
           "name": "Enter Email ID"
         },
         {
-          "id": "I0044",
+          "id": "I0101",
+          "type": "click",
+          "element": "input",
+          "name": "Enter Email ID"
+        },
+        {
+          "id": "I0102",
           "type": "change",
           "element": "input",
           "name": "Enter Email ID"
         },
         {
-          "id": "I0045",
+          "id": "I0103",
           "type": "click",
           "element": "input",
           "name": "Enter Password"
         },
         {
-          "id": "I0046",
+          "id": "I0104",
+          "type": "change",
+          "element": "input",
+          "name": "Enter Password"
+        },
+        {
+          "id": "I0105",
           "type": "click",
           "element": "button",
           "name": "Login"
         },
         {
-          "id": "I0047",
+          "id": "I0106",
           "type": "submit",
           "element": "form",
-          "name": "Login Login Invalid credentials Don't have an account? Register Forgot Password? Reset Password"
+          "name": "Login Login Don't have an account? Register Forgot Password? Reset Password"
+        },
+        {
+          "id": "I0172",
+          "type": "click",
+          "element": "div",
+          "name": "Admissions Portal B.Tech/Integrated-M.Tech/M.Tech The last date for submitting the online application (B.Tech & Integrated M.Tech) has been extended to June 10, 2026."
+        },
+        {
+          "id": "I0173",
+          "type": "click",
+          "element": "a",
+          "name": ""
         }
       ],
       "apiEndpoints": [
-        "POST /api/auth/login"
+        "POST /api/auth/login",
+        "GET /api/rounds",
+        "GET /api/Marksformat",
+        "POST /api/auth/logout",
+        "POST /api/auth/refresh"
       ]
     },
     {
-      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4830EAEDC28EFE222437E87797E16557FBA29CA8EEAA92F4D66CD5D9109F023C149D02CB35A5E8024293AE5DD0660446449CEBAD5DA31EFCB4613D510B75393D5C94750E41705434A71B692E060FCD2F07AA4772646CB992A34569188F50F8143D3B31CD9B32B196",
+      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F3CCBE933D28A4D3AEFD0765E777128380AE3E036A8CE40C7551BCF630DFB4626031CFD40F920346B8A3A7EF42F4FC09EA9F214CD25ACCD1C427A5CC11C29D2CB1975EBE53BA190F296EE4FD5B8CF44781CCCAF32046FFF39539C9252BF7E588FA26D10CFC70EA0F",
       "visitCount": 1,
       "interactions": [],
       "apiEndpoints": [
@@ -139,59 +125,83 @@
     },
     {
       "url": "https://admissions.staging.iiitb.net/applicant/home",
-      "visitCount": 4,
-      "interactions": [
-        {
-          "id": "I0008",
-          "type": "click",
-          "element": "button",
-          "name": "Edit Application"
-        },
-        {
-          "id": "I0014",
-          "type": "click",
-          "element": "button",
-          "name": "Edit Application"
-        },
-        {
-          "id": "I0028",
-          "type": "click",
-          "element": "button",
-          "name": "Edit Application"
-        },
-        {
-          "id": "I0034",
-          "type": "click",
-          "element": "button",
-          "name": "Logout"
-        }
-      ],
-      "apiEndpoints": [
-        "GET /api/drive",
-        "GET /api/applications",
-        "HEAD /config.json",
-        "GET /api/rounds",
-        "POST /api/auth/logout"
-      ]
-    },
-    {
-      "url": "https://admissions.staging.iiitb.net/personaldetails",
       "visitCount": 5,
       "interactions": [
         {
           "id": "I0009",
           "type": "click",
           "element": "button",
-          "name": "Parent & Guardians Details"
+          "name": "Apply Now"
         },
         {
-          "id": "I0015",
+          "id": "I0010",
+          "type": "click",
+          "element": "button",
+          "name": "Apply Now"
+        },
+        {
+          "id": "I0062",
+          "type": "click",
+          "element": "span",
+          "name": "Ask a Query"
+        },
+        {
+          "id": "I0085",
+          "type": "click",
+          "element": "button",
+          "name": "Edit Application"
+        },
+        {
+          "id": "I0091",
+          "type": "click",
+          "element": "div",
+          "name": "student"
+        },
+        {
+          "id": "I0092",
+          "type": "click",
+          "element": "div",
+          "name": "student@test.com"
+        },
+        {
+          "id": "I0093",
+          "type": "click",
+          "element": "img",
+          "name": ""
+        },
+        {
+          "id": "I0095",
+          "type": "click",
+          "element": "button",
+          "name": "Apply Now"
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/applications",
+        "GET /api/drive",
+        "HEAD /config.json",
+        "GET /api/rounds",
+        "POST /api/applications"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/personaldetails",
+      "visitCount": 3,
+      "interactions": [
+        {
+          "id": "I0011",
           "type": "click",
           "element": "button",
           "name": "Parent & Guardians Details"
         },
         {
-          "id": "I0029",
+          "id": "I0086",
+          "type": "click",
+          "element": "button",
+          "name": "Parent & Guardians Details"
+        },
+        {
+          "id": "I0096",
           "type": "click",
           "element": "button",
           "name": "Parent & Guardians Details"
@@ -199,93 +209,13 @@
       ],
       "apiEndpoints": [
         "GET /api/v0.1/countries",
-        "GET /api/applications",
         "GET /api/drive",
+        "GET /api/applications",
         "GET /api/getAllResourceMetaData/applicant",
-        "GET /api/getAllResourceMetaData/currentaddress",
         "GET /api/getAllResourceMetaData/applications",
+        "GET /api/getAllResourceMetaData/currentaddress",
         "GET /api/getAllResourceMetaData/permaddress",
         "GET /api/users",
-        "GET /api/Gender",
-        "GET /api/rounds",
-        "GET /api/Programme",
-        "GET /api/Gatesubject",
-        "GET /api/JeeAdvancedVerificationStatus",
-        "GET /api/AllocationMode",
-        "GET /api/message",
-        "GET /api/OnlineRoundStatus",
-        "POST /api/v0.1/countries/states",
-        "GET /api/v0.1/countries/states/q",
-        "GET /api/Marksformat",
-        "GET /api/ApplicationStatus",
-        "GET /api/JeeMainVerificationStatus"
-      ]
-    },
-    {
-      "url": "https://admissions.staging.iiitb.net/parentdetails",
-      "visitCount": 5,
-      "interactions": [
-        {
-          "id": "I0010",
-          "type": "click",
-          "element": "button",
-          "name": "Education Details"
-        },
-        {
-          "id": "I0016",
-          "type": "click",
-          "element": "input",
-          "name": "Full Name"
-        },
-        {
-          "id": "I0017",
-          "type": "change",
-          "element": "input",
-          "name": "Full Name"
-        },
-        {
-          "id": "I0018",
-          "type": "click",
-          "element": "button",
-          "name": "Save & Next"
-        },
-        {
-          "id": "I0020",
-          "type": "click",
-          "element": "input",
-          "name": "Full Name"
-        },
-        {
-          "id": "I0021",
-          "type": "change",
-          "element": "input",
-          "name": "Full Name"
-        },
-        {
-          "id": "I0022",
-          "type": "click",
-          "element": "div",
-          "name": "Save & Next"
-        },
-        {
-          "id": "I0023",
-          "type": "click",
-          "element": "button",
-          "name": "Save & Next"
-        },
-        {
-          "id": "I0030",
-          "type": "click",
-          "element": "button",
-          "name": "Education Details"
-        }
-      ],
-      "apiEndpoints": [
-        "GET /api/users",
-        "GET /api/applications",
-        "GET /api/drive",
-        "GET /api/getAllResourceMetaData/guardian",
-        "GET /api/getAllResourceMetaData/applications",
         "GET /api/Gender",
         "GET /api/rounds",
         "GET /api/Programme",
@@ -295,31 +225,194 @@
         "GET /api/JeeMainVerificationStatus",
         "GET /api/JeeAdvancedVerificationStatus",
         "GET /api/AllocationMode",
-        "GET /api/OnlineRoundStatus",
-        "POST /api/applications"
+        "GET /api/OnlineRoundStatus"
       ]
     },
     {
-      "url": "https://admissions.staging.iiitb.net/educationdetails",
-      "visitCount": 4,
+      "url": "https://admissions.staging.iiitb.net/parentdetails",
+      "visitCount": 3,
       "interactions": [
         {
-          "id": "I0011",
+          "id": "I0012",
           "type": "click",
-          "element": "button",
-          "name": "Programme Details"
+          "element": "input",
+          "name": "Full Name"
+        },
+        {
+          "id": "I0013",
+          "type": "change",
+          "element": "input",
+          "name": "Full Name"
+        },
+        {
+          "id": "I0014",
+          "type": "click",
+          "element": "input",
+          "name": "Mobile Number"
+        },
+        {
+          "id": "I0015",
+          "type": "change",
+          "element": "input",
+          "name": "Mobile Number"
+        },
+        {
+          "id": "I0016",
+          "type": "click",
+          "element": "input",
+          "name": "Alternate Mobile Number"
+        },
+        {
+          "id": "I0017",
+          "type": "click",
+          "element": "div",
+          "name": "Parent / Guardian Details Note: Registered Parent/Guardian will be allowed to sign/attest during the admissions process as needed. Name * Relation * Select Relation Father Mother Other Mobile Number * Email * Alternate Mobile Save & Next"
+        },
+        {
+          "id": "I0018",
+          "type": "change",
+          "element": "input",
+          "name": "Alternate Mobile Number"
         },
         {
           "id": "I0019",
           "type": "click",
-          "element": "button",
-          "name": "Parent & Guardians Details"
+          "element": "div",
+          "name": "Parent / Guardian Details Note: Registered Parent/Guardian will be allowed to sign/attest during the admissions process as needed. Name * Relation * Select Relation Father Mother Other Mobile Number * Email * Alternate Mobile Save & Next"
+        },
+        {
+          "id": "I0020",
+          "type": "change",
+          "element": "input",
+          "name": "Mobile Number"
+        },
+        {
+          "id": "I0021",
+          "type": "click",
+          "element": "input",
+          "name": "Email Address"
+        },
+        {
+          "id": "I0022",
+          "type": "change",
+          "element": "input",
+          "name": "Email Address"
+        },
+        {
+          "id": "I0023",
+          "type": "click",
+          "element": "select",
+          "name": "Select Relation Father Mother Other"
         },
         {
           "id": "I0024",
           "type": "click",
+          "element": "select",
+          "name": "Select Relation Father Mother Other"
+        },
+        {
+          "id": "I0025",
+          "type": "click",
+          "element": "select",
+          "name": "Select Relation Father Mother Other"
+        },
+        {
+          "id": "I0026",
+          "type": "change",
+          "element": "select",
+          "name": "Select Relation Father Mother Other"
+        },
+        {
+          "id": "I0027",
+          "type": "click",
+          "element": "select",
+          "name": "Select Relation Father Mother Other"
+        },
+        {
+          "id": "I0028",
+          "type": "click",
           "element": "button",
-          "name": "Pay & Submit"
+          "name": "Save & Next"
+        },
+        {
+          "id": "I0087",
+          "type": "click",
+          "element": "button",
+          "name": "Education Details"
+        },
+        {
+          "id": "I0097",
+          "type": "click",
+          "element": "button",
+          "name": "Programme Details"
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/applications",
+        "GET /api/drive",
+        "GET /api/getAllResourceMetaData/guardian",
+        "GET /api/getAllResourceMetaData/applications",
+        "GET /api/users",
+        "GET /api/rounds",
+        "GET /api/Gender",
+        "GET /api/Programme",
+        "GET /api/Gatesubject",
+        "GET /api/Marksformat",
+        "GET /api/ApplicationStatus",
+        "GET /api/JeeMainVerificationStatus",
+        "GET /api/JeeAdvancedVerificationStatus",
+        "GET /api/AllocationMode",
+        "GET /api/OnlineRoundStatus",
+        "POST /api/applications",
+        "POST /api/v0.1/countries/states",
+        "GET /api/message",
+        "GET /api/v0.1/countries/states/q"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/educationdetails",
+      "visitCount": 3,
+      "interactions": [
+        {
+          "id": "I0029",
+          "type": "click",
+          "element": "button",
+          "name": "Exam Details"
+        },
+        {
+          "id": "I0088",
+          "type": "click",
+          "element": "button",
+          "name": "Programme Details"
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/applications",
+        "GET /api/drive",
+        "GET /api/users",
+        "GET /api/Marksformat",
+        "GET /api/Programme",
+        "GET /api/getAllResourceMetaData/graduationdetails",
+        "GET /api/getAllResourceMetaData/applications",
+        "GET /api/rounds",
+        "GET /api/Gender",
+        "GET /api/Gatesubject",
+        "GET /api/ApplicationStatus",
+        "GET /api/JeeMainVerificationStatus",
+        "GET /api/JeeAdvancedVerificationStatus",
+        "GET /api/AllocationMode",
+        "GET /api/OnlineRoundStatus"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/examdetails",
+      "visitCount": 1,
+      "interactions": [
+        {
+          "id": "I0030",
+          "type": "click",
+          "element": "button",
+          "name": "Exam Details"
         },
         {
           "id": "I0031",
@@ -329,53 +422,226 @@
         }
       ],
       "apiEndpoints": [
-        "GET /api/drive",
         "GET /api/applications",
-        "GET /api/rounds",
-        "GET /api/Gender",
-        "GET /api/getAllResourceMetaData/applications",
-        "GET /api/getAllResourceMetaData/graduationdetails",
-        "GET /api/Programme",
-        "GET /api/users",
-        "GET /api/Marksformat"
+        "GET /api/drive"
       ]
     },
     {
       "url": "https://admissions.staging.iiitb.net/programmedetails",
-      "visitCount": 3,
+      "visitCount": 5,
       "interactions": [
-        {
-          "id": "I0012",
-          "type": "click",
-          "element": "button",
-          "name": "Pay & Submit"
-        },
-        {
-          "id": "I0026",
-          "type": "click",
-          "element": "button",
-          "name": "Exam Details"
-        },
         {
           "id": "I0032",
           "type": "click",
           "element": "button",
           "name": "Pay & Submit"
+        },
+        {
+          "id": "I0034",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0035",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0036",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0037",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0038",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0039",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0040",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0041",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0042",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0043",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0044",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0045",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0046",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0047",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0048",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None B.Tech. (Electronics and Communication Engineering) Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0049",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0050",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme None Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0051",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme None Integrated M.Tech (Computer Science and Engineering)"
+        },
+        {
+          "id": "I0052",
+          "type": "click",
+          "element": "button",
+          "name": "Save & Next"
+        },
+        {
+          "id": "I0054",
+          "type": "click",
+          "element": "button",
+          "name": "Reset Preferences"
+        },
+        {
+          "id": "I0055",
+          "type": "click",
+          "element": "button",
+          "name": "Save & Next"
+        },
+        {
+          "id": "I0056",
+          "type": "click",
+          "element": "span",
+          "name": "First preference is required"
+        },
+        {
+          "id": "I0057",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0058",
+          "type": "change",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0059",
+          "type": "click",
+          "element": "select",
+          "name": "Select Programme B.Tech. (Computer Science and Engineering) B.Tech. (Electronics and Communication Engineering) B.Tech. (Artificial Intelligence & Data Science) Integrated M.Tech (Computer Science and Engineering) Integrated M.Tech. (Electronics and Communication Engineering)"
+        },
+        {
+          "id": "I0060",
+          "type": "click",
+          "element": "div",
+          "name": "Save & Next"
+        },
+        {
+          "id": "I0061",
+          "type": "click",
+          "element": "button",
+          "name": "Save & Next"
+        },
+        {
+          "id": "I0089",
+          "type": "click",
+          "element": "a",
+          "name": "M.Tech CSE"
+        },
+        {
+          "id": "I0090",
+          "type": "click",
+          "element": "button",
+          "name": "Education Details"
+        },
+        {
+          "id": "I0098",
+          "type": "click",
+          "element": "span",
+          "name": "S"
+        },
+        {
+          "id": "I0099",
+          "type": "click",
+          "element": "button",
+          "name": "Logout"
         }
       ],
       "apiEndpoints": [
+        "GET /api/applications",
+        "GET /api/drive",
+        "GET /api/getAllResourceMetaData/applications",
+        "GET /api/getAllResourceMetaData/programmepreference",
         "GET /api/users",
         "GET /api/Programme",
-        "GET /api/Gatesubject",
-        "GET /api/drive",
-        "GET /api/applications",
-        "GET /api/getAllResourceMetaData/programmepreference",
-        "GET /api/getAllResourceMetaData/applications",
         "GET /api/Marksformat",
-        "GET /api/rounds",
         "GET /api/ApplicationStatus",
+        "GET /api/JeeMainVerificationStatus",
+        "GET /api/JeeAdvancedVerificationStatus",
+        "GET /api/AllocationMode",
+        "GET /api/OnlineRoundStatus",
+        "POST /api/applications",
+        "GET /api/rounds",
         "GET /api/Gender",
-        "GET /api/getAllResourceMetaData/gate"
+        "GET /api/Gatesubject",
+        "POST /api/auth/logout",
+        "POST /api/auth/refresh"
       ]
     },
     {
@@ -383,42 +649,29 @@
       "visitCount": 3,
       "interactions": [
         {
-          "id": "I0013",
-          "type": "click",
-          "element": "button",
-          "name": "Personal Details"
-        },
-        {
-          "id": "I0025",
+          "id": "I0033",
           "type": "click",
           "element": "button",
           "name": "Programme Details"
         },
         {
-          "id": "I0033",
+          "id": "I0053",
           "type": "click",
           "element": "button",
-          "name": "Parent & Guardians Details"
+          "name": "Programme Details"
         }
       ],
       "apiEndpoints": [
+        "GET /api/Programme",
         "GET /api/applications",
         "GET /api/drive",
-        "GET /api/JeeMainVerificationStatus",
-        "GET /api/Programme",
-        "GET /api/JeeAdvancedVerificationStatus",
         "GET /api/rounds",
-        "GET /api/Gatesubject",
-        "GET /api/AllocationMode",
         "GET /api/Gender",
-        "GET /api/Marksformat",
-        "GET /api/OnlineRoundStatus",
-        "GET /api/ApplicationStatus",
-        "GET /api/users"
+        "GET /api/Gatesubject"
       ]
     },
     {
-      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4DB2CECF4595103AF17C476D4C115B901EDC64F2D1E28B59D8D16CE106CC50F14AF3292C46ED0F1624C2B82B63CFFC74F06A1E6E5EA8E4DE7B50C55730C194CEE78397B4927D672BDEB1CCB55BFCC5D584F4FD7171055800DE778CA6624FDFACE8DDE81D8B52FB87",
+      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F92336E470BBF021072F9FD6832B6CEB6F95FE866E79FF9C7B051D22EE15E7D3FC53E12FBB7FF68F1E33F7EA91323387CC4C9B0335B98FFB9B164139A648F33BD36658EDF5030F71DE1CC29629ABB7F8080E276EBF4CF4521AD14CC86A35AF00AA96EE7404D7CD4B",
       "visitCount": 1,
       "interactions": [],
       "apiEndpoints": [
@@ -426,39 +679,178 @@
       ]
     },
     {
-      "url": "https://admissions.staging.iiitb.net/examdetails",
+      "url": "https://admissions.staging.iiitb.net/newQuery",
+      "visitCount": 3,
+      "interactions": [
+        {
+          "id": "I0063",
+          "type": "click",
+          "element": "input",
+          "name": "Enter query subject"
+        },
+        {
+          "id": "I0064",
+          "type": "change",
+          "element": "input",
+          "name": "Enter query subject"
+        },
+        {
+          "id": "I0065",
+          "type": "click",
+          "element": "select",
+          "name": "Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries"
+        },
+        {
+          "id": "I0066",
+          "type": "change",
+          "element": "select",
+          "name": "Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries"
+        },
+        {
+          "id": "I0067",
+          "type": "click",
+          "element": "select",
+          "name": "Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries"
+        },
+        {
+          "id": "I0068",
+          "type": "click",
+          "element": "select",
+          "name": "Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0069",
+          "type": "change",
+          "element": "select",
+          "name": "Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0070",
+          "type": "click",
+          "element": "select",
+          "name": "Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0071",
+          "type": "click",
+          "element": "p",
+          "name": ""
+        },
+        {
+          "id": "I0072",
+          "type": "click",
+          "element": "input",
+          "name": ""
+        },
+        {
+          "id": "I0073",
+          "type": "change",
+          "element": "input",
+          "name": "C:\\fakepath\\OS_Full_Notes.pdf"
+        },
+        {
+          "id": "I0074",
+          "type": "click",
+          "element": "input",
+          "name": ""
+        },
+        {
+          "id": "I0075",
+          "type": "change",
+          "element": "input",
+          "name": "C:\\fakepath\\LP-2.png"
+        },
+        {
+          "id": "I0076",
+          "type": "click",
+          "element": "button",
+          "name": "Submit"
+        },
+        {
+          "id": "I0077",
+          "type": "submit",
+          "element": "form",
+          "name": "Query Subject* Query Category* Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries Select Program* Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug Query's Description / Message* This is just a test query written by 20 credit students working in the RASP migration track to record playwright flows for our demo to the mentors. Upload Attachment Max size: 1024 KB | Formats: JPG, JPEG, PNG, PDF "
+        },
+        {
+          "id": "I0078",
+          "type": "click",
+          "element": "button",
+          "name": "My Query"
+        },
+        {
+          "id": "I0094",
+          "type": "click",
+          "element": "button",
+          "name": ""
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/QueryCategory",
+        "GET /api/drive",
+        "POST /api/query",
+        "POST /api/message",
+        "GET /api/query"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/myQuery",
+      "visitCount": 3,
+      "interactions": [
+        {
+          "id": "I0079",
+          "type": "click",
+          "element": "div",
+          "name": "Testing Playwright Workflow Open Submitted : 28 Aug 2026, 11:06 pm"
+        },
+        {
+          "id": "I0083",
+          "type": "click",
+          "element": "span",
+          "name": "Mark Closed"
+        },
+        {
+          "id": "I0084",
+          "type": "click",
+          "element": "button",
+          "name": ""
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/query",
+        "POST /api/query"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/query/14a2b9f2-ba89-43c0-a516-cf755c8aca34-5",
       "visitCount": 1,
       "interactions": [
         {
-          "id": "I0027",
+          "id": "I0080",
+          "type": "click",
+          "element": "div",
+          "name": ""
+        },
+        {
+          "id": "I0081",
+          "type": "click",
+          "element": "img",
+          "name": ""
+        },
+        {
+          "id": "I0082",
           "type": "click",
           "element": "button",
-          "name": "Personal Details"
+          "name": ""
         }
       ],
       "apiEndpoints": [
-        "GET /api/drive",
-        "GET /api/Programme",
-        "GET /api/applications",
-        "GET /api/rounds",
-        "GET /api/message",
-        "GET /api/Gender",
-        "GET /api/Gatesubject",
-        "GET /api/Marksformat",
-        "GET /api/ApplicationStatus",
-        "GET /api/JeeMainVerificationStatus"
+        "GET /api/query",
+        "GET /api/message"
       ]
     },
     {
-      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=1E9EF4963E7E17406AC6521EE81B9CAC6D51363DD5598F8008B1F1B948FC22EB2CD8386709858E12734D0610E0CD7BDDFAD052C331F48C58C167023AE040BC7C8F5BE47499FFD5C6DFBA769BAB7193664D47CDA12C1924F2AFEEF618C6DFE1AE5838C95F0FAE461A",
-      "visitCount": 1,
-      "interactions": [],
-      "apiEndpoints": [
-        "GET /config.json"
-      ]
-    },
-    {
-      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=7E47FABFD872199B70686B21D4F559B17B880F5A45CDBA66B58377D7A2EE1C0FB6E9337B62883839F9B383E96BF5182BF69F9598DE9C9D7D6CE4C74348EAE7111EC722A7BB21D418A261EEF960CC0A45184366ADFA0B01C754D35A83833B017372B919C32B2C4DB6",
+      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=E65325E742093B1838CEC8FF66D01028EC2CD4893429F0A3DE36103255D8E9A51FF8E50024332A73CD4E5EF1B5861E0A456BAE19C9000AAC908637ECF827FBA22B9C855A5F726007CD6AAF5F3784BE31E2EF0B2F8F3EFB52BAAB20ED87BE22B4256E11F984A13E1A",
       "visitCount": 1,
       "interactions": [],
       "apiEndpoints": [
@@ -467,37 +859,25 @@
     },
     {
       "url": "https://admissions.staging.iiitb.net/dashboard",
-      "visitCount": 3,
+      "visitCount": 4,
       "interactions": [
         {
-          "id": "I0048",
+          "id": "I0107",
           "type": "click",
           "element": "button",
           "name": "Create Drives"
         },
         {
-          "id": "I0094",
-          "type": "click",
-          "element": "button",
-          "name": "Create Rounds"
-        },
-        {
           "id": "I0114",
           "type": "click",
           "element": "button",
-          "name": "Toggle sidebar"
+          "name": "Queries"
         },
         {
-          "id": "I0115",
+          "id": "I0117",
           "type": "click",
           "element": "button",
-          "name": "Toggle sidebar"
-        },
-        {
-          "id": "I0116",
-          "type": "click",
-          "element": "button",
-          "name": "Create Rounds"
+          "name": "Payment Status"
         }
       ],
       "apiEndpoints": [
@@ -507,224 +887,349 @@
     },
     {
       "url": "https://admissions.staging.iiitb.net/createdrive",
-      "visitCount": 4,
+      "visitCount": 3,
       "interactions": [
         {
-          "id": "I0049",
+          "id": "I0108",
           "type": "click",
           "element": "button",
           "name": "Create Rounds"
         },
         {
-          "id": "I0099",
-          "type": "click",
-          "element": "input",
-          "name": ""
-        },
-        {
-          "id": "I0100",
-          "type": "change",
-          "element": "input",
-          "name": "Test-Drive-28thAug"
-        },
-        {
-          "id": "I0101",
-          "type": "click",
-          "element": "select",
-          "name": "Select Drive Type Btech Mtech"
-        },
-        {
-          "id": "I0102",
-          "type": "change",
-          "element": "select",
-          "name": "Select Drive Type Btech Mtech"
-        },
-        {
-          "id": "I0103",
-          "type": "click",
-          "element": "select",
-          "name": "Select Drive Type Btech Mtech"
-        },
-        {
-          "id": "I0104",
-          "type": "click",
-          "element": "input",
-          "name": "dd-mm-yyyy"
-        },
-        {
-          "id": "I0105",
-          "type": "click",
-          "element": "button",
-          "name": "Choose date"
-        },
-        {
-          "id": "I0106",
-          "type": "click",
-          "element": "button",
-          "name": "Next month"
-        },
-        {
-          "id": "I0107",
-          "type": "click",
-          "element": "button",
-          "name": "1"
-        },
-        {
-          "id": "I0108",
-          "type": "click",
-          "element": "button",
-          "name": "Choose date"
-        },
-        {
-          "id": "I0109",
-          "type": "click",
-          "element": "button",
-          "name": "30"
-        },
-        {
-          "id": "I0110",
-          "type": "click",
-          "element": "textarea",
-          "name": ""
-        },
-        {
-          "id": "I0111",
-          "type": "change",
-          "element": "textarea",
-          "name": "This drive is created by 20 credit students working on the RASP Migration Track to test out playright flows"
-        },
-        {
-          "id": "I0112",
-          "type": "click",
-          "element": "button",
-          "name": "Submit"
-        },
-        {
-          "id": "I0113",
-          "type": "click",
-          "element": "button",
-          "name": "Dashboard"
-        },
-        {
-          "id": "I0119",
-          "type": "click",
-          "element": "div",
-          "name": ""
-        },
-        {
-          "id": "I0120",
-          "type": "click",
-          "element": "div",
-          "name": "30-09-2026"
-        },
-        {
           "id": "I0121",
           "type": "click",
-          "element": "div",
-          "name": "30-09-2026"
+          "element": "input",
+          "name": ""
         },
         {
           "id": "I0122",
           "type": "click",
-          "element": "div",
-          "name": "Test-Drive-28thAug"
-        },
-        {
-          "id": "I0123",
-          "type": "click",
-          "element": "div",
-          "name": ""
-        },
-        {
-          "id": "I0124",
-          "type": "click",
-          "element": "div",
-          "name": ""
-        },
-        {
-          "id": "I0125",
-          "type": "click",
           "element": "button",
-          "name": "Edit"
+          "name": "Create Rounds"
         },
         {
-          "id": "I0129",
+          "id": "I0165",
           "type": "click",
-          "element": "div",
+          "element": "input",
+          "name": ""
+        },
+        {
+          "id": "I0166",
+          "type": "click",
+          "element": "span",
           "name": "A"
         },
         {
-          "id": "I0130",
+          "id": "I0167",
           "type": "click",
           "element": "button",
           "name": "Logout"
+        },
+        {
+          "id": "I0168",
+          "type": "click",
+          "element": "button",
+          "name": "Logout"
+        },
+        {
+          "id": "I0169",
+          "type": "click",
+          "element": "button",
+          "name": "Logout"
+        },
+        {
+          "id": "I0170",
+          "type": "click",
+          "element": "label",
+          "name": "* Drive Type"
+        },
+        {
+          "id": "I0171",
+          "type": "click",
+          "element": "div",
+          "name": "A"
         }
       ],
       "apiEndpoints": [
-        "GET /api/getAllResourceMetaData/drive",
         "GET /api/drive",
+        "GET /api/getAllResourceMetaData/drive",
         "GET /api/Drivetype",
         "GET /api/RoundType",
         "GET /api/AllocationMode",
-        "POST /api/drive",
         "POST /api/auth/logout"
       ]
     },
     {
       "url": "https://admissions.staging.iiitb.net/createround",
-      "visitCount": 3,
+      "visitCount": 2,
       "interactions": [
         {
-          "id": "I0050",
+          "id": "I0109",
           "type": "click",
           "element": "button",
           "name": "Registrations"
         },
         {
-          "id": "I0095",
+          "id": "I0123",
+          "type": "click",
+          "element": "div",
+          "name": "* Name * Drive Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug * Start Date ​ * End Date ​ Withdrawal End Date ​ * Round Type Select Round Type * Details * Fee Template Name"
+        },
+        {
+          "id": "I0124",
+          "type": "click",
+          "element": "select",
+          "name": "Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0125",
+          "type": "change",
+          "element": "select",
+          "name": "Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0126",
+          "type": "click",
+          "element": "select",
+          "name": "Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug"
+        },
+        {
+          "id": "I0127",
           "type": "click",
           "element": "input",
           "name": ""
         },
         {
-          "id": "I0096",
+          "id": "I0128",
           "type": "change",
           "element": "input",
-          "name": "Test-3"
+          "name": "TestRd1"
         },
         {
-          "id": "I0097",
-          "type": "click",
-          "element": "select",
-          "name": "Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2"
-        },
-        {
-          "id": "I0098",
+          "id": "I0129",
           "type": "click",
           "element": "button",
-          "name": "Create Drives"
+          "name": "Choose date"
         },
         {
-          "id": "I0117",
+          "id": "I0130",
+          "type": "click",
+          "element": "button",
+          "name": "Next month"
+        },
+        {
+          "id": "I0131",
+          "type": "click",
+          "element": "button",
+          "name": "3"
+        },
+        {
+          "id": "I0132",
+          "type": "click",
+          "element": "button",
+          "name": "Choose date"
+        },
+        {
+          "id": "I0133",
+          "type": "click",
+          "element": "button",
+          "name": "Next month"
+        },
+        {
+          "id": "I0134",
+          "type": "click",
+          "element": "button",
+          "name": "2"
+        },
+        {
+          "id": "I0135",
+          "type": "click",
+          "element": "input",
+          "name": "dd-mm-yyyy"
+        },
+        {
+          "id": "I0136",
           "type": "click",
           "element": "select",
-          "name": "Select Round Type Online Offline On Campus Manual"
+          "name": "Select Round Type"
         },
         {
-          "id": "I0118",
+          "id": "I0137",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0138",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0139",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0140",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0141",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0142",
+          "type": "click",
+          "element": "div",
+          "name": "* Name * Drive Select Drive B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug * Start Date ​ * End Date ​ Withdrawal End Date ​ * Round Type Select Round Type * Details * Fee Template Name"
+        },
+        {
+          "id": "I0143",
+          "type": "click",
+          "element": "button",
+          "name": "Choose date, selected date is Sep 2, 2026"
+        },
+        {
+          "id": "I0144",
+          "type": "click",
+          "element": "button",
+          "name": "10"
+        },
+        {
+          "id": "I0145",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0146",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0147",
+          "type": "click",
+          "element": "input",
+          "name": "dd-mm-yyyy"
+        },
+        {
+          "id": "I0148",
+          "type": "click",
+          "element": "button",
+          "name": "Choose date, selected date is Sep 10, 2026"
+        },
+        {
+          "id": "I0149",
+          "type": "click",
+          "element": "button",
+          "name": "2"
+        },
+        {
+          "id": "I0150",
+          "type": "click",
+          "element": "input",
+          "name": ""
+        },
+        {
+          "id": "I0151",
+          "type": "change",
+          "element": "input",
+          "name": "SDCCDEQ"
+        },
+        {
+          "id": "I0152",
+          "type": "click",
+          "element": "input",
+          "name": ""
+        },
+        {
+          "id": "I0153",
+          "type": "change",
+          "element": "input",
+          "name": "2000"
+        },
+        {
+          "id": "I0154",
+          "type": "click",
+          "element": "input",
+          "name": "e.g. M.Tech Offer Letter R1"
+        },
+        {
+          "id": "I0155",
+          "type": "change",
+          "element": "input",
+          "name": "e.g. M.Tech Offer Letter R1"
+        },
+        {
+          "id": "I0156",
+          "type": "click",
+          "element": "button",
+          "name": "Submit"
+        },
+        {
+          "id": "I0157",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0158",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0159",
+          "type": "click",
+          "element": "input",
+          "name": "dd-mm-yyyy"
+        },
+        {
+          "id": "I0160",
+          "type": "click",
+          "element": "button",
+          "name": "Choose date, selected date is Sep 2, 2026"
+        },
+        {
+          "id": "I0161",
+          "type": "click",
+          "element": "button",
+          "name": "10"
+        },
+        {
+          "id": "I0162",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0163",
+          "type": "click",
+          "element": "select",
+          "name": "Select Round Type"
+        },
+        {
+          "id": "I0164",
           "type": "click",
           "element": "button",
           "name": "Create Drives"
         }
       ],
       "apiEndpoints": [
-        "GET /api/rounds",
-        "GET /api/drive",
         "GET /api/getAllResourceMetaData/rounds",
+        "GET /api/drive",
+        "GET /api/rounds",
+        "GET /api/applications",
+        "GET /api/Drivetype",
         "GET /api/AllocationType",
-        "GET /api/ApplicationStatus",
-        "GET /api/RoundType",
-        "GET /api/AllocationMode"
+        "GET /api/ApplicationStatus"
       ]
     },
     {
@@ -732,16 +1237,18 @@
       "visitCount": 1,
       "interactions": [
         {
-          "id": "I0051",
+          "id": "I0110",
           "type": "click",
           "element": "button",
           "name": "Applications"
         }
       ],
       "apiEndpoints": [
-        "GET /api/ApplicationStatus",
         "GET /api/users",
         "GET /api/getAllResourceMetaData/users",
+        "GET /api/drive",
+        "GET /api/AllocationType",
+        "GET /api/ApplicationStatus",
         "GET /api/RoundType",
         "GET /api/AllocationMode"
       ]
@@ -751,7 +1258,7 @@
       "visitCount": 1,
       "interactions": [
         {
-          "id": "I0052",
+          "id": "I0111",
           "type": "click",
           "element": "button",
           "name": "Rounds"
@@ -767,282 +1274,71 @@
       "visitCount": 1,
       "interactions": [
         {
-          "id": "I0053",
+          "id": "I0112",
           "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0054",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0055",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0056",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0057",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0058",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0059",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0060",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0061",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0062",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0063",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+          "element": "button",
+          "name": "Queries"
         }
       ],
       "apiEndpoints": [
-        "GET /api/drive",
         "GET /api/rounds",
-        "GET /api/applications"
+        "GET /api/drive"
       ]
     },
     {
-      "url": "https://admissions.staging.iiitb.net/viewrounds/online",
-      "visitCount": 3,
+      "url": "https://admissions.staging.iiitb.net/allQueries",
+      "visitCount": 2,
       "interactions": [
         {
-          "id": "I0064",
+          "id": "I0113",
           "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+          "element": "button",
+          "name": ""
         },
         {
-          "id": "I0065",
+          "id": "I0115",
           "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+          "element": "div",
+          "name": "Loading..."
         },
         {
-          "id": "I0066",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0082",
+          "id": "I0116",
           "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
+          "element": "button",
+          "name": ""
+        }
+      ],
+      "apiEndpoints": [
+        "GET /api/applications",
+        "GET /api/query"
+      ]
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/paymentStatus",
+      "visitCount": 1,
+      "interactions": [
         {
-          "id": "I0083",
+          "id": "I0118",
           "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
+          "element": "button",
+          "name": "Withdrawals"
+        }
+      ],
+      "apiEndpoints": []
+    },
+    {
+      "url": "https://admissions.staging.iiitb.net/withdrawals",
+      "visitCount": 1,
+      "interactions": [
         {
-          "id": "I0084",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0088",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0089",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Round-1-Online (01-08-2026 to 31-08-2026) B.Tech-IMTech-Online-Round-3C (29-07-2026 to 31-07-2026) B.Tech-IMTech-Online-Round-3B (27-07-2026 to 28-07-2026) M.Tech-Online-Round-2 (23-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-3A (22-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-2 (16-07-2026 to 21-07-2026) B.Tech-IMTech-Online-Round-1 (06-07-2026 to 13-07-2026) M.Tech-Online-Round-1 (06-07-2026 to 14-07-2026)"
-        },
-        {
-          "id": "I0090",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Round-1-Online (01-08-2026 to 31-08-2026) B.Tech-IMTech-Online-Round-3C (29-07-2026 to 31-07-2026) B.Tech-IMTech-Online-Round-3B (27-07-2026 to 28-07-2026) M.Tech-Online-Round-2 (23-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-3A (22-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-2 (16-07-2026 to 21-07-2026) B.Tech-IMTech-Online-Round-1 (06-07-2026 to 13-07-2026) M.Tech-Online-Round-1 (06-07-2026 to 14-07-2026)"
-        },
-        {
-          "id": "I0091",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Round-1-Online (01-08-2026 to 31-08-2026) B.Tech-IMTech-Online-Round-3C (29-07-2026 to 31-07-2026) B.Tech-IMTech-Online-Round-3B (27-07-2026 to 28-07-2026) M.Tech-Online-Round-2 (23-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-3A (22-07-2026 to 27-07-2026) B.Tech-IMTech-Online-Round-2 (16-07-2026 to 21-07-2026) B.Tech-IMTech-Online-Round-1 (06-07-2026 to 13-07-2026) M.Tech-Online-Round-1 (06-07-2026 to 14-07-2026)"
-        },
-        {
-          "id": "I0092",
+          "id": "I0119",
           "type": "click",
           "element": "button",
           "name": "Admit Status"
         }
       ],
       "apiEndpoints": [
-        "GET /api/applications"
-      ]
-    },
-    {
-      "url": "https://admissions.staging.iiitb.net/viewrounds/",
-      "visitCount": 1,
-      "interactions": [
-        {
-          "id": "I0067",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0068",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0069",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        }
-      ],
-      "apiEndpoints": []
-    },
-    {
-      "url": "https://admissions.staging.iiitb.net/viewrounds/manual",
-      "visitCount": 1,
-      "interactions": [
-        {
-          "id": "I0070",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0071",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0072",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        }
-      ],
-      "apiEndpoints": []
-    },
-    {
-      "url": "https://admissions.staging.iiitb.net/viewrounds/offline",
-      "visitCount": 2,
-      "interactions": [
-        {
-          "id": "I0073",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0074",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0075",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0076",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0077",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0078",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0079",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round B.Tech-IMTech-2026-Round-3 [Sliding] (02-07-2026 to 07-07-2026) M.Tech-2026-Round-3 (02-07-2026 to 06-07-2026) B.Tech-IMTech-2026-Round-2 [Sliding] (25-06-2026 to 29-06-2026) M.Tech-2026-Round 2 (24-06-2026 to 28-06-2026) B.Tech-IMtech-2026-Round-1 (14-06-2026 to 21-06-2026) M.Tech-2026-Round 1.1 (19-05-2026 to 21-06-2026) M.Tech-2026-Round 1 (07-05-2026 to 21-06-2026)"
-        },
-        {
-          "id": "I0080",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0081",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0085",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0086",
-          "type": "click",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        },
-        {
-          "id": "I0087",
-          "type": "change",
-          "element": "select",
-          "name": "Choose Round Type ONLINE OFFLINE MANUAL"
-        }
-      ],
-      "apiEndpoints": [
-        "GET /api/applications"
+        "GET /api/withdrawals"
       ]
     },
     {
@@ -1050,64 +1346,76 @@
       "visitCount": 1,
       "interactions": [
         {
-          "id": "I0093",
+          "id": "I0120",
           "type": "click",
           "element": "button",
-          "name": "Dashboard"
+          "name": "Create Drives"
         }
       ],
       "apiEndpoints": [
-        "GET /api/withdrawals",
+        "GET /api/rounds",
         "GET /api/applications",
-        "GET /api/drive",
-        "GET /api/rounds"
+        "GET /api/drive"
       ]
     },
     {
-      "url": "https://admissions.staging.iiitb.net/edit/drive/c3319c71-57df-42f4-9633-164cd174dba5-34",
+      "url": "https://www.linkedin.com/school/iiitbofficial",
       "visitCount": 1,
-      "interactions": [
-        {
-          "id": "I0126",
-          "type": "click",
-          "element": "button",
-          "name": "Choose date, selected date is Sep 30, 2026"
-        },
-        {
-          "id": "I0127",
-          "type": "click",
-          "element": "button",
-          "name": "29"
-        },
-        {
-          "id": "I0128",
-          "type": "click",
-          "element": "button",
-          "name": "Submit"
-        }
-      ],
+      "interactions": [],
+      "apiEndpoints": []
+    },
+    {
+      "url": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGBy1n5-Sc_dwAAAaBJdkmgWRZoa6I5iC1k0cZXI-69wqvbk01PFPXTtyJVT3Pxxgv0Ap0qmR3z-WG6aLcA3MuaeJY20voiwx_fainTM0DVP5xRyhlmeiQMrX-txIQ1Bp2o_bM=&original_referer=https://admissions.staging.iiitb.net/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fschool%2Fiiitbofficial",
+      "visitCount": 1,
+      "interactions": [],
       "apiEndpoints": [
-        "GET /api/drive",
-        "GET /api/getAllResourceMetaData/drive",
-        "GET /api/Drivetype",
-        "POST /api/drive"
+        "HEAD /aero-v1/sc/h/9wv8clo6j7ijqdbdqtn8d8a4m",
+        "HEAD /aero-v1/sc/h/4w1iremrnsuxf3bjq4udk3vti",
+        "HEAD /aero-v1/sc/h/5pb1ojg869mw5g0pl1d8cta0f",
+        "GET /aero-v1/sc/h/ddi43qwelxeqjxdd45pe3fvs1",
+        "GET /aero-v1/sc/h/8fkga714vy9b2wk5auqo5reeb",
+        "GET /aero-v1/sc/h/5oas73nreunfgygkpe5iwmgrs",
+        "GET /aero-v1/sc/h/gs508lg3t2o81tq7pmcgn6m2",
+        "GET /aero-v1/sc/h/euqjj7tf5wvr33frd3x1jj9s",
+        "GET /aero-v1/sc/h/adzjokfylbe8pvjr9h8iv96mw",
+        "GET /aero-v1/sc/h/5mebydpuuijm3uhv1q375inqh",
+        "GET /aero-v1/sc/h/cyolgscd0imw2ldqppkrb84vo",
+        "POST /directory/api/ingraphs/gauge",
+        "GET /litms/api/metadata/user",
+        "POST /li/track",
+        "HEAD /aero-v1/sc/h/29rdkxlvag0d3cpj96fiilbju",
+        "GET /gsi/status",
+        "POST /platform-telemetry/li/apfcDf",
+        "POST /directory/api/ingraphs/counter",
+        "POST /litms/api/events/tms-load",
+        "POST /event"
+      ]
+    },
+    {
+      "url": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=3DE1C36E56874AEBF2D9C8E9B93C16A62A1A58F2173F517B3DCC510759D5BA1B1C4ABFE54DE29C830040AF65D5628213DA24DFADA89E7EF6E0A9F79E44B9F675597D2A4BF1E4D9F283CDCC1B1C788147C6279B52122A42D81C56FD13BBDE19E66241BE7C11459598",
+      "visitCount": 1,
+      "interactions": [],
+      "apiEndpoints": [
+        "GET /config.json"
       ]
     }
   ],
   "edges": [
     {
       "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4830EAEDC28EFE222437E87797E16557FBA29CA8EEAA92F4D66CD5D9109F023C149D02CB35A5E8024293AE5DD0660446449CEBAD5DA31EFCB4613D510B75393D5C94750E41705434A71B692E060FCD2F07AA4772646CB992A34569188F50F8143D3B31CD9B32B196",
+      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F3CCBE933D28A4D3AEFD0765E777128380AE3E036A8CE40C7551BCF630DFB4626031CFD40F920346B8A3A7EF42F4FC09EA9F214CD25ACCD1C427A5CC11C29D2CB1975EBE53BA190F296EE4FD5B8CF44781CCCAF32046FFF39539C9252BF7E588FA26D10CFC70EA0F",
       "trigger": {
+        "interactionId": "I0000",
         "type": "system",
         "element": null,
         "name": null
       }
     },
     {
-      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4830EAEDC28EFE222437E87797E16557FBA29CA8EEAA92F4D66CD5D9109F023C149D02CB35A5E8024293AE5DD0660446449CEBAD5DA31EFCB4613D510B75393D5C94750E41705434A71B692E060FCD2F07AA4772646CB992A34569188F50F8143D3B31CD9B32B196",
+      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F3CCBE933D28A4D3AEFD0765E777128380AE3E036A8CE40C7551BCF630DFB4626031CFD40F920346B8A3A7EF42F4FC09EA9F214CD25ACCD1C427A5CC11C29D2CB1975EBE53BA190F296EE4FD5B8CF44781CCCAF32046FFF39539C9252BF7E588FA26D10CFC70EA0F",
       "toUrl": "https://admissions.staging.iiitb.net/",
       "trigger": {
+        "interactionId": "I0000",
         "type": "system",
         "element": null,
         "name": null
@@ -1117,24 +1425,27 @@
       "fromUrl": "https://admissions.staging.iiitb.net/",
       "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
       "trigger": {
-        "type": "click",
-        "element": "input",
-        "name": "Enter Password"
+        "interactionId": "I0008",
+        "type": "submit",
+        "element": "form",
+        "name": "Login Login Don't have an account? Register Forgot Password? Reset Password"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
       "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
       "trigger": {
+        "interactionId": "I0010",
         "type": "click",
         "element": "button",
-        "name": "Edit Application"
+        "name": "Apply Now"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
       "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
       "trigger": {
+        "interactionId": "I0011",
         "type": "click",
         "element": "button",
         "name": "Parent & Guardians Details"
@@ -1144,96 +1455,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
       "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
       "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Education Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Programme Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
-      "toUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Pay & Submit"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
-      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "toUrl": "https://admissions.staging.iiitb.net/",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4DB2CECF4595103AF17C476D4C115B901EDC64F2D1E28B59D8D16CE106CC50F14AF3292C46ED0F1624C2B82B63CFFC74F06A1E6E5EA8E4DE7B50C55730C194CEE78397B4927D672BDEB1CCB55BFCC5D584F4FD7171055800DE778CA6624FDFACE8DDE81D8B52FB87",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=4DB2CECF4595103AF17C476D4C115B901EDC64F2D1E28B59D8D16CE106CC50F14AF3292C46ED0F1624C2B82B63CFFC74F06A1E6E5EA8E4DE7B50C55730C194CEE78397B4927D672BDEB1CCB55BFCC5D584F4FD7171055800DE778CA6624FDFACE8DDE81D8B52FB87",
-      "toUrl": "https://admissions.staging.iiitb.net/",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
-      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Edit Application"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Parent & Guardians Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "trigger": {
+        "interactionId": "I0028",
         "type": "click",
         "element": "button",
         "name": "Save & Next"
@@ -1241,44 +1463,9 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Parent & Guardians Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Save & Next"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Pay & Submit"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
-      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Programme Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
       "toUrl": "https://admissions.staging.iiitb.net/examdetails",
       "trigger": {
+        "interactionId": "I0029",
         "type": "click",
         "element": "button",
         "name": "Exam Details"
@@ -1286,80 +1473,9 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/examdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "toUrl": "https://admissions.staging.iiitb.net/",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=1E9EF4963E7E17406AC6521EE81B9CAC6D51363DD5598F8008B1F1B948FC22EB2CD8386709858E12734D0610E0CD7BDDFAD052C331F48C58C167023AE040BC7C8F5BE47499FFD5C6DFBA769BAB7193664D47CDA12C1924F2AFEEF618C6DFE1AE5838C95F0FAE461A",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=1E9EF4963E7E17406AC6521EE81B9CAC6D51363DD5598F8008B1F1B948FC22EB2CD8386709858E12734D0610E0CD7BDDFAD052C331F48C58C167023AE040BC7C8F5BE47499FFD5C6DFBA769BAB7193664D47CDA12C1924F2AFEEF618C6DFE1AE5838C95F0FAE461A",
-      "toUrl": "https://admissions.staging.iiitb.net/",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Personal Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
-      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Edit Application"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
-      "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Parent & Guardians Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Education Details"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
       "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
       "trigger": {
+        "interactionId": "I0031",
         "type": "click",
         "element": "button",
         "name": "Programme Details"
@@ -1369,6 +1485,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
       "toUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
       "trigger": {
+        "interactionId": "I0032",
         "type": "click",
         "element": "button",
         "name": "Pay & Submit"
@@ -1376,8 +1493,169 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
+      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "trigger": {
+        "interactionId": "I0033",
+        "type": "click",
+        "element": "button",
+        "name": "Programme Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "toUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
+      "trigger": {
+        "interactionId": "I0052",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
+      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "trigger": {
+        "interactionId": "I0053",
+        "type": "click",
+        "element": "button",
+        "name": "Programme Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "toUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
+      "trigger": {
+        "interactionId": "I0061",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/paymentinitiate",
+      "toUrl": "https://admissions.staging.iiitb.net/",
+      "trigger": {
+        "interactionId": "I0061",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/",
+      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F92336E470BBF021072F9FD6832B6CEB6F95FE866E79FF9C7B051D22EE15E7D3FC53E12FBB7FF68F1E33F7EA91323387CC4C9B0335B98FFB9B164139A648F33BD36658EDF5030F71DE1CC29629ABB7F8080E276EBF4CF4521AD14CC86A35AF00AA96EE7404D7CD4B",
+      "trigger": {
+        "interactionId": "I0061",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=F92336E470BBF021072F9FD6832B6CEB6F95FE866E79FF9C7B051D22EE15E7D3FC53E12FBB7FF68F1E33F7EA91323387CC4C9B0335B98FFB9B164139A648F33BD36658EDF5030F71DE1CC29629ABB7F8080E276EBF4CF4521AD14CC86A35AF00AA96EE7404D7CD4B",
+      "toUrl": "https://admissions.staging.iiitb.net/",
+      "trigger": {
+        "interactionId": "I0061",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/",
+      "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "trigger": {
+        "interactionId": "I0061",
+        "type": "click",
+        "element": "button",
+        "name": "Save & Next"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "toUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "trigger": {
+        "interactionId": "I0062",
+        "type": "click",
+        "element": "span",
+        "name": "Ask a Query"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "trigger": {
+        "interactionId": "I0077",
+        "type": "submit",
+        "element": "form",
+        "name": "Query Subject* Query Category* Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries Select Program* Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug Query's Description / Message* This is just a test query written by 20 credit students working in the RASP migration track to record playwright flows for our demo to the mentors. Upload Attachment Max size: 1024 KB | Formats: JPG, JPEG, PNG, PDF "
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "trigger": {
+        "interactionId": "I0077",
+        "type": "submit",
+        "element": "form",
+        "name": "Query Subject* Query Category* Select Query Category Course Details Eligibility Criteria Fees Details Hostel Infrastructure Other General Queries Select Program* Select Program B.Tech & Integrated M.Tech M.Tech Test-Drive Test-Drive-2 Test-Drive-28thAug Query's Description / Message* This is just a test query written by 20 credit students working in the RASP migration track to record playwright flows for our demo to the mentors. Upload Attachment Max size: 1024 KB | Formats: JPG, JPEG, PNG, PDF "
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "trigger": {
+        "interactionId": "I0078",
+        "type": "click",
+        "element": "button",
+        "name": "My Query"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/query/14a2b9f2-ba89-43c0-a516-cf755c8aca34-5",
+      "trigger": {
+        "interactionId": "I0079",
+        "type": "click",
+        "element": "div",
+        "name": "Testing Playwright Workflow Open Submitted : 28 Aug 2026, 11:06 pm"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/query/14a2b9f2-ba89-43c0-a516-cf755c8aca34-5",
+      "toUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "trigger": {
+        "interactionId": "I0082",
+        "type": "click",
+        "element": "button",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/myQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "trigger": {
+        "interactionId": "I0084",
+        "type": "click",
+        "element": "button",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
+      "trigger": {
+        "interactionId": "I0085",
+        "type": "click",
+        "element": "button",
+        "name": "Edit Application"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
       "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
       "trigger": {
+        "interactionId": "I0086",
         "type": "click",
         "element": "button",
         "name": "Parent & Guardians Details"
@@ -1385,44 +1663,129 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
-      "toUrl": "https://admissions.staging.iiitb.net/",
+      "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
       "trigger": {
+        "interactionId": "I0087",
         "type": "click",
         "element": "button",
-        "name": "Parent & Guardians Details"
+        "name": "Education Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
+      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "trigger": {
+        "interactionId": "I0088",
+        "type": "click",
+        "element": "button",
+        "name": "Programme Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "toUrl": "https://admissions.staging.iiitb.net/educationdetails",
+      "trigger": {
+        "interactionId": "I0090",
+        "type": "click",
+        "element": "button",
+        "name": "Education Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/educationdetails",
+      "toUrl": "https://admissions.staging.iiitb.net/",
+      "trigger": {
+        "interactionId": "I0090",
+        "type": "click",
+        "element": "button",
+        "name": "Education Details"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/",
-      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=7E47FABFD872199B70686B21D4F559B17B880F5A45CDBA66B58377D7A2EE1C0FB6E9337B62883839F9B383E96BF5182BF69F9598DE9C9D7D6CE4C74348EAE7111EC722A7BB21D418A261EEF960CC0A45184366ADFA0B01C754D35A83833B017372B919C32B2C4DB6",
+      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=E65325E742093B1838CEC8FF66D01028EC2CD4893429F0A3DE36103255D8E9A51FF8E50024332A73CD4E5EF1B5861E0A456BAE19C9000AAC908637ECF827FBA22B9C855A5F726007CD6AAF5F3784BE31E2EF0B2F8F3EFB52BAAB20ED87BE22B4256E11F984A13E1A",
       "trigger": {
+        "interactionId": "I0090",
         "type": "click",
         "element": "button",
-        "name": "Parent & Guardians Details"
+        "name": "Education Details"
       }
     },
     {
-      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787916190404.88114706&unified_session_id=TVAiNwFORE18cU&session_token=7E47FABFD872199B70686B21D4F559B17B880F5A45CDBA66B58377D7A2EE1C0FB6E9337B62883839F9B383E96BF5182BF69F9598DE9C9D7D6CE4C74348EAE7111EC722A7BB21D418A261EEF960CC0A45184366ADFA0B01C754D35A83833B017372B919C32B2C4DB6",
+      "fromUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=E65325E742093B1838CEC8FF66D01028EC2CD4893429F0A3DE36103255D8E9A51FF8E50024332A73CD4E5EF1B5861E0A456BAE19C9000AAC908637ECF827FBA22B9C855A5F726007CD6AAF5F3784BE31E2EF0B2F8F3EFB52BAAB20ED87BE22B4256E11F984A13E1A",
       "toUrl": "https://admissions.staging.iiitb.net/",
       "trigger": {
+        "interactionId": "I0090",
         "type": "click",
         "element": "button",
-        "name": "Parent & Guardians Details"
+        "name": "Education Details"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/",
       "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
       "trigger": {
+        "interactionId": "I0090",
+        "type": "click",
+        "element": "button",
+        "name": "Education Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "toUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "trigger": {
+        "interactionId": "I0093",
+        "type": "click",
+        "element": "img",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/newQuery",
+      "toUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "trigger": {
+        "interactionId": "I0094",
+        "type": "click",
+        "element": "button",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "toUrl": "https://admissions.staging.iiitb.net/personaldetails",
+      "trigger": {
+        "interactionId": "I0095",
+        "type": "click",
+        "element": "button",
+        "name": "Apply Now"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/personaldetails",
+      "toUrl": "https://admissions.staging.iiitb.net/parentdetails",
+      "trigger": {
+        "interactionId": "I0096",
         "type": "click",
         "element": "button",
         "name": "Parent & Guardians Details"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/applicant/home",
+      "fromUrl": "https://admissions.staging.iiitb.net/parentdetails",
+      "toUrl": "https://admissions.staging.iiitb.net/programmedetails",
+      "trigger": {
+        "interactionId": "I0097",
+        "type": "click",
+        "element": "button",
+        "name": "Programme Details"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/programmedetails",
       "toUrl": "https://admissions.staging.iiitb.net/",
       "trigger": {
+        "interactionId": "I0099",
         "type": "click",
         "element": "button",
         "name": "Logout"
@@ -1432,15 +1795,17 @@
       "fromUrl": "https://admissions.staging.iiitb.net/",
       "toUrl": "https://admissions.staging.iiitb.net/dashboard",
       "trigger": {
+        "interactionId": "I0106",
         "type": "submit",
         "element": "form",
-        "name": "Login Login Invalid credentials Don't have an account? Register Forgot Password? Reset Password"
+        "name": "Login Login Don't have an account? Register Forgot Password? Reset Password"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
       "toUrl": "https://admissions.staging.iiitb.net/createdrive",
       "trigger": {
+        "interactionId": "I0107",
         "type": "click",
         "element": "button",
         "name": "Create Drives"
@@ -1450,6 +1815,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/createdrive",
       "toUrl": "https://admissions.staging.iiitb.net/createround",
       "trigger": {
+        "interactionId": "I0108",
         "type": "click",
         "element": "button",
         "name": "Create Rounds"
@@ -1459,6 +1825,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/createround",
       "toUrl": "https://admissions.staging.iiitb.net/registration_list",
       "trigger": {
+        "interactionId": "I0109",
         "type": "click",
         "element": "button",
         "name": "Registrations"
@@ -1468,6 +1835,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/registration_list",
       "toUrl": "https://admissions.staging.iiitb.net/applications",
       "trigger": {
+        "interactionId": "I0110",
         "type": "click",
         "element": "button",
         "name": "Applications"
@@ -1477,6 +1845,7 @@
       "fromUrl": "https://admissions.staging.iiitb.net/applications",
       "toUrl": "https://admissions.staging.iiitb.net/viewrounds",
       "trigger": {
+        "interactionId": "I0111",
         "type": "click",
         "element": "button",
         "name": "Rounds"
@@ -1484,71 +1853,79 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/viewrounds",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
+      "toUrl": "https://admissions.staging.iiitb.net/dashboard",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0112",
+        "type": "click",
+        "element": "button",
+        "name": "Queries"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/",
+      "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
+      "toUrl": "https://admissions.staging.iiitb.net/allQueries",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0112",
+        "type": "click",
+        "element": "button",
+        "name": "Queries"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/manual",
+      "fromUrl": "https://admissions.staging.iiitb.net/allQueries",
+      "toUrl": "https://admissions.staging.iiitb.net/dashboard",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0113",
+        "type": "click",
+        "element": "button",
+        "name": ""
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/manual",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/offline",
+      "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
+      "toUrl": "https://admissions.staging.iiitb.net/allQueries",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0114",
+        "type": "click",
+        "element": "button",
+        "name": "Queries"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/offline",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
+      "fromUrl": "https://admissions.staging.iiitb.net/allQueries",
+      "toUrl": "https://admissions.staging.iiitb.net/dashboard",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0116",
+        "type": "click",
+        "element": "button",
+        "name": ""
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/offline",
+      "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
+      "toUrl": "https://admissions.staging.iiitb.net/paymentStatus",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0117",
+        "type": "click",
+        "element": "button",
+        "name": "Payment Status"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/offline",
-      "toUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
+      "fromUrl": "https://admissions.staging.iiitb.net/paymentStatus",
+      "toUrl": "https://admissions.staging.iiitb.net/withdrawals",
       "trigger": {
-        "type": "change",
-        "element": "select",
-        "name": "Choose Round Type ONLINE OFFLINE MANUAL"
+        "interactionId": "I0118",
+        "type": "click",
+        "element": "button",
+        "name": "Withdrawals"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/viewrounds/online",
+      "fromUrl": "https://admissions.staging.iiitb.net/withdrawals",
       "toUrl": "https://admissions.staging.iiitb.net/updatestatus",
       "trigger": {
+        "interactionId": "I0119",
         "type": "click",
         "element": "button",
         "name": "Admit Status"
@@ -1556,17 +1933,19 @@
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/updatestatus",
-      "toUrl": "https://admissions.staging.iiitb.net/dashboard",
+      "toUrl": "https://admissions.staging.iiitb.net/createdrive",
       "trigger": {
+        "interactionId": "I0120",
         "type": "click",
         "element": "button",
-        "name": "Dashboard"
+        "name": "Create Drives"
       }
     },
     {
-      "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
+      "fromUrl": "https://admissions.staging.iiitb.net/createdrive",
       "toUrl": "https://admissions.staging.iiitb.net/createround",
       "trigger": {
+        "interactionId": "I0122",
         "type": "click",
         "element": "button",
         "name": "Create Rounds"
@@ -1576,63 +1955,60 @@
       "fromUrl": "https://admissions.staging.iiitb.net/createround",
       "toUrl": "https://admissions.staging.iiitb.net/createdrive",
       "trigger": {
+        "interactionId": "I0164",
         "type": "click",
         "element": "button",
         "name": "Create Drives"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/createdrive",
-      "toUrl": "https://admissions.staging.iiitb.net/dashboard",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Dashboard"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/dashboard",
-      "toUrl": "https://admissions.staging.iiitb.net/createround",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Create Rounds"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/createround",
-      "toUrl": "https://admissions.staging.iiitb.net/createdrive",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Create Drives"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/createdrive",
-      "toUrl": "https://admissions.staging.iiitb.net/edit/drive/c3319c71-57df-42f4-9633-164cd174dba5-34",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Edit"
-      }
-    },
-    {
-      "fromUrl": "https://admissions.staging.iiitb.net/edit/drive/c3319c71-57df-42f4-9633-164cd174dba5-34",
-      "toUrl": "https://admissions.staging.iiitb.net/createdrive",
-      "trigger": {
-        "type": "click",
-        "element": "button",
-        "name": "Submit"
       }
     },
     {
       "fromUrl": "https://admissions.staging.iiitb.net/createdrive",
       "toUrl": "https://admissions.staging.iiitb.net/",
       "trigger": {
+        "interactionId": "I0171",
         "type": "click",
-        "element": "button",
-        "name": "Logout"
+        "element": "div",
+        "name": "A"
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/",
+      "toUrl": "https://www.linkedin.com/school/iiitbofficial",
+      "trigger": {
+        "interactionId": "I0173",
+        "type": "click",
+        "element": "a",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://www.linkedin.com/school/iiitbofficial",
+      "toUrl": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGBy1n5-Sc_dwAAAaBJdkmgWRZoa6I5iC1k0cZXI-69wqvbk01PFPXTtyJVT3Pxxgv0Ap0qmR3z-WG6aLcA3MuaeJY20voiwx_fainTM0DVP5xRyhlmeiQMrX-txIQ1Bp2o_bM=&original_referer=https://admissions.staging.iiitb.net/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fschool%2Fiiitbofficial",
+      "trigger": {
+        "interactionId": "I0173",
+        "type": "click",
+        "element": "a",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGBy1n5-Sc_dwAAAaBJdkmgWRZoa6I5iC1k0cZXI-69wqvbk01PFPXTtyJVT3Pxxgv0Ap0qmR3z-WG6aLcA3MuaeJY20voiwx_fainTM0DVP5xRyhlmeiQMrX-txIQ1Bp2o_bM=&original_referer=https://admissions.staging.iiitb.net/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fschool%2Fiiitbofficial",
+      "toUrl": "https://admissions.staging.iiitb.net/",
+      "trigger": {
+        "interactionId": "I0173",
+        "type": "click",
+        "element": "a",
+        "name": ""
+      }
+    },
+    {
+      "fromUrl": "https://admissions.staging.iiitb.net/",
+      "toUrl": "https://api.razorpay.com/v1/checkout/public?traffic_env=production&build=15898f7181091dbf7d94e10859a130f3381eed5b&build_v1=755bf4b2e2419bf0ffc2bac7c1fd6e126753d61d&checkout_v2=1&new_session=1&rzp_device_id=1.a03a8002242c1ad369820b9af5e3831275a13096.1787938355473.24848269&unified_session_id=TVH0c66FxAmx1c&session_token=3DE1C36E56874AEBF2D9C8E9B93C16A62A1A58F2173F517B3DCC510759D5BA1B1C4ABFE54DE29C830040AF65D5628213DA24DFADA89E7EF6E0A9F79E44B9F675597D2A4BF1E4D9F283CDCC1B1C788147C6279B52122A42D81C56FD13BBDE19E66241BE7C11459598",
+      "trigger": {
+        "interactionId": "I0173",
+        "type": "click",
+        "element": "a",
+        "name": ""
       }
     }
   ]
