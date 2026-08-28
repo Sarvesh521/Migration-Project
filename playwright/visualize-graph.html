@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Navigation Graph Visualizer</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    :root {
+      --background: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --foreground: #f8fafc;
+      --muted-foreground: #94a3b8;
+      --primary: #3b82f6;
+      --accent: #10b981;
+    }
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+    }
+    
+    /* Active selection styles */
+    .node-active {
+      stroke: var(--primary);
+      stroke-width: 3px;
+    }
+    .edge-active {
+      stroke: var(--accent);
+      stroke-width: 3px;
+    }
+
+    /* Spotlight / Dimming transitions */
+    .graph-node, .graph-edge {
+      transition: opacity 0.3s ease, filter 0.3s ease;
+    }
+    .dimmed {
+      opacity: 0.15;
+      filter: grayscale(100%);
+    }
+
+    /* Spotlight glow on matched nodes */
+    .spotlight-glow {
+      filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.9))
+              drop-shadow(0 0 14px rgba(59, 130, 246, 0.6));
+    }
+
+    /* Playback visibility transitions */
+    .playback-hidden {
+      opacity: 0 !important;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .playback-visible {
+      opacity: 1 !important;
+      transition: opacity 0.4s ease;
+    }
+
+    /* Edge draw-on animation (stroke-dashoffset) */
+    @keyframes drawEdge {
+      from { stroke-dashoffset: var(--edge-length, 1000); }
+      to   { stroke-dashoffset: 0; }
+    }
+    .edge-drawing {
+      stroke-dasharray: var(--edge-length, 1000);
+      stroke-dashoffset: var(--edge-length, 1000);
+      animation: drawEdge 0.9s ease-out forwards;
+    }
+
+    /* Playback bar styling */
+    .playback-bar {
+      backdrop-filter: blur(10px);
+      background: rgba(30, 41, 59, 0.85);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.15);
+    }
+    .playback-btn {
+      transition: all 0.15s ease;
+    }
+    .playback-btn:hover:not(:disabled) {
+      background-color: rgba(59, 130, 246, 0.25);
+      transform: translateY(-1px);
+    }
+    .playback-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body class="h-screen flex flex-col overflow-hidden antialiased">
+
+  <!-- Header -->
+  <header class="bg-[var(--card)] border-b border-[var(--border)] px-6 py-4 flex items-center justify-between z-10">
+    <div class="flex items-center space-x-3">
+      <div class="bg-blue-600 text-white p-2 rounded-lg font-bold">FE</div>
+      <div>
+        <h1 class="text-lg font-bold">Frontend Navigation Graph</h1>
+        <p class="text-xs text-[var(--muted-foreground)]">Visualize user flows, page nodes, and API boundaries</p>
+      </div>
+    </div>
+    
+    <div class="flex items-center space-x-6">
+      
+      <!-- Search Bar -->
+      <div class="relative hidden" id="searchContainer">
+        <svg class="w-4 h-4 absolute left-3 top-2.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <input type="text" id="searchInput" placeholder="Search URLs, APIs, Actions..."
+               class="bg-slate-900 border border-slate-700 text-slate-200 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 pl-9 p-2 transition-colors placeholder-slate-500 outline-none">
+      </div>
+
+      <div class="flex items-center space-x-4 text-xs font-semibold border-l border-slate-700 pl-6">
+        <div class="flex items-center space-x-1.5">
+          <div class="w-3 h-3 rounded-full bg-blue-600 border border-slate-800"></div>
+          <span class="text-slate-300">App Pages</span>
+        </div>
+        <div class="flex items-center space-x-1.5">
+          <div class="w-3 h-3 rounded-full bg-purple-600 border border-slate-800"></div>
+          <span class="text-slate-300">External URLs</span>
+        </div>
+      </div>
+
+      <!-- File Selector -->
+      <label class="flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer text-sm font-medium transition-colors shadow-sm">
+        <span>Load navigation-graph.json</span>
+        <input type="file" id="fileInput" accept=".json" class="hidden">
+      </label>
+      <div class="text-xs text-[var(--muted-foreground)]" id="stats">
+        No graph loaded
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Area -->
+  <main class="flex-1 flex overflow-hidden relative">
+    
+    <!-- Drag & Drop Overlay / Initial Welcome Screen -->
+    <div id="dropZone" class="absolute inset-0 bg-[var(--background)] bg-opacity-95 flex flex-col items-center justify-center border-4 border-dashed border-blue-500 m-8 rounded-2xl z-20 transition-all duration-300">
+      <svg class="w-16 h-16 text-blue-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+      </svg>
+      <h2 class="text-xl font-bold mb-2">Visualize Your Flow</h2>
+      <p class="text-[var(--muted-foreground)] mb-6 text-center max-w-md">
+        Drag and drop your generated <code class="bg-[var(--card)] px-2 py-1 rounded text-blue-400">navigation-graph.json</code> file anywhere here, or click the button above to load it.
+      </p>
+      <span class="text-xs text-[var(--muted-foreground)]">Generated by observer-logger.js</span>
+    </div>
+
+    <!-- Graph Viewport -->
+    <div class="flex-1 relative cursor-grab active:cursor-grabbing" id="canvasContainer">
+      <svg id="graphSvg" class="w-full h-full">
+        <!-- Arrowhead marker definition -->
+        <defs>
+          <marker id="arrow" viewBox="0 -5 10 10" refX="18" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,-5L10,0L0,5" fill="#475569" />
+          </marker>
+          <marker id="arrow-active" viewBox="0 -5 10 10" refX="18" refY="0" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,-5L10,0L0,5" fill="#10b981" />
+          </marker>
+          <!-- Glow filter for spotlight on matched nodes -->
+          <filter id="glowFilter" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+        <g id="zoomGroup">
+          <g id="linksGroup"></g>
+          <g id="nodesGroup"></g>
+        </g>
+      </svg>
+
+      <!-- Zoom & Layout Controls -->
+      <div class="absolute bottom-4 left-4 bg-[var(--card)] border border-[var(--border)] rounded-lg p-2 flex items-center space-x-2 shadow-lg">
+        <button id="zoomIn" class="w-8 h-8 flex items-center justify-center hover:bg-[var(--border)] rounded text-lg font-bold">+</button>
+        <button id="zoomOut" class="w-8 h-8 flex items-center justify-center hover:bg-[var(--border)] rounded text-lg font-bold">-</button>
+        <button id="zoomFit" class="px-3 h-8 flex items-center justify-center hover:bg-[var(--border)] rounded text-xs font-semibold">Fit</button>
+        <button id="reLayout" class="px-3 h-8 flex items-center justify-center hover:bg-[var(--border)] rounded text-xs font-semibold">Reset Physics</button>
+      </div>
+
+      <!-- Playback Control Bar -->
+      <div id="playbackBar" class="hidden absolute bottom-6 left-1/2 -translate-x-1/2 playback-bar rounded-full px-5 py-3 flex items-center space-x-4 z-30">
+        <button id="playbackPlay" title="Play" class="playback-btn w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 hover:bg-blue-500 text-white">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button id="playbackPause" title="Pause" class="playback-btn w-10 h-10 flex items-center justify-center rounded-full bg-slate-700 text-white" disabled>
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+        </button>
+        <button id="playbackReset" title="Reset" class="playback-btn w-10 h-10 flex items-center justify-center rounded-full bg-slate-700 text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v6h6M20 20v-6h-6M5.5 13a8 8 0 0013.4 3.4M18.5 11A8 8 0 005.1 7.6"/></svg>
+        </button>
+        <div class="text-xs font-mono text-slate-200 border-l border-slate-600 pl-4">
+          <span class="text-[var(--muted-foreground)]">Step</span>
+          <span id="playbackStep" class="text-blue-400 font-bold mx-1">0</span>
+          <span class="text-[var(--muted-foreground)]">of</span>
+          <span id="playbackTotal" class="text-slate-300 font-semibold mx-1">0</span>
+        </div>
+        <div class="flex items-center space-x-2 border-l border-slate-600 pl-4">
+          <label class="text-[10px] uppercase tracking-wider text-[var(--muted-foreground)] font-bold">Speed</label>
+          <select id="playbackSpeed" class="bg-slate-900 border border-slate-700 text-slate-200 text-xs rounded px-2 py-1 outline-none focus:border-blue-500">
+            <option value="2000">0.5x</option>
+            <option value="1000" selected>1x</option>
+            <option value="500">2x</option>
+            <option value="250">4x</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Details Sidebar -->
+    <aside class="w-[450px] border-l border-[var(--border)] bg-[var(--card)] flex flex-col overflow-hidden shadow-2xl shrink-0">
+      
+      <!-- Panel Header / Tabs -->
+      <div class="border-b border-[var(--border)] px-4 py-3 bg-[var(--card)]">
+        <h2 class="font-bold text-sm text-[var(--foreground)]" id="detailPanelTitle">Flow Inspector</h2>
+      </div>
+
+      <!-- Detail Content Pane -->
+      <div class="flex-1 overflow-y-auto p-4 space-y-6" id="detailContent">
+        <div class="text-center text-[var(--muted-foreground)] py-20">
+          <svg class="w-12 h-12 mx-auto text-[var(--border)] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+          </svg>
+          <p class="text-sm">Click on any node (page) or edge (transition) in the graph to view its detailed logs, API requests, and user events.</p>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <script>
+    // App State
+    let graphData = { nodes: [], edges: [] };
+    let selectedItem = null;
+    let zoomLevel = 1;
+    let panX = 0;
+    let panY = 0;
+    let isPanning = false;
+    let startPanX = 0;
+    let startPanY = 0;
+    let draggedNode = null;
+    let simulationTimer = null;
+
+    // Playback State
+    let playbackState = {
+      active: false,
+      paused: false,
+      stepIndex: 0,         // index into the ordered traversal
+      timer: null,
+      speed: 1000,          // ms per step
+      traversal: [],         // ordered [{type:'node'|'edge', ref:node|edge}]
+    };
+
+    // DOM Elements
+    const dropZone = document.getElementById('dropZone');
+    const fileInput = document.getElementById('fileInput');
+    const searchContainer = document.getElementById('searchContainer');
+    const searchInput = document.getElementById('searchInput');
+    const graphSvg = document.getElementById('graphSvg');
+    const zoomGroup = document.getElementById('zoomGroup');
+    const linksGroup = document.getElementById('linksGroup');
+    const nodesGroup = document.getElementById('nodesGroup');
+    const statsEl = document.getElementById('stats');
+    const detailContent = document.getElementById('detailContent');
+    const detailPanelTitle = document.getElementById('detailPanelTitle');
+    const playbackBar = document.getElementById('playbackBar');
+    const playbackPlay = document.getElementById('playbackPlay');
+    const playbackPause = document.getElementById('playbackPause');
+    const playbackReset = document.getElementById('playbackReset');
+    const playbackStep = document.getElementById('playbackStep');
+    const playbackTotal = document.getElementById('playbackTotal');
+    const playbackSpeed = document.getElementById('playbackSpeed');
+
+    // Auto-load fallback when served locally
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('./navigation-graph.json')
+        .then(res => {
+          if (!res.ok) throw new Error('Not found');
+          return res.json();
+        })
+        .then(json => {
+          if (json.nodes && json.edges) {
+            graphData = json;
+            dropZone.classList.add('hidden');
+            searchContainer.classList.remove('hidden');
+            initializeGraph();
+          }
+        })
+        .catch(() => {});
+    });
+
+    // Drag & Drop Setup
+    window.addEventListener('dragover', (e) => e.preventDefault());
+    window.addEventListener('drop', (e) => {
+      e.preventDefault();
+      const files = e.dataTransfer.files;
+      if (files.length > 0 && files[0].name.endsWith('.json')) {
+        handleFile(files[0]);
+      }
+    });
+
+    fileInput.addEventListener('change', (e) => {
+      if (e.target.files.length > 0) {
+        handleFile(e.target.files[0]);
+      }
+    });
+
+    function handleFile(file) {
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const json = JSON.parse(event.target.result);
+          if (json.nodes && json.edges) {
+            graphData = json;
+            dropZone.classList.add('hidden');
+            searchContainer.classList.remove('hidden');
+            initializeGraph();
+          } else {
+            alert('Invalid graph schema: JSON must contain "nodes" and "edges" keys.');
+          }
+        } catch (err) {
+          alert('Failed to parse JSON file: ' + err.message);
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    // Graph Initialization
+    function initializeGraph() {
+      statsEl.innerHTML = `<span class="text-blue-400 font-semibold">${graphData.nodes.length}</span> Pages | <span class="text-emerald-400 font-semibold">${graphData.edges.length}</span> Transitions`;
+
+      const width = graphSvg.clientWidth || 1000;
+      const height = graphSvg.clientHeight || 800;
+
+      // Assign initial positions
+      graphData.nodes.forEach((n, idx) => {
+        const angle = (idx / graphData.nodes.length) * 2 * Math.PI;
+        n.x = width / 2 + 400 * Math.cos(angle);
+        n.y = height / 2 + 400 * Math.sin(angle);
+        n.vx = 0;
+        n.vy = 0;
+        n.radius = Math.max(16, Math.min(45, 12 + (n.visitCount || 1) * 3));
+      });
+
+      // Map edges to actual node references
+      const nodeMap = new Map(graphData.nodes.map(n => [n.url, n]));
+      const edgePairCount = {};
+      graphData.edges.forEach(e => {
+        e.sourceNode = nodeMap.get(e.fromUrl);
+        e.targetNode = nodeMap.get(e.toUrl);
+
+        if (e.sourceNode && e.targetNode) {
+            const pairId = [e.fromUrl, e.toUrl].sort().join('|');
+            edgePairCount[pairId] = (edgePairCount[pairId] || 0) + 1;
+            e.bendIndex = edgePairCount[pairId];
+        }
+      });
+
+      linksGroup.innerHTML = '';
+      nodesGroup.innerHTML = '';
+      zoomLevel = 1;
+      panX = 0;
+      panY = 0;
+      updateViewportTransform();
+      searchInput.value = ''; // Reset search on new load
+
+      renderGraph();
+      startSimulation();
+      buildPlaybackTraversal();
+      resetPlayback();
+      // Reveal the playback bar now that we have data
+      if (playbackBar) playbackBar.classList.remove('hidden');
+    }
+
+    // Search Logic (Spotlight effect)
+    searchInput.addEventListener('input', (e) => {
+      const term = e.target.value.toLowerCase().trim();
+
+      if (!term) {
+        // Clear spotlight
+        graphData.nodes.forEach(n => {
+          if (n.groupElement) {
+            n.groupElement.classList.remove('dimmed');
+            n.groupElement.classList.remove('spotlight-glow');
+          }
+          if (n.coreElement) n.coreElement.classList.remove('spotlight-glow');
+        });
+        graphData.edges.forEach(e => {
+          if (e.element) {
+            e.element.classList.remove('dimmed');
+            e.element.classList.remove('spotlight-glow');
+          }
+        });
+        return;
+      }
+
+      const matchedNodes = new Set();
+
+      graphData.nodes.forEach(n => {
+        let match = false;
+
+        // Search URL
+        if (n.url.toLowerCase().includes(term)) match = true;
+
+        // Search API Endpoints
+        if (!match && n.apiEndpoints) {
+          if (n.apiEndpoints.some(api => api.toLowerCase().includes(term))) match = true;
+        }
+
+        // Search Interactions
+        if (!match && n.interactions) {
+          n.interactions.forEach(interaction => {
+             if (typeof interaction === 'string') {
+                 if (interaction.toLowerCase().includes(term)) match = true;
+             } else {
+                 if (
+                     (interaction.type && interaction.type.toLowerCase().includes(term)) ||
+                     (interaction.name && interaction.name.toLowerCase().includes(term)) ||
+                     (interaction.element && interaction.element.toLowerCase().includes(term))
+                 ) {
+                     match = true;
+                 }
+             }
+          });
+        }
+
+        if (match) {
+          matchedNodes.add(n);
+          if (n.groupElement) {
+            n.groupElement.classList.remove('dimmed');
+            n.groupElement.classList.add('spotlight-glow');
+          }
+          if (n.coreElement) n.coreElement.classList.add('spotlight-glow');
+        } else {
+          if (n.groupElement) {
+            n.groupElement.classList.add('dimmed');
+            n.groupElement.classList.remove('spotlight-glow');
+          }
+          if (n.coreElement) n.coreElement.classList.remove('spotlight-glow');
+        }
+      });
+
+      // Edge spotlight: keep edges where BOTH connected nodes match the search
+      graphData.edges.forEach(e => {
+        if (e.element) {
+           if (matchedNodes.has(e.sourceNode) && matchedNodes.has(e.targetNode)) {
+               e.element.classList.remove('dimmed');
+               e.element.classList.add('spotlight-glow');
+           } else {
+               e.element.classList.add('dimmed');
+               e.element.classList.remove('spotlight-glow');
+           }
+        }
+      });
+    });
+
+    // Force Directed Layout Physics
+    function startSimulation() {
+      if (simulationTimer) clearInterval(simulationTimer);
+      
+      const width = graphSvg.clientWidth || 1000;
+      const height = graphSvg.clientHeight || 800;
+      const centerX = width / 2;
+      const centerY = height / 2;
+
+      let tickCount = 0;
+      simulationTimer = setInterval(() => {
+        // Repulsive forces
+        for (let i = 0; i < graphData.nodes.length; i++) {
+          const n1 = graphData.nodes[i];
+          for (let j = i + 1; j < graphData.nodes.length; j++) {
+            const n2 = graphData.nodes[j];
+            const dx = n2.x - n1.x;
+            const dy = n2.y - n1.y;
+            const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+            
+            const force = 15000 / (dist * dist);
+            const fx = (dx / dist) * force;
+            const fy = (dy / dist) * force;
+            
+            if (n1 !== draggedNode) {
+              n1.vx -= fx;
+              n1.vy -= fy;
+            }
+            if (n2 !== draggedNode) {
+              n2.vx += fx;
+              n2.vy += fy;
+            }
+          }
+        }
+
+        // Attractive forces
+        graphData.edges.forEach(e => {
+          if (!e.sourceNode || !e.targetNode) return;
+          const dx = e.targetNode.x - e.sourceNode.x;
+          const dy = e.targetNode.y - e.sourceNode.y;
+          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+          
+          const restLen = 350;
+          const force = (dist - restLen) * 0.03;
+          const fx = (dx / dist) * force;
+          const fy = (dy / dist) * force;
+
+          if (e.sourceNode !== draggedNode) {
+            e.sourceNode.vx += fx;
+            e.sourceNode.vy += fy;
+          }
+          if (e.targetNode !== draggedNode) {
+            e.targetNode.vx -= fx;
+            e.targetNode.vy -= fy;
+          }
+        });
+
+        // Center gravity force
+        graphData.nodes.forEach(n => {
+          if (n === draggedNode) return;
+          const dx = centerX - n.x;
+          const dy = centerY - n.y;
+          n.vx += dx * 0.005;
+          n.vy += dy * 0.005;
+        });
+
+        // Friction and Update
+        graphData.nodes.forEach(n => {
+          if (n === draggedNode) return;
+          n.x += n.vx;
+          n.y += n.vy;
+          n.vx *= 0.82;
+          n.vy *= 0.82;
+        });
+
+        updateGraphPositions();
+
+        tickCount++;
+        if (tickCount > 300 && !draggedNode) {
+          clearInterval(simulationTimer);
+        }
+      }, 20);
+    }
+
+    // Render nodes and edges
+    function renderGraph() {
+      graphData.edges.forEach((e, idx) => {
+        if (!e.sourceNode || !e.targetNode) return;
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute("stroke", "#475569");
+        path.setAttribute("stroke-width", "2");
+        path.setAttribute("fill", "transparent");
+        path.setAttribute("marker-end", "url(#arrow)");
+        path.setAttribute("class", "graph-edge transition-all duration-150 cursor-pointer hover:stroke-[var(--accent)] hover:stroke-3");
+
+        path.addEventListener('click', (evt) => {
+          evt.stopPropagation();
+          selectItem('edge', e, path);
+        });
+
+        e.element = path;
+        linksGroup.appendChild(path);
+      });
+
+      graphData.nodes.forEach((n, idx) => {
+        const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        group.setAttribute("class", "graph-node cursor-pointer group playback-visible");
+
+        const ring = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        ring.setAttribute("r", n.radius + 8);
+        ring.setAttribute("fill", "transparent");
+        ring.setAttribute("class", "group-hover:fill-blue-500 group-hover:fill-opacity-20 transition-colors duration-200");
+        group.appendChild(ring);
+
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("r", n.radius);
+        const isStaging = n.url.includes('iiitb.net') || !n.url.startsWith('http');
+        circle.setAttribute("fill", isStaging ? "#2563eb" : "#9333ea");
+        circle.setAttribute("stroke", "#1e293b");
+        circle.setAttribute("stroke-width", "3");
+        group.appendChild(circle);
+
+        const labelBg = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        labelBg.setAttribute("fill", "#0f172a");
+        labelBg.setAttribute("fill-opacity", "0.75");
+        labelBg.setAttribute("rx", "4");
+        group.appendChild(labelBg);
+
+        const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+        let pathName = n.url;
+        try {
+            const urlObj = new URL(n.url);
+            pathName = urlObj.pathname;
+            if (pathName === '/') pathName = '/ (root)';
+            if (!isStaging) pathName = `${urlObj.hostname}...${pathName}`;
+        } catch(e) {}
+        
+        const shortName = pathName.slice(0, 30) + (pathName.length > 30 ? '...' : '');
+        text.textContent = shortName;
+        text.setAttribute("fill", "#f8fafc");
+        text.setAttribute("font-size", "12px");
+        text.setAttribute("font-weight", "600");
+        text.setAttribute("text-anchor", "middle");
+        text.setAttribute("dy", n.radius + 20);
+        
+        setTimeout(() => {
+            try {
+                const bbox = text.getBBox();
+                labelBg.setAttribute("x", bbox.x - 4);
+                labelBg.setAttribute("y", bbox.y - 2);
+                labelBg.setAttribute("width", bbox.width + 8);
+                labelBg.setAttribute("height", bbox.height + 4);
+            } catch(e) {}
+        }, 0);
+
+        group.appendChild(text);
+
+        group.addEventListener('click', (evt) => {
+          evt.stopPropagation();
+          selectItem('node', n, circle);
+        });
+
+        group.addEventListener('mousedown', (evt) => {
+          evt.stopPropagation();
+          draggedNode = n;
+          n.vx = 0;
+          n.vy = 0;
+          startSimulation();
+        });
+
+        n.groupElement = group;
+        n.coreElement = circle;
+        nodesGroup.appendChild(group);
+      });
+    }
+
+    function updateGraphPositions() {
+      graphData.edges.forEach(e => {
+        if (!e.sourceNode || !e.targetNode || !e.element) return;
+        
+        const sx = e.sourceNode.x;
+        const sy = e.sourceNode.y;
+        const tx = e.targetNode.x;
+        const ty = e.targetNode.y;
+        
+        if (e.sourceNode === e.targetNode) {
+            e.element.setAttribute("d", `M ${sx},${sy - e.sourceNode.radius} C ${sx - 60},${sy - 120} ${sx + 60},${sy - 120} ${sx},${sy - e.sourceNode.radius}`);
+            return;
+        }
+
+        const dx = tx - sx;
+        const dy = ty - sy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        
+        const bendFactor = e.bendIndex || 1;
+        const dr = dist * (1 + (bendFactor * 0.3)); 
+
+        const sRad = e.sourceNode.radius + 2;
+        const tRad = e.targetNode.radius + 6; 
+
+        const nx = dx / dist;
+        const ny = dy / dist;
+        
+        const startX = sx + nx * sRad;
+        const startY = sy + ny * sRad;
+        const endX = tx - nx * tRad;
+        const endY = ty - ny * tRad;
+
+        e.element.setAttribute("d", `M${startX},${startY} A${dr},${dr} 0 0,1 ${endX},${endY}`);
+      });
+
+      graphData.nodes.forEach(n => {
+        if (!n.groupElement) return;
+        n.groupElement.setAttribute("transform", `translate(${n.x}, ${n.y})`);
+      });
+    }
+
+    window.addEventListener('mousemove', (e) => {
+      if (draggedNode) {
+        const rect = graphSvg.getBoundingClientRect();
+        draggedNode.x = (e.clientX - rect.left - panX) / zoomLevel;
+        draggedNode.y = (e.clientY - rect.top - panY) / zoomLevel;
+        updateGraphPositions();
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      draggedNode = null;
+    });
+
+    function selectItem(type, data, svgElement) {
+      document.querySelectorAll('.node-active').forEach(el => el.classList.remove('node-active'));
+      document.querySelectorAll('.edge-active').forEach(el => el.classList.remove('edge-active'));
+      
+      graphData.edges.forEach(e => {
+        if (e.element) e.element.setAttribute("marker-end", "url(#arrow)");
+      });
+
+      selectedItem = { type, data };
+
+      if (type === 'node') {
+        svgElement.classList.add('node-active');
+        detailPanelTitle.innerText = "Page Details";
+        
+        let apiHtml = `<p class="text-xs text-[var(--muted-foreground)]">No backend API requests made from this page.</p>`;
+        if (data.apiEndpoints && data.apiEndpoints.length > 0) {
+          apiHtml = `<div class="space-y-1.5 font-mono text-[11px]">` + 
+            data.apiEndpoints.map(ep => {
+              const parts = ep.split(' ');
+              const method = parts[0];
+              const path = parts.slice(1).join(' ');
+              const badgeBg = method === 'GET' ? 'bg-blue-900 text-blue-300' :
+                              method === 'POST' ? 'bg-green-900 text-green-300' :
+                              method === 'DELETE' ? 'bg-red-900 text-red-300' : 'bg-gray-700 text-gray-300';
+              return `<div class="flex items-center space-x-2 bg-slate-900 border border-slate-800 p-2 rounded hover:bg-slate-800 transition-colors">
+                <span class="px-1.5 py-0.5 rounded text-[10px] font-bold ${badgeBg}">${method}</span>
+                <span class="truncate text-slate-300 flex-1 select-all" title="${path}">${path}</span>
+              </div>`;
+            }).join('') + `</div>`;
+        }
+
+        let interactionsHtml = `<p class="text-xs text-[var(--muted-foreground)]">No user interactions captured here.</p>`;
+        if (data.interactions && data.interactions.length > 0) {
+          interactionsHtml = `<div class="space-y-2">` + 
+            data.interactions.map(interaction => {
+              if (typeof interaction === 'string') {
+                  return `<div class="bg-slate-900 border border-slate-800 p-2.5 rounded flex justify-between items-center text-slate-300">
+                    <span class="font-mono text-blue-400 font-semibold text-xs">${interaction}</span>
+                    <span class="text-[10px] text-[var(--muted-foreground)]">Action Recorded</span>
+                  </div>`;
+              }
+              return `
+                <div class="bg-slate-900 border border-slate-800 p-3 rounded-lg shadow-sm space-y-2">
+                  <div class="flex items-center justify-between">
+                    <span class="font-mono text-blue-400 font-semibold text-xs">${interaction.id}</span>
+                    <span class="px-1.5 py-0.5 bg-slate-800 text-slate-300 rounded text-[10px] uppercase font-bold tracking-wider">${interaction.type}</span>
+                  </div>
+                  <div class="flex items-center space-x-2">
+                    <span class="text-[10px] text-slate-500">Element:</span>
+                    <span class="text-xs font-mono text-emerald-400">&lt;${interaction.element}&gt;</span>
+                  </div>
+                  <div class="text-xs text-slate-300 bg-slate-950 p-2 rounded border border-slate-800 break-words select-all">
+                    ${interaction.name || '<em><Unnamed Element></em>'}
+                  </div>
+                </div>
+              `;
+            }).join('') + `</div>`;
+        }
+
+        detailContent.innerHTML = `
+          <div class="space-y-2">
+            <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)]">Frontend URL</label>
+            <div class="bg-slate-950 p-3 rounded-lg border border-[var(--border)] select-all break-all text-xs font-mono text-blue-400 font-semibold leading-relaxed">
+              ${data.url}
+            </div>
+            <div class="flex items-center justify-between text-xs pt-1">
+              <span class="text-[var(--muted-foreground)]">Explore Visit Count:</span>
+              <span class="font-bold px-2.5 py-1 bg-slate-800 rounded-md">${data.visitCount} times</span>
+            </div>
+          </div>
+          <hr class="border-[var(--border)]">
+          
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)]">API Boundary Called</label>
+              <span class="px-2 py-0.5 bg-blue-950 text-blue-400 border border-blue-900 rounded-full text-[10px] font-semibold">${data.apiEndpoints?.length || 0} calls</span>
+            </div>
+            ${apiHtml}
+          </div>
+          <hr class="border-[var(--border)]">
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-center">
+              <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)]">User Actions Log</label>
+              <span class="px-2 py-0.5 bg-purple-950 text-purple-400 border border-purple-900 rounded-full text-[10px] font-semibold">${data.interactions?.length || 0} interactions</span>
+            </div>
+            ${interactionsHtml}
+          </div>
+        `;
+      } else if (type === 'edge') {
+        svgElement.classList.add('edge-active');
+        svgElement.setAttribute("marker-end", "url(#arrow-active)");
+        detailPanelTitle.innerText = "Navigation Edge";
+
+        const trigger = data.trigger || {};
+        
+        detailContent.innerHTML = `
+          <div class="space-y-4">
+            <div>
+              <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)] block mb-1.5">Transition From Node</label>
+              <div class="bg-slate-950 p-3 rounded-lg border border-[var(--border)] break-all text-[11px] font-mono text-slate-400 select-all leading-relaxed">
+                ${data.fromUrl}
+              </div>
+            </div>
+            <div class="flex justify-center text-emerald-500 py-2">
+              <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </div>
+            <div>
+              <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)] block mb-1.5">Transition To Node</label>
+              <div class="bg-slate-950 p-3 rounded-lg border border-[var(--border)] break-all text-[11px] font-mono text-emerald-400 select-all leading-relaxed">
+                ${data.toUrl}
+              </div>
+            </div>
+          </div>
+          <hr class="border-[var(--border)] my-4">
+
+          <div class="space-y-3">
+            <label class="text-[10px] uppercase font-bold tracking-wider text-[var(--muted-foreground)]">Triggering Action</label>
+            <div class="bg-slate-900 border border-[var(--border)] p-4 rounded-xl space-y-4">
+              <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-3">
+                <span class="text-[var(--muted-foreground)]">Action Event Type:</span>
+                <span class="px-2 py-0.5 bg-emerald-950 text-emerald-400 border border-emerald-900 rounded font-semibold text-[10px] uppercase">${trigger.type || 'direct'}</span>
+              </div>
+              <div class="flex items-center justify-between text-xs pb-1">
+                <span class="text-[var(--muted-foreground)]">Target HTML Element:</span>
+                <span class="font-mono text-blue-400 text-xs font-semibold">&lt;${trigger.element || 'navigation'}&gt;</span>
+              </div>
+              <div class="space-y-2 pt-1">
+                <span class="text-[11px] text-[var(--muted-foreground)] block">Inner Content / Display Name:</span>
+                <div class="bg-slate-950 p-3 rounded border border-slate-800 whitespace-pre-wrap select-all text-sm text-slate-200">
+                  ${trigger.name || '<em><none or automated navigation></em>'}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+    }
+
+    function updateViewportTransform() {
+      zoomGroup.setAttribute("transform", `translate(${panX}, ${panY}) scale(${zoomLevel})`);
+    }
+
+    graphSvg.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const zoomFactor = 1.1;
+      const rect = graphSvg.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+
+      const svgX = (mouseX - panX) / zoomLevel;
+      const svgY = (mouseY - panY) / zoomLevel;
+
+      if (e.deltaY < 0) {
+        zoomLevel *= zoomFactor;
+      } else {
+        zoomLevel /= zoomFactor;
+      }
+      zoomLevel = Math.max(0.1, Math.min(5, zoomLevel));
+
+      panX = mouseX - svgX * zoomLevel;
+      panY = mouseY - svgY * zoomLevel;
+
+      updateViewportTransform();
+    });
+
+    graphSvg.addEventListener('mousedown', (e) => {
+      if (e.button === 0 && e.target === graphSvg) {
+        isPanning = true;
+        startPanX = e.clientX - panX;
+        startPanY = e.clientY - panY;
+      }
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (isPanning) {
+        panX = e.clientX - startPanX;
+        panY = e.clientY - startPanY;
+        updateViewportTransform();
+      }
+    });
+
+    window.addEventListener('mouseup', () => {
+      isPanning = false;
+    });
+
+    document.getElementById('zoomIn').addEventListener('click', () => {
+      zoomLevel = Math.min(5, zoomLevel * 1.25);
+      updateViewportTransform();
+    });
+
+    document.getElementById('zoomOut').addEventListener('click', () => {
+      zoomLevel = Math.max(0.1, zoomLevel / 1.25);
+      updateViewportTransform();
+    });
+
+    document.getElementById('zoomFit').addEventListener('click', () => {
+      if (graphData.nodes.length === 0) return;
+      
+      const width = graphSvg.clientWidth || 1000;
+      const height = graphSvg.clientHeight || 800;
+
+      let minX = Infinity, maxX = -Infinity;
+      let minY = Infinity, maxY = -Infinity;
+
+      graphData.nodes.forEach(n => {
+        minX = Math.min(minX, n.x);
+        maxX = Math.max(maxX, n.x);
+        minY = Math.min(minY, n.y);
+        maxY = Math.max(maxY, n.y);
+      });
+
+      const pad = 60;
+      const graphW = (maxX - minX) || 1;
+      const graphH = (maxY - minY) || 1;
+
+      zoomLevel = Math.min((width - pad * 2) / graphW, (height - pad * 2) / graphH);
+      zoomLevel = Math.max(0.1, Math.min(1.5, zoomLevel));
+
+      panX = (width - graphW * zoomLevel) / 2 - minX * zoomLevel;
+      panY = (height - graphH * zoomLevel) / 2 - minY * zoomLevel;
+
+      updateViewportTransform();
+    });
+
+    document.getElementById('reLayout').addEventListener('click', () => {
+      initializeGraph();
+    });
+
+    // ============================================================
+    // Playback Feature: User Journey Playback
+    // ============================================================
+
+    // Build an ordered traversal from the edges array.
+    // The edges array is already chronologically ordered. We weave
+    // nodes and edges together: starting node, edge, target node,
+    // next edge, next node, and so on. Any node never reached by an
+    // edge is appended at the end (these are orphan first-touch pages).
+    function buildPlaybackTraversal() {
+      playbackState.traversal = [];
+      const nodeMap = new Map(graphData.nodes.map(n => [n.url, n]));
+      const visitedNodes = new Set();
+
+      // Start with the fromUrl of the very first edge (chronological start)
+      if (graphData.edges.length === 0) {
+        // No edges: every node becomes a step on its own
+        graphData.nodes.forEach(n => {
+          playbackState.traversal.push({ type: 'node', ref: n });
+        });
+        return;
+      }
+
+      const firstNode = nodeMap.get(graphData.edges[0].fromUrl);
+      if (firstNode) {
+        playbackState.traversal.push({ type: 'node', ref: firstNode });
+        visitedNodes.add(firstNode);
+      }
+
+      graphData.edges.forEach(e => {
+        if (!e.sourceNode || !e.targetNode) return;
+        playbackState.traversal.push({ type: 'edge', ref: e });
+        if (!visitedNodes.has(e.targetNode)) {
+          playbackState.traversal.push({ type: 'node', ref: e.targetNode });
+          visitedNodes.add(e.targetNode);
+        }
+        if (!visitedNodes.has(e.sourceNode)) {
+          playbackState.traversal.push({ type: 'node', ref: e.sourceNode });
+          visitedNodes.add(e.sourceNode);
+        }
+      });
+
+      // Append any nodes that were never touched (defensive)
+      graphData.nodes.forEach(n => {
+        if (!visitedNodes.has(n)) {
+          playbackState.traversal.push({ type: 'node', ref: n });
+        }
+      });
+    }
+
+    function resetPlayback() {
+      stopPlaybackTimer();
+      playbackState.active = false;
+      playbackState.paused = false;
+      playbackState.stepIndex = 0;
+
+      // Hide everything: nodes and edges get playback-hidden, animation classes cleared
+      graphData.nodes.forEach(n => {
+        if (n.groupElement) {
+          n.groupElement.classList.remove('edge-drawing');
+          n.groupElement.classList.remove('playback-visible');
+          n.groupElement.classList.add('playback-hidden');
+        }
+      });
+      graphData.edges.forEach(e => {
+        if (e.element) {
+          e.element.classList.remove('edge-drawing');
+          e.element.classList.remove('playback-visible');
+          e.element.classList.add('playback-hidden');
+        }
+      });
+
+      playbackStep.textContent = '0';
+      playbackTotal.textContent = String(playbackState.traversal.length);
+      playbackPlay.disabled = false;
+      playbackPause.disabled = true;
+    }
+
+    function startPlayback() {
+      if (playbackState.traversal.length === 0) return;
+
+      // If we are at the end, restart from the beginning
+      if (playbackState.stepIndex >= playbackState.traversal.length) {
+        resetPlayback();
+      }
+
+      playbackState.active = true;
+      playbackState.paused = false;
+      playbackPlay.disabled = true;
+      playbackPause.disabled = false;
+
+      // Step immediately, then schedule subsequent steps on a timer
+      applyStep();
+      scheduleNextStep();
+    }
+
+    function pausePlayback() {
+      playbackState.paused = true;
+      playbackState.active = false;
+      stopPlaybackTimer();
+      playbackPlay.disabled = false;
+      playbackPause.disabled = true;
+    }
+
+    function stopPlaybackTimer() {
+      if (playbackState.timer) {
+        clearTimeout(playbackState.timer);
+        playbackState.timer = null;
+      }
+    }
+
+    function scheduleNextStep() {
+      stopPlaybackTimer();
+      if (!playbackState.active) return;
+      if (playbackState.stepIndex >= playbackState.traversal.length) {
+        // Done
+        playbackState.active = false;
+        playbackPlay.disabled = false;
+        playbackPause.disabled = true;
+        return;
+      }
+      playbackState.timer = setTimeout(() => {
+        applyStep();
+        scheduleNextStep();
+      }, playbackState.speed);
+    }
+
+    // Compute approximate path length so stroke-dasharray can match it.
+    function computePathLength(pathEl) {
+      try {
+        const len = pathEl.getTotalLength();
+        if (isFinite(len) && len > 0) return len;
+      } catch (e) {}
+      return 1000; // safe fallback
+    }
+
+    function applyStep() {
+      if (playbackState.stepIndex >= playbackState.traversal.length) return;
+      const step = playbackState.traversal[playbackState.stepIndex];
+      playbackState.stepIndex++;
+
+      if (step.type === 'node') {
+        const n = step.ref;
+        if (n.groupElement) {
+          n.groupElement.classList.remove('playback-hidden');
+          n.groupElement.classList.add('playback-visible');
+        }
+        // Auto-populate the right-hand inspector with this node's details
+        if (n.coreElement) {
+          selectItem('node', n, n.coreElement);
+        }
+      } else if (step.type === 'edge') {
+        const e = step.ref;
+        if (e.element) {
+          // Set up stroke-dasharray to match the path length, then animate
+          const len = computePathLength(e.element);
+          e.element.style.setProperty('--edge-length', len);
+          e.element.classList.remove('playback-hidden');
+          e.element.classList.add('playback-visible');
+
+          // Restart the animation by removing and re-adding the class on next frame
+          e.element.classList.remove('edge-drawing');
+          // Force reflow so the animation re-triggers reliably
+          void e.element.getBoundingClientRect();
+          e.element.classList.add('edge-drawing');
+        }
+        // Auto-populate the right-hand inspector with this edge's details
+        if (e.element) {
+          selectItem('edge', e, e.element);
+        }
+      }
+
+      playbackStep.textContent = String(playbackState.stepIndex);
+    }
+
+    // Wire up the playback control buttons
+    if (playbackPlay) {
+      playbackPlay.addEventListener('click', () => {
+        playbackState.speed = parseInt(playbackSpeed.value, 10) || 1000;
+        startPlayback();
+      });
+    }
+    if (playbackPause) {
+      playbackPause.addEventListener('click', () => {
+        pausePlayback();
+      });
+    }
+    if (playbackReset) {
+      playbackReset.addEventListener('click', () => {
+        resetPlayback();
+      });
+    }
+    if (playbackSpeed) {
+      playbackSpeed.addEventListener('change', () => {
+        playbackState.speed = parseInt(playbackSpeed.value, 10) || 1000;
+        // If currently playing, the next scheduled step picks up the new speed automatically
+      });
+    }
+  </script>
+</body>
+</html>
