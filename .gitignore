@@ -14,6 +14,7 @@ env/
 # ETL generated files
 .etl_work/
 output/
+output_generic/
 
 # OS / editor
 .DS_Store
@@ -26,3 +27,6 @@ Thumbs.db
 .claude
 .env
 .node_modules/
+
+# Helper
+*.txt

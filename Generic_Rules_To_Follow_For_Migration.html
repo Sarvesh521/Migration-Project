@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Generic_Rules_For_Migration_Brief</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<h1
+id="generic-rules-for-mongodb-to-mysql-schema-data-migration">Generic
+Rules for MongoDB to MySQL Schema &amp; Data Migration</h1>
+<h3
+id="can-the-conversion-be-rule-based-and-where-does-it-need-a-human">Can
+the Conversion Be Rule-Based, and Where Does It Need a Human?</h3>
+<hr />
+<h2 id="summary">Summary</h2>
+<p><strong>Yes — a substantial part of MongoDB→MySQL schema conversion
+can be reduced to generic, reusable rules, but not all of it.</strong>
+Structural and type-level transformations can be automated by
+<em>sampling</em> documents and <em>statistically inferring</em> a
+schema. What can’t be automated is anything depending on
+<strong>intent</strong> — whether a value that looks like a foreign key
+actually is one, or whether a nested object deserves its own table.
+Every rule below is tagged:</p>
+<ul>
+<li><strong>Fully automatable</strong></li>
+<li><strong>Automatable with review</strong> (confident heuristic, can
+still be wrong)</li>
+<li><strong>Requires domain input</strong> (cannot be safely
+automated)</li>
+</ul>
+<p><strong>Evidence this is feasible:</strong> a peer-reviewed method
+(Aftab et al., <em>Automatic NoSQL to Relational Database Transformation
+with Dynamic Schema Mapping</em>, <em>Scientific Programming</em>, 2020)
+built and benchmarked a fully automatic MongoDB→MySQL/PostgreSQL
+pipeline that infers schema dynamically and outperformed Talend on the
+same task. Commercial/open-source tools (<strong>Hackolade</strong>,
+<strong>Variety</strong>, <strong>mongo-jsonschema</strong>) already do
+sampling-based schema inference in production — Hackolade specifically
+infers implicit relationships by testing whether <code>ObjectId</code>
+values resolve to documents in another collection, and has a “suggest
+normalization” mode for relational targets. The consistent pattern:
+<strong>structure/type inference is automatable from data; semantic
+interpretation is not.</strong></p>
+<hr />
+<h2 id="core-rules">Core Rules</h2>
+<p><strong>1. Collection → Table.</strong> Each collection becomes one
+table, name normalized to <code>snake_case</code>. <em>Fully
+automatable.</em> Merging two collections that represent the same entity
+under different names (schema-drift symptom) is <strong>domain
+input</strong>.</p>
+<p><strong>2. BSON Type → MySQL Type.</strong> Fixed lookup table,
+always choosing the type that preserves precision:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>BSON Type</th>
+<th>MySQL Type</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>ObjectId</code></td>
+<td><code>CHAR(24)</code> or <code>BINARY(12)</code></td>
+<td>Preserves the identifier as-is</td>
+</tr>
+<tr class="even">
+<td><code>String</code></td>
+<td><code>VARCHAR(n)</code> / <code>TEXT</code></td>
+<td>Length from observed max during sampling</td>
+</tr>
+<tr class="odd">
+<td><code>Int32</code> / <code>Int64</code></td>
+<td><code>INT</code> / <code>BIGINT</code></td>
+<td>Match bit-width; never downcast
+<code>Long</code>→<code>INT</code></td>
+</tr>
+<tr class="even">
+<td><code>Decimal128</code></td>
+<td><code>DECIMAL(M,D)</code> — never
+<code>FLOAT</code>/<code>DOUBLE</code></td>
+<td>Built for precision (e.g., money); floats lose it silently</td>
+</tr>
+<tr class="odd">
+<td><code>Boolean</code></td>
+<td><code>TINYINT(1)</code></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>Date</code></td>
+<td><code>DATETIME(6)</code>, normalized to UTC</td>
+<td>Captures ms/µs precision, avoids timezone drift</td>
+</tr>
+<tr class="odd">
+<td><code>BinData</code></td>
+<td><code>VARBINARY</code> / <code>BLOB</code></td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td><code>Array</code> / <code>Object</code></td>
+<td>Child table (see Rule 4)</td>
+<td>Not a scalar type</td>
+</tr>
+</tbody>
+</table>
+<p><em>Scalar mapping: fully automatable.</em> Choosing column
+<strong>width</strong> from sampled data: <strong>automatable with
+review</strong> (sample may miss the true max).</p>
+<p><strong>3. <code>_id</code> → Primary Key.</strong> Default
+<code>ObjectId</code> case: <em>fully automatable</em>
+(<code>CHAR(24)</code>). Heterogeneous <code>_id</code> types within one
+collection (legal but unusual in MongoDB) require detecting the type
+union during sampling and defaulting to a canonical string form —
+<strong>requires domain input</strong> to confirm, since it changes
+sort/index behavior.</p>
+<p><strong>4. Nested Objects &amp; Arrays → Relational
+Structures.</strong> The largest source of judgment calls:</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Structure</th>
+<th>Rule</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Shallow embedded object, always present</td>
+<td>Flatten to prefixed columns (<code>address_city</code>)</td>
+<td>Automatable with review</td>
+</tr>
+<tr class="even">
+<td>Deeply nested / contains arrays</td>
+<td>Extract to child table + FK</td>
+<td>Automatable with review (extraction trigger can be
+auto-thresholded)</td>
+</tr>
+<tr class="odd">
+<td>Array of primitives</td>
+<td>Junction table <strong>or</strong> <code>JSON</code> column</td>
+<td><strong>Requires domain input</strong> — depends on query pattern,
+not shape</td>
+</tr>
+<tr class="even">
+<td>Array of objects</td>
+<td>Always a child table, never flattened</td>
+<td>Automatable with review — close to a safe universal rule (1NF)</td>
+</tr>
+<tr class="odd">
+<td>Arrays/documents near the 16MB BSON limit</td>
+<td>Force child-table extraction; batch-insert for fan-out</td>
+<td>Fully automatable as a guardrail (flag above a size/length
+threshold)</td>
+</tr>
+</tbody>
+</table>
+<p>General principle: <strong>automate “must normalize” as a hard
+rule</strong> for repeating objects; <strong>leave “flatten vs. JSON” as
+an overridable default</strong> for shallow data.</p>
+<p><strong>5. Primary Key / Foreign Key Identification.</strong> Two
+heuristics, both producing suggestions, not certainties: - <em>Naming
+convention</em> (<code>xId</code> → collection <code>x</code>): cheap,
+imprecise — false positives and negatives both occur. -
+<em>Value-matching</em>: sample <code>ObjectId</code>-typed fields and
+test resolution against candidate collections (Hackolade’s technique); a
+high hit-rate (e.g., &gt;95%) is strong evidence.</p>
+<p><strong>Status: automatable with review.</strong> Before creating an
+actual MySQL <code>FOREIGN KEY</code>, validate the relationship against
+the <strong>full</strong> dataset (not the sample) for orphaned
+references — MongoDB never enforced these, so broken references are
+common.</p>
+<p><strong>6. Null/Missing Fields &amp; Type Inconsistency.</strong> -
+<em>Absent vs. <code>null</code> vs. empty</em>: track field
+<strong>presence rate</strong> during sampling; if &lt;100%, column is
+nullable. Mapping “absent”→<code>NULL</code> is <em>fully
+automatable</em>; deciding whether the app needs to distinguish
+absent/null/empty (requiring an extra flag column) is <strong>domain
+input</strong>. - <em>Mixed types in one field</em>: apply a
+<strong>type-widening hierarchy</strong> —
+<code>Null &lt; Boolean &lt; Integer &lt; BigInt &lt; Decimal/Double &lt; Date &lt; String</code>
+— falling back to <code>VARCHAR</code>/<code>JSON</code> only when no
+common numeric/date type exists (the same approach used by Delta
+Lake/Databricks schema evolution). <em>Fully automatable as a default
+policy.</em> Reviewing <strong>why</strong> a field widened to text
+(possible legacy bug) is a data-quality judgment call.</p>
+<hr />
+<h2 id="additional-rules-worth-adding">Additional Rules Worth
+Adding</h2>
+<ul>
+<li><strong>Sparse/partial uniqueness:</strong> MySQL has no native
+sparse-unique index; use a generated column + unique index, or app-level
+enforcement. Flag as a <strong>manual reconciliation item</strong>.</li>
+<li><strong>Schema drift over time:</strong> take the <strong>union of
+all historically observed field names</strong>, not just recent
+documents, to avoid the common failure of recency-biased sampling.
+Merging field-name variants (<code>phone</code>
+vs. <code>contact.phone</code>) needs a person to confirm.</li>
+<li><strong>“Overflow” catch-all column:</strong> route long-tail rare
+fields into a single <code>extra_fields JSON</code> column rather than
+dozens of sparse columns; the frequency threshold is configurable, not
+absolute.</li>
+<li><strong>Prefer an existing <code>$jsonSchema</code>
+validator</strong> over statistical inference when a collection has one
+— it’s authoritative, not a guess.</li>
+<li><strong>Validate constraints against the full dataset</strong>, not
+the sample, before enforcing
+<code>NOT NULL</code>/<code>UNIQUE</code>/<code>FOREIGN KEY</code> — a
+failed <code>ALTER TABLE</code> late in migration is expensive to
+debug.</li>
+</ul>
+<hr />
+<h2 id="automation-summary">Automation Summary</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fully Automatable</th>
+<th>Automatable, Needs Review</th>
+<th>Requires Domain Knowledge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Collection → table mapping</td>
+<td>Column width/precision sizing</td>
+<td>Merging collections representing the same entity</td>
+</tr>
+<tr class="even">
+<td>BSON scalar type → MySQL type</td>
+<td>Flatten-vs-child-table for shallow objects</td>
+<td>Array-of-primitives: junction table vs. JSON</td>
+</tr>
+<tr class="odd">
+<td><code>_id</code> → PK (default case)</td>
+<td>Heterogeneous <code>_id</code> handling</td>
+<td>Absent/null/empty distinction matters?</td>
+</tr>
+<tr class="even">
+<td>Array-of-objects → child table</td>
+<td>FK inference (naming + value-matching)</td>
+<td>Confirming a suspected FK is real</td>
+</tr>
+<tr class="odd">
+<td>Type-widening default policy</td>
+<td>Presence-rate-driven nullability</td>
+<td>Field widened to text = bug worth fixing?</td>
+</tr>
+<tr class="even">
+<td>Large-array/oversized-doc guardrail</td>
+<td>Overflow-column threshold</td>
+<td>Merging field-name variants across schema eras</td>
+</tr>
+<tr class="odd">
+<td>Preferring existing <code>$jsonSchema</code> validator</td>
+<td>Sparse-unique translation strategy</td>
+<td>Sparse-unique needs app-level replacement?</td>
+</tr>
+<tr class="even">
+<td>Full-dataset constraint validation</td>
+<td>—</td>
+<td>Final go/no-go before cutover</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="recommended-process">Recommended Process</h2>
+<ol type="1">
+<li><strong>Sample and infer</strong> per collection using a
+statistically sound method (<code>$sample</code>), not “first N
+documents.”</li>
+<li><strong>Apply fixed automatable rules</strong> to produce a
+first-draft schema and type mapping.</li>
+<li><strong>Run review-tier heuristics</strong> (FK detection, nesting
+thresholds, nullability, overflow thresholds) to produce a
+<em>candidate</em>, confidence-scored schema.</li>
+<li><strong>Surface every domain-input item</strong> as an explicit
+human checklist before finalizing.</li>
+<li><strong>Validate the finalized schema against the full
+dataset</strong> before enforcing constraints.</li>
+<li><strong>Re-run inference periodically</strong> for collections still
+receiving writes during a live/CDC migration.</li>
+</ol>
+<hr />
+<!-- ## References
+
+- Aftab, Z., Iqbal, W., Almustafa, K. M., Bukhari, F., & Abdullah, M. (2020). *Automatic NoSQL to Relational Database Transformation with Dynamic Schema Mapping.* Scientific Programming. https://doi.org/10.1155/2020/8813350
+- Hackolade, *MongoDB reverse-engineering*: https://hackolade.com/help/MongoDB.html
+- Hackolade, *Relationships and Denormalization*: https://hackolade.com/help/Relationshipsanddenormalization.html
+- PyPI, *mongo-jsonschema*: https://pypi.org/project/mongo-jsonschema/
+- Databricks / Microsoft Learn, *Type widening*: https://learn.microsoft.com/en-au/azure/Databricks/delta/type-widening
+- GeeksforGeeks, *BSON Types — MongoDB*: https://www.geeksforgeeks.org/mongodb/bson-types-mongodb/ -->
+</body>
+</html>

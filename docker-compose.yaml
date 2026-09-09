@@ -8,8 +8,9 @@ services:
       MYSQL_DATABASE: admissions
       MYSQL_USER: admissions
       MYSQL_PASSWORD: admissions
+    command: --innodb-strict-mode=OFF
     ports:
-      - "3306:3306"
+      - "3307:3306"
     volumes:
       - mysql_data:/var/lib/mysql
     healthcheck:
@@ -31,15 +32,14 @@ services:
     command:
       [
         "python",
-        "run_etl.py",
-        "--dump-root",
-        ".",
-        "--output-dir",
-        "output/csv",
+        "run_generic_etl.py",
+        "--dump-dir",
+        "rasp_db",
         "--db-uri",
         "mysql+pymysql://admissions:admissions@mysql:3306/admissions",
         "--recreate-schema",
-        "--enforce-fks"
+        "--workers",
+        "4"
       ]
 
 volumes:

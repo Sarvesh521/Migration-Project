@@ -1,0 +1,79 @@
+# Implementation Plan: MongoDB to MySQL Migration via `etl_generic`
+
+This plan details the implementation of an automatic, dynamic schema mapping ETL pipeline based on the methodology described in *Aftab et al. (2020) - Automatic NoSQL to Relational Database Transformation with Dynamic Schema Mapping*.
+
+The pipeline will be contained within a new directory `etl_generic/` and will transform MongoDB BSON dump files (e.g. from `rasp_db/`) into relational MySQL tables executed completely in Docker.
+
+## User Review Required
+
+> [!NOTE]
+> The implementation strictly follows **Algorithms 1, 2, and 3** from Aftab et al. (2020):
+> 1. **Algorithm 1 (Schema Analyzer)**: Scans BSON records to dynamically infer table structures, data types (handling type widening), primary keys (`_id`), and child tables for nested documents and arrays up to depth $k=2$.
+> 2. **Algorithm 2 (Processes Initiation)**: Initializes MySQL tables (parent and child tables), partitions document ranges, and spawns concurrent worker processes.
+> 3. **Algorithm 3 (Transformation & Loading)**: Worker processes read BSON document batches, build relational insert queries for parent/child tables, and execute batch inserts into MySQL.
+
+## Proposed Changes
+
+### `etl_generic/` Package
+
+#### [NEW] [bson_reader.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/bson_reader.py)
+- Module to stream and count BSON documents from BSON dump files.
+- Provides indexed/offset reading (`start`, `limit`) to support process partitioning.
+- Handles BSON types (`ObjectId`, `Datetime`, `Decimal128`, `Int64`, `Binary`, etc.).
+
+#### [NEW] [schema_analyzer.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/schema_analyzer.py)
+- Implements **Algorithm 1 (Schema Analyzer)**.
+- Recursively inspects documents and key-value pairs up to depth $k=2$.
+- Dynamically maps BSON types to MySQL column types (`VARCHAR`, `INT`, `BIGINT`, `DOUBLE`, `DECIMAL`, `DATETIME`, `TINYINT`, `LONGTEXT`).
+- Widens column types when key values have heterogeneous types across documents.
+- Creates child table schemas for nested JSON objects (`isDocument`) and arrays (`isArray`) with foreign keys pointing back to parent table primary key (`_id`).
+
+#### [NEW] [process_initiator.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/process_initiator.py)
+- Implements **Algorithm 2 (Processes Initiation)**.
+- Connects to MySQL and executes `initialize_schema(schema)` to create parent and child tables.
+- Calculates document length for each collection BSON file.
+- Divides documents into $n$ logical partitions (`start`, `limit`) and spawns worker processes via Python `multiprocessing`.
+
+#### [NEW] [transformer_loader.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/transformer_loader.py)
+- Implements **Algorithm 3 (Transformation & Loading)**.
+- Each worker process reads batches of BSON documents for its logical partition.
+- Function `createQuery(doc)` extracts scalar values for the parent table and extracts rows for child tables (subdocuments/arrays).
+- Performs bulk batch insertion into MySQL database with transaction management.
+
+#### [NEW] [cli.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/cli.py)
+- Main CLI entrypoint for `etl_generic`.
+- Accepts command-line arguments: `--dump-dir`, `--db-uri`, `--workers`, `--batch-size`, `--recreate-schema`.
+- Coordinates Schema Analysis (Alg 1), Schema Creation & Process Initiation (Alg 2), and Batch Loading (Alg 3).
+
+#### [NEW] [__init__.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/etl_generic/__init__.py)
+- Package initializer.
+
+---
+
+### Root Configuration & Execution
+
+#### [NEW] [run_generic_etl.py](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/run_generic_etl.py)
+- Root executable script calling `etl_generic.cli.run()`.
+
+#### [MODIFY] [docker-compose.yaml](file:///home/jinesh14/CourseWork/Sem9/Sarvesh_Code/docker-compose.yaml)
+- Configure the `etl` service command to execute `run_generic_etl.py` against `rasp_db/`.
+
+---
+
+## Verification Plan
+
+### Automated Verification
+1. Build and start containers:
+   ```bash
+   docker compose down -v
+   docker compose up -d mysql
+   docker compose run --rm etl python run_generic_etl.py --dump-dir rasp_db --db-uri mysql+pymysql://admissions:admissions@mysql:3306/admissions --workers 4
+   ```
+2. Verify MySQL database tables and row counts:
+   ```bash
+   docker exec admissions-mysql mysql -u admissions -padmissions admissions -e "SHOW TABLES; SELECT COUNT(*) FROM rounds; SELECT COUNT(*) FROM rounds_extra_data; SELECT COUNT(*) FROM applications; SELECT COUNT(*) FROM applications_offered_payment_refNo_list; SELECT COUNT(*) FROM users;"
+   ```
+3. Check data integrity and foreign keys between parent tables and child tables (e.g. `rounds_extra_data` pointing to `rounds._id`, `applications_offered_payment_refNo_list` pointing to `applications._id`).
+
+### Manual Verification
+- Inspect schema definitions generated by `Schema Analyzer` for all collections in `rasp_db/`.
