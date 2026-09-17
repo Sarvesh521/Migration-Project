@@ -152,13 +152,23 @@ class SchemaAnalyzer:
     def _init_table(
         self, table_name, is_child, parent_table, parent_fk_col, primary_key
     ):
-        if table_name not in self.tables:
+            fk_list = []
+            if is_child and parent_table:
+                parent_pk = self.tables[parent_table]["primary_key"] if parent_table in self.tables else "_id"
+                fk_list.append({
+                    "fk_col": parent_fk_col,
+                    "ref_table": parent_table,
+                    "ref_col": parent_pk,
+                    "on_delete": "CASCADE"
+                })
+
             self.tables[table_name] = {
                 "table_name": table_name,
                 "is_child": is_child,
                 "parent_table": parent_table,
                 "parent_fk_col": parent_fk_col,
                 "primary_key": primary_key,
+                "fk_constraints": fk_list,
                 "columns": {},
                 "record_count": 0,
             }

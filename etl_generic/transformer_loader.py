@@ -80,25 +80,38 @@ def create_query_data(doc, schema, max_depth=2):
     return rows_by_table
 
 
-def execute_batch_insert(cursor, table_name, table_schema, rows):
+def execute_batch_insert(cursor, table_name_key, table_schema, rows):
     if not rows:
         return
 
-    cols = [
-        c
-        for c in table_schema["columns"].keys()
-        if c != "id" or not table_schema["is_child"]
-    ]
+    if table_schema.get("excluded"):
+        return
 
-    placeholders = ", ".join(["%s"] * len(cols))
-    quoted_cols = ", ".join([f"`{c}`" for c in cols])
-    query = f"INSERT IGNORE INTO `{table_name}` ({quoted_cols}) VALUES ({placeholders})"
+    actual_table_name = table_schema.get("table_name", table_name_key)
+
+    # Determine active columns (excluding 'id' if child table and excluded columns)
+    active_cols = []
+    renamed_cols = []
+    for col_key, cinfo in table_schema["columns"].items():
+        if cinfo.get("excluded"):
+            continue
+        if col_key == "id" and table_schema.get("is_child"):
+            continue
+        active_cols.append(col_key)
+        renamed_cols.append(cinfo.get("renamed_to", col_key))
+
+    if not active_cols:
+        return
+
+    placeholders = ", ".join(["%s"] * len(active_cols))
+    quoted_cols = ", ".join([f"`{c}`" for c in renamed_cols])
+    query = f"INSERT IGNORE INTO `{actual_table_name}` ({quoted_cols}) VALUES ({placeholders})"
 
     params_list = []
     for r in rows:
         row_params = []
-        for c in cols:
-            val = r.get(c)
+        for col_key in active_cols:
+            val = r.get(col_key)
             row_params.append(val)
         params_list.append(row_params)
 

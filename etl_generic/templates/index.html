@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schema Studio - MongoDB to MySQL Migration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --panel-bg: #1e293b;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --accent: #06b6d4;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    header {
+      background-color: rgba(30, 41, 59, 0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .brand-title h1 { font-size: 18px; font-weight: 600; }
+    .brand-title p { font-size: 12px; color: var(--text-muted); }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    }
+    .btn-secondary {
+      background-color: var(--border-color);
+      color: var(--text-main);
+    }
+    .btn-secondary:hover { background-color: #475569; }
+
+    .main-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    .sidebar {
+      width: 290px;
+      background-color: #090d16;
+      border-right: 1px solid var(--border-color);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-header {
+      padding: 16px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .table-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 8px;
+    }
+    .table-nav-item {
+      padding: 10px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      transition: all 0.15s ease;
+    }
+    .table-nav-item:hover {
+      background-color: var(--panel-bg);
+      color: var(--text-main);
+    }
+    .table-nav-item.active {
+      background-color: rgba(99, 102, 241, 0.15);
+      color: #818cf8;
+      font-weight: 600;
+    }
+    .badge {
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 10px;
+      background-color: var(--border-color);
+    }
+    .badge-child { background-color: rgba(6, 182, 212, 0.2); color: var(--accent); }
+    .badge-excluded { background-color: rgba(239, 68, 68, 0.2); color: var(--danger); }
+
+    .content-area {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      background-color: #0b1120;
+    }
+
+    .table-card {
+      background-color: var(--panel-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 32px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .table-header {
+      padding: 20px 24px;
+      background-color: rgba(15, 23, 42, 0.5);
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .input-table-name {
+      background-color: #0f172a;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .table-meta {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .schema-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .schema-table th {
+      background-color: rgba(15, 23, 42, 0.7);
+      text-align: left;
+      padding: 12px 16px;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .schema-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+      vertical-align: middle;
+    }
+    .schema-table tr:hover {
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    input[type="text"], select {
+      background-color: #0f172a;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      width: 100%;
+    }
+    input[type="text"]:focus, select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .section-title {
+      padding: 16px 24px 8px 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .fk-section {
+      padding: 16px 24px;
+      background-color: rgba(15, 23, 42, 0.3);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .fk-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .status-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .status-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(99, 102, 241, 0.2);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 1s infinite linear;
+      margin-bottom: 20px;
+    }
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-icon">S</div>
+      <div class="brand-title">
+        <h1>Schema Studio</h1>
+        <p>NoSQL → Relational Schema Review (4 Category Modification Control)</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-secondary" onclick="loadSchema()">Reset Overrides</button>
+      <button class="btn btn-primary" onclick="approveAndExecute()">
+        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        Approve & Execute Migration
+      </button>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="sidebar">
+      <div class="sidebar-header">Discovered Tables & Collections</div>
+      <div class="table-nav" id="tableNav"></div>
+    </div>
+    <div class="content-area" id="contentArea"></div>
+  </div>
+
+  <div class="status-overlay" id="statusOverlay">
+    <div class="spinner"></div>
+    <h2>Executing Migration...</h2>
+    <p style="color: var(--text-muted); margin-top: 8px;">Creating MySQL tables and batch loading records.</p>
+  </div>
+
+  <script>
+    let schemaData = null;
+
+    async function loadSchema() {
+      try {
+        const res = await fetch('/api/schema');
+        schemaData = await res.json();
+        renderSidebar();
+        renderContent();
+      } catch (err) {
+        alert('Failed to load schema: ' + err);
+      }
+    }
+
+    function renderSidebar() {
+      const nav = document.getElementById('tableNav');
+      nav.innerHTML = '';
+      if (!schemaData || !schemaData.tables) return;
+
+      Object.keys(schemaData.tables).forEach(tname => {
+        const tbl = schemaData.tables[tname];
+        const item = document.createElement('div');
+        item.className = 'table-nav-item';
+        item.onclick = () => scrollToTable(tname);
+        
+        let badgeHtml = tbl.is_child ? '<span class="badge badge-child">Child</span>' : '<span class="badge">Root</span>';
+        if (tbl.excluded) badgeHtml += ' <span class="badge badge-excluded">Excluded</span>';
+
+        item.innerHTML = `<span>${tname}</span> ${badgeHtml}`;
+        nav.appendChild(item);
+      });
+    }
+
+    function renderContent() {
+      const area = document.getElementById('contentArea');
+      area.innerHTML = '';
+      if (!schemaData || !schemaData.tables) return;
+
+      const allTableNames = Object.keys(schemaData.tables);
+
+      allTableNames.forEach(tname => {
+        const tbl = schemaData.tables[tname];
+        const card = document.createElement('div');
+        card.className = 'table-card';
+        card.id = `card-${tname}`;
+
+        // Ensure fk_constraints array exists
+        if (!tbl.fk_constraints) {
+          tbl.fk_constraints = [];
+          if (tbl.is_child && tbl.parent_table && tbl.parent_fk_col) {
+            tbl.fk_constraints.push({
+              fk_col: tbl.parent_fk_col,
+              ref_table: tbl.parent_table,
+              ref_col: schemaData.tables[tbl.parent_table] ? schemaData.tables[tbl.parent_table].primary_key : '_id',
+              on_delete: 'CASCADE'
+            });
+          }
+        }
+
+        let rowsHtml = '';
+        Object.keys(tbl.columns).forEach(colName => {
+          const col = tbl.columns[colName];
+          const isPk = colName === tbl.primary_key;
+          const isFk = tbl.fk_constraints.some(f => f.fk_col === colName);
+
+          rowsHtml += `
+            <tr style="${col.excluded ? 'opacity: 0.4;' : ''}">
+              <td style="font-family: 'Fira Code', monospace;">${colName}</td>
+              <td>
+                <input type="text" value="${col.renamed_to || colName}" 
+                  onchange="updateColName('${tname}', '${colName}', this.value)">
+              </td>
+              <td>
+                <!-- Category 2: Data Type Modification -->
+                <select onchange="updateColType('${tname}', '${colName}', this.value)">
+                  <option value="VARCHAR(64)" ${col.sql_type.includes('VARCHAR(64)') ? 'selected' : ''}>VARCHAR(64)</option>
+                  <option value="VARCHAR(255)" ${col.sql_type.includes('VARCHAR(255)') ? 'selected' : ''}>VARCHAR(255)</option>
+                  <option value="TEXT" ${col.sql_type === 'TEXT' ? 'selected' : ''}>TEXT</option>
+                  <option value="LONGTEXT" ${col.sql_type === 'LONGTEXT' ? 'selected' : ''}>LONGTEXT</option>
+                  <option value="INT" ${col.sql_type.includes('INT') && !col.sql_type.includes('BIG') && !col.sql_type.includes('TINY') ? 'selected' : ''}>INT</option>
+                  <option value="BIGINT" ${col.sql_type.includes('BIGINT') ? 'selected' : ''}>BIGINT</option>
+                  <option value="DOUBLE" ${col.sql_type.includes('DOUBLE') ? 'selected' : ''}>DOUBLE</option>
+                  <option value="DECIMAL(38, 10)" ${col.sql_type.includes('DECIMAL') ? 'selected' : ''}>DECIMAL</option>
+                  <option value="DATETIME(6)" ${col.sql_type.includes('DATETIME') ? 'selected' : ''}>DATETIME</option>
+                  <option value="TINYINT(1)" ${col.sql_type.includes('TINYINT') ? 'selected' : ''}>BOOLEAN (TINYINT)</option>
+                  <option value="JSON" ${col.sql_type.includes('JSON') ? 'selected' : ''}>JSON</option>
+                </select>
+              </td>
+              <!-- Category 3: PK Selection -->
+              <td>
+                <label class="checkbox-container">
+                  <input type="radio" name="pk-${tname}" ${isPk ? 'checked' : ''} 
+                    onchange="updatePrimaryKey('${tname}', '${colName}')">
+                  ${isPk ? '<span class="badge" style="background:#6366f1">PK</span>' : 'Set PK'}
+                  ${isFk ? '<span class="badge badge-child">FK</span>' : ''}
+                </label>
+              </td>
+              <!-- Category 2: Nullability -->
+              <td>
+                <label class="checkbox-container">
+                  <input type="checkbox" ${col.nullable ? 'checked' : ''} 
+                    onchange="updateColNullable('${tname}', '${colName}', this.checked)">
+                  Nullable
+                </label>
+              </td>
+              <!-- Category 2: Exclude Column -->
+              <td>
+                <label class="checkbox-container" style="color: var(--danger)">
+                  <input type="checkbox" ${col.excluded ? 'checked' : ''} 
+                    onchange="updateColExcluded('${tname}', '${colName}', this.checked)">
+                  Exclude
+                </label>
+              </td>
+            </tr>
+          `;
+        });
+
+        // Generate FK Rows HTML
+        let fkRowsHtml = '';
+        const currentTableCols = Object.keys(tbl.columns);
+
+        tbl.fk_constraints.forEach((fk, idx) => {
+          const targetTblObj = schemaData.tables[fk.ref_table];
+          const targetCols = targetTblObj ? Object.keys(targetTblObj.columns) : ['_id'];
+
+          let colOpts = currentTableCols.map(c => `<option value="${c}" ${c === fk.fk_col ? 'selected' : ''}>${c}</option>`).join('');
+          let refTblOpts = allTableNames.map(t => `<option value="${t}" ${t === fk.ref_table ? 'selected' : ''}>${t}</option>`).join('');
+          let refColOpts = targetCols.map(rc => `<option value="${rc}" ${rc === fk.ref_col ? 'selected' : ''}>${rc}</option>`).join('');
+
+          fkRowsHtml += `
+            <div class="fk-row" style="display:flex; gap:10px; align-items:center; margin-bottom:8px; background:rgba(15,23,42,0.6); padding:8px 12px; border-radius:6px; border:1px solid var(--border-color);">
+              <div style="flex:1;">
+                <span style="font-size:11px; color:var(--text-muted); display:block;">Local FK Column</span>
+                <select onchange="updateFkConstraint('${tname}', ${idx}, 'fk_col', this.value)">${colOpts}</select>
+              </div>
+              <div style="font-weight:bold; color:var(--accent);">&rarr;</div>
+              <div style="flex:1;">
+                <span style="font-size:11px; color:var(--text-muted); display:block;">Target Parent Table</span>
+                <select onchange="updateFkConstraint('${tname}', ${idx}, 'ref_table', this.value)">${refTblOpts}</select>
+              </div>
+              <div style="flex:1;">
+                <span style="font-size:11px; color:var(--text-muted); display:block;">Target Ref Column</span>
+                <select onchange="updateFkConstraint('${tname}', ${idx}, 'ref_col', this.value)">${refColOpts}</select>
+              </div>
+              <div style="width:130px;">
+                <span style="font-size:11px; color:var(--text-muted); display:block;">On Delete Action</span>
+                <select onchange="updateFkConstraint('${tname}', ${idx}, 'on_delete', this.value)">
+                  <option value="CASCADE" ${fk.on_delete === 'CASCADE' ? 'selected' : ''}>CASCADE</option>
+                  <option value="SET NULL" ${fk.on_delete === 'SET NULL' ? 'selected' : ''}>SET NULL</option>
+                  <option value="RESTRICT" ${fk.on_delete === 'RESTRICT' ? 'selected' : ''}>RESTRICT</option>
+                  <option value="NO ACTION" ${fk.on_delete === 'NO ACTION' ? 'selected' : ''}>NO ACTION</option>
+                </select>
+              </div>
+              <button class="btn" style="background:var(--danger); color:white; padding:6px 10px; font-size:12px;" onclick="removeFkConstraint('${tname}', ${idx})">
+                🗑️ Remove
+              </button>
+            </div>
+          `;
+        });
+
+        card.innerHTML = `
+          <!-- Category 1: Table-Level Modifications (Rename & Exclude Table) -->
+          <div class="table-header">
+            <div class="table-title">
+              <span class="badge ${tbl.is_child ? 'badge-child' : ''}">${tbl.is_child ? 'Child Table' : 'Parent Table'}</span>
+              <input type="text" class="input-table-name" value="${tbl.table_name}" 
+                onchange="updateTableName('${tname}', this.value)" placeholder="MySQL Table Name">
+            </div>
+            <div class="table-meta">
+              <!-- Category 4: Array Strategy Selector -->
+              ${tbl.is_child ? `
+                <div style="display:flex; align-items:center; gap:6px;">
+                  <span style="font-size:12px;">Array Strategy:</span>
+                  <select style="width:auto;" onchange="updateArrayStrategy('${tname}', this.value)">
+                    <option value="child_table" selected>Child Table (1NF Normalized)</option>
+                    <option value="json_column">Inline JSON Column</option>
+                  </select>
+                </div>
+              ` : ''}
+
+              <!-- Category 1: Exclude Table Toggle -->
+              <label class="checkbox-container" style="color: var(--danger); font-weight: 600;">
+                <input type="checkbox" ${tbl.excluded ? 'checked' : ''} 
+                  onchange="updateTableExcluded('${tname}', this.checked)">
+                Exclude Table
+              </label>
+
+              <span>Records: <strong>${tbl.record_count || 0}</strong></span>
+              <span>Cols: <strong>${Object.keys(tbl.columns).length}</strong></span>
+            </div>
+          </div>
+
+          <table class="schema-table">
+            <thead>
+              <tr>
+                <th>Original BSON Key</th>
+                <th>MySQL Column Name (Rename)</th>
+                <th>SQL Data Type</th>
+                <th>Primary Key</th>
+                <th>Nullability</th>
+                <th>Column Exclusion</th>
+              </tr>
+            </thead>
+            <tbody>${rowsHtml}</tbody>
+          </table>
+
+          <!-- Category 3: Foreign Key Constraints Studio -->
+          <div class="fk-section">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+              <div class="fk-title" style="margin:0;">Foreign Key Constraints Studio (Relational Links):</div>
+              <button class="btn btn-secondary" style="padding:4px 12px; font-size:12px;" onclick="addFkConstraint('${tname}')">
+                + Add Foreign Key
+              </button>
+            </div>
+            ${tbl.fk_constraints.length > 0 ? fkRowsHtml : '<p style="font-size:12px; color:var(--text-muted); font-style:italic;">No Foreign Key constraints configured for this table.</p>'}
+          </div>
+        `;
+        area.appendChild(card);
+      });
+    }
+
+    // Category 1: Table-Level Operations
+    function updateTableName(origName, newName) {
+      if (schemaData.tables[origName]) {
+        schemaData.tables[origName].table_name = newName;
+      }
+    }
+    function updateTableExcluded(tname, val) {
+      if (schemaData.tables[tname]) {
+        schemaData.tables[tname].excluded = val;
+        renderSidebar();
+        renderContent();
+      }
+    }
+
+    // Category 2: Column-Level Operations
+    function updateColName(tname, colName, val) {
+      if (schemaData.tables[tname].columns[colName]) {
+        schemaData.tables[tname].columns[colName].renamed_to = val;
+      }
+    }
+    function updateColType(tname, colName, val) {
+      if (schemaData.tables[tname].columns[colName]) {
+        schemaData.tables[tname].columns[colName].sql_type = val;
+      }
+    }
+    function updateColNullable(tname, colName, val) {
+      if (schemaData.tables[tname].columns[colName]) {
+        schemaData.tables[tname].columns[colName].nullable = val;
+      }
+    }
+    function updateColExcluded(tname, colName, val) {
+      if (schemaData.tables[tname].columns[colName]) {
+        schemaData.tables[tname].columns[colName].excluded = val;
+        renderContent();
+      }
+    }
+
+    // Category 3: Key & Foreign Key Constraint Operations
+    function updatePrimaryKey(tname, colName) {
+      if (schemaData.tables[tname]) {
+        schemaData.tables[tname].primary_key = colName;
+        // Update Primary Key sql_type
+        Object.keys(schemaData.tables[tname].columns).forEach(c => {
+          if (c === colName) {
+            schemaData.tables[tname].columns[c].sql_type = "VARCHAR(64) PRIMARY KEY";
+          } else if (schemaData.tables[tname].columns[c].sql_type.includes("PRIMARY KEY")) {
+            schemaData.tables[tname].columns[c].sql_type = "VARCHAR(64)";
+          }
+        });
+        renderContent();
+      }
+    }
+
+    function addFkConstraint(tname) {
+      if (!schemaData.tables[tname].fk_constraints) {
+        schemaData.tables[tname].fk_constraints = [];
+      }
+      const cols = Object.keys(schemaData.tables[tname].columns);
+      const firstCol = cols.length > 0 ? cols[0] : '';
+      const allTables = Object.keys(schemaData.tables);
+      const refTbl = allTables.length > 0 ? allTables[0] : tname;
+      const refCols = schemaData.tables[refTbl] ? Object.keys(schemaData.tables[refTbl].columns) : ['_id'];
+
+      schemaData.tables[tname].fk_constraints.push({
+        fk_col: firstCol,
+        ref_table: refTbl,
+        ref_col: schemaData.tables[refTbl]?.primary_key || refCols[0] || '_id',
+        on_delete: 'CASCADE'
+      });
+      renderContent();
+    }
+
+    function removeFkConstraint(tname, idx) {
+      if (schemaData.tables[tname] && schemaData.tables[tname].fk_constraints) {
+        schemaData.tables[tname].fk_constraints.splice(idx, 1);
+        renderContent();
+      }
+    }
+
+    function updateFkConstraint(tname, idx, field, val) {
+      if (schemaData.tables[tname] && schemaData.tables[tname].fk_constraints && schemaData.tables[tname].fk_constraints[idx]) {
+        schemaData.tables[tname].fk_constraints[idx][field] = val;
+        if (field === 'ref_table') {
+          const newRefTbl = schemaData.tables[val];
+          schemaData.tables[tname].fk_constraints[idx]['ref_col'] = newRefTbl ? (newRefTbl.primary_key || '_id') : '_id';
+        }
+        renderContent();
+      }
+    }
+
+    // Category 4: Array Strategy Operations
+    function updateArrayStrategy(tname, strategy) {
+      if (schemaData.tables[tname]) {
+        schemaData.tables[tname].array_strategy = strategy;
+        if (strategy === "json_column") {
+          schemaData.tables[tname].excluded = true;
+          alert(`Child table '${tname}' excluded. Array will be stored as inline JSON column in parent table.`);
+        } else {
+          schemaData.tables[tname].excluded = false;
+        }
+        renderSidebar();
+        renderContent();
+      }
+    }
+
+    function scrollToTable(tname) {
+      const el = document.getElementById(`card-${tname}`);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function approveAndExecute() {
+      if (!confirm('Approve schema with your customized modifications and launch migration execution?')) return;
+      document.getElementById('statusOverlay').classList.add('active');
+
+      try {
+        const res = await fetch('/api/approve-schema', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(schemaData)
+        });
+        if (res.ok) {
+          setTimeout(() => {
+            alert('Schema approved! Migration is running in Docker background.');
+          }, 1000);
+        } else {
+          alert('Error approving schema');
+          document.getElementById('statusOverlay').classList.remove('active');
+        }
+      } catch (err) {
+        alert('Failed to approve schema: ' + err);
+        document.getElementById('statusOverlay').classList.remove('active');
+      }
+    }
+
+    window.onload = loadSchema;
+  </script>
+</body>
+</html>

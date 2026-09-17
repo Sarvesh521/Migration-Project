@@ -51,7 +51,7 @@ class ProcessInitiator:
 
     def initialize_schema(self, schema, recreate=False):
         """
-        Creates target MySQL tables for the collection and all child tables.
+        Creates target MySQL tables for all collections and child tables based on approved schema.
         """
         conn = get_db_connection(self.db_params)
         try:
@@ -60,38 +60,106 @@ class ProcessInitiator:
                     cursor.execute("SET SESSION innodb_strict_mode=0;")
                 except Exception:
                     pass
-                # Order tables so child tables are created after parent tables (or dropped first)
+                try:
+                    cursor.execute("SET FOREIGN_KEY_CHECKS=0;")
+                except Exception:
+                    pass
+
                 tables = schema["tables"]
-                main_table = schema["collection_name"]
+                # Order tables: root tables first, then child tables
+                root_keys = [t for t, info in tables.items() if not info.get("is_child")]
+                child_keys = [t for t, info in tables.items() if info.get("is_child")]
+                ordered_tbl_keys = root_keys + child_keys
 
                 if recreate:
-                    # Drop child tables first, then main table
-                    for tbl_name in reversed(list(tables.keys())):
-                        cursor.execute(f"DROP TABLE IF EXISTS `{tbl_name}`")
+                    # Drop tables in reverse order
+                    for tbl_key in reversed(ordered_tbl_keys):
+                        tbl_info = tables[tbl_key]
+                        if tbl_info.get("excluded"):
+                            continue
+                        actual_name = tbl_info.get("table_name", tbl_key)
+                        cursor.execute(f"DROP TABLE IF EXISTS `{actual_name}`")
 
-                # Create parent table first, then child tables
-                ordered_tbl_names = [main_table] + [
-                    t for t in tables.keys() if t != main_table
-                ]
+                # Pass 1: Create all tables without inline FKs first
+                for tbl_key in ordered_tbl_keys:
+                    tbl_info = tables[tbl_key]
+                    if tbl_info.get("excluded"):
+                        continue
 
-                for tbl_name in ordered_tbl_names:
-                    tbl_info = tables[tbl_name]
+                    actual_table_name = tbl_info.get("table_name", tbl_key)
                     col_defs = []
 
-                    for col_name, cinfo in tbl_info["columns"].items():
+                    # Find all FK columns for this table to ensure type compatibility
+                    fk_col_map = {}
+                    user_fks = tbl_info.get("fk_constraints", [])
+                    if user_fks:
+                        for fk in user_fks:
+                            fk_col_map[fk.get("fk_col")] = fk
+                    elif tbl_info.get("is_child"):
+                        fk_col_map[tbl_info["parent_fk_col"]] = True
+
+                    for col_key, cinfo in tbl_info["columns"].items():
+                        if cinfo.get("excluded"):
+                            continue
+                        col_name = cinfo.get("renamed_to", col_key)
                         sql_type = cinfo["sql_type"]
+
+                        # If this column is a Foreign Key and type is TEXT/LONGTEXT, enforce VARCHAR(64) for MySQL FK compatibility
+                        if col_key in fk_col_map or col_name in fk_col_map:
+                            if "TEXT" in sql_type or "LONGTEXT" in sql_type:
+                                sql_type = "VARCHAR(64)"
+
                         col_defs.append(f"`{col_name}` {sql_type}")
 
-                    # Foreign key constraint for child tables
-                    fk_clause = ""
-                    if tbl_info["is_child"]:
-                        parent_tbl = tbl_info["parent_table"]
-                        parent_fk_col = tbl_info["parent_fk_col"]
-                        parent_pk = tables[parent_tbl]["primary_key"]
-                        fk_clause = f", FOREIGN KEY (`{parent_fk_col}`) REFERENCES `{parent_tbl}`(`{parent_pk}`) ON DELETE CASCADE"
+                    if not col_defs:
+                        continue
 
-                    create_query = f"CREATE TABLE IF NOT EXISTS `{tbl_name}` ({', '.join(col_defs)}{fk_clause}) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4;"
+                    create_query = f"CREATE TABLE IF NOT EXISTS `{actual_table_name}` ({', '.join(col_defs)}) ENGINE=InnoDB ROW_FORMAT=DYNAMIC DEFAULT CHARSET=utf8mb4;"
                     cursor.execute(create_query)
+
+                # Pass 2: Add all Foreign Key constraints using ALTER TABLE
+                for tbl_key in ordered_tbl_keys:
+                    tbl_info = tables[tbl_key]
+                    if tbl_info.get("excluded"):
+                        continue
+
+                    actual_table_name = tbl_info.get("table_name", tbl_key)
+                    user_fks = tbl_info.get("fk_constraints", [])
+
+                    fks_to_apply = []
+                    if user_fks:
+                        for fk in user_fks:
+                            fks_to_apply.append(fk)
+                    elif tbl_info.get("is_child"):
+                        parent_tbl_key = tbl_info.get("parent_table")
+                        if parent_tbl_key:
+                            parent_pk = tables[parent_tbl_key]["primary_key"] if parent_tbl_key in tables else "_id"
+                            fks_to_apply.append({
+                                "fk_col": tbl_info["parent_fk_col"],
+                                "ref_table": parent_tbl_key,
+                                "ref_col": parent_pk,
+                                "on_delete": "CASCADE"
+                            })
+
+                    for fk_idx, fk in enumerate(fks_to_apply):
+                        ref_tbl_key = fk.get("ref_table")
+                        if ref_tbl_key in tables and not tables[ref_tbl_key].get("excluded"):
+                            ref_actual_name = tables[ref_tbl_key].get("table_name", ref_tbl_key)
+                            fk_col = fk.get("fk_col")
+                            ref_col = fk.get("ref_col") or tables[ref_tbl_key].get("primary_key", "_id")
+                            on_del = fk.get("on_delete", "CASCADE").upper()
+                            fk_name = f"fk_{actual_table_name}_{fk_col}_{fk_idx}"
+
+                            alter_query = f"ALTER TABLE `{actual_table_name}` ADD CONSTRAINT `{fk_name}` FOREIGN KEY (`{fk_col}`) REFERENCES `{ref_actual_name}`(`{ref_col}`) ON DELETE {on_del};"
+                            try:
+                                cursor.execute(alter_query)
+                            except Exception as fk_err:
+                                print(f"Warning: Could not add FK on `{actual_table_name}`.`{fk_col}` referencing `{ref_actual_name}`.`{ref_col}`: {fk_err}")
+
+                try:
+                    cursor.execute("SET FOREIGN_KEY_CHECKS=1;")
+                except Exception:
+                    pass
         finally:
             conn.close()
 
@@ -99,8 +167,6 @@ class ProcessInitiator:
         """
         Initiates multi-process ETL for a single BSON file.
         """
-        self.initialize_schema(schema)
-
         length = count_bson_file(filepath)
         if length == 0:
             print(f"Skipping empty file {filepath}")

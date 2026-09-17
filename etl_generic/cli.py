@@ -50,6 +50,17 @@ def run():
         help="Directory to save intermediate inferred schema JSON files",
     )
     parser.add_argument(
+        "--gui-port",
+        type=int,
+        default=5000,
+        help="Port for Web GUI Schema Studio (default: 5000)",
+    )
+    parser.add_argument(
+        "--headless",
+        action="store_true",
+        help="Bypass Web GUI interactive schema approval and run automatically",
+    )
+    parser.add_argument(
         "--recreate-schema",
         action="store_true",
         help="Recreate MySQL tables if they already exist",
@@ -67,6 +78,8 @@ def run():
     print(f" Source Dump Path   : {args.dump_dir}")
     print(f" Schema Output Dir  : {args.schema_output_dir}")
     print(f" Target DB URI      : {args.db_uri}")
+    print(f" Web GUI Port       : {args.gui_port}")
+    print(f" Headless Mode      : {args.headless}")
     print(f" Worker Processes   : {args.workers}")
     print(f" Batch Size         : {args.batch_size}")
     print(f" Recreate Schema    : {args.recreate_schema}")
@@ -81,56 +94,85 @@ def run():
     for f in bson_files:
         print(f"  - {f}")
 
+    # 1. Step 1: Run Algorithm 1 (Schema Analyzer) across all collections
+    print("\n[+] Step 1/3: Running Schema Analyzer (Algorithm 1)...")
+    combined_schema = {"collection_name": "all_collections", "tables": {}}
+    schemas_by_file = {}
+
+    import json
+    for filepath in bson_files:
+        collection_name = os.path.basename(filepath)[:-5]
+        analyzer = SchemaAnalyzer(collection_name=collection_name, max_depth=2)
+        schema = analyzer.analyze_bson_file(filepath)
+        schemas_by_file[filepath] = schema
+        for tkey, tbl in schema["tables"].items():
+            combined_schema["tables"][tkey] = tbl
+
+        schema_json_path = os.path.join(args.schema_output_dir, f"{collection_name}.json")
+        with open(schema_json_path, "w", encoding="utf-8") as sf:
+            json.dump(schema, sf, indent=2)
+
+    combined_inferred_path = os.path.join(args.schema_output_dir, "inferred_schema.json")
+    with open(combined_inferred_path, "w", encoding="utf-8") as csf:
+        json.dump(combined_schema, csf, indent=2)
+
+    print(f"    Inferred schema across {len(combined_schema['tables'])} table(s) saved to {args.schema_output_dir}/")
+
+    # 2. Step 2: Web GUI Schema Review Layer (unless --headless)
+    approved_schema = combined_schema
+    if not args.headless:
+        from etl_generic.web_gui import wait_for_user_approval
+        approved_schema = wait_for_user_approval(combined_schema, port=args.gui_port)
+
+    # Overwrite JSON schema files in output_generic/ with user-approved modifications
+    approved_json_path = os.path.join(args.schema_output_dir, "approved_schema.json")
+    with open(approved_json_path, "w", encoding="utf-8") as af:
+        json.dump(approved_schema, af, indent=2)
+
+    with open(combined_inferred_path, "w", encoding="utf-8") as csf:
+        json.dump(approved_schema, csf, indent=2)
+
+    for filepath in bson_files:
+        collection_name = os.path.basename(filepath)[:-5]
+        file_schema = schemas_by_file[filepath]
+        # Sync file_schema tables with approved schema modifications
+        for tkey in list(file_schema["tables"].keys()):
+            if tkey in approved_schema["tables"]:
+                file_schema["tables"][tkey] = approved_schema["tables"][tkey]
+        schema_json_path = os.path.join(args.schema_output_dir, f"{collection_name}.json")
+        with open(schema_json_path, "w", encoding="utf-8") as sf:
+            json.dump(file_schema, sf, indent=2)
+
     process_initiator = ProcessInitiator(
         db_uri=args.db_uri,
         num_workers=args.workers,
         batch_size=args.batch_size,
     )
 
+    # 3. Step 3: Execute Algorithm 2 (Process Initiator DDL) ONCE for all tables
+    print("\n[+] Step 2 & 3: Initializing Tables & Loading Records (Algorithm 2 & 3)...")
+    process_initiator.initialize_schema(approved_schema, recreate=args.recreate_schema)
+
     summary_stats = []
 
     for filepath in bson_files:
         collection_name = os.path.basename(filepath)[:-5]
-        print(f"\n[+] Processing Collection/BSON: '{collection_name}' ({filepath})")
+        file_schema = schemas_by_file[filepath]
 
-        # 1. Algorithm 1: Schema Analyzer
-        print("  -> Step 1/3: Running Schema Analyzer (Algorithm 1)...")
-        analyzer_start = time.time()
-        analyzer = SchemaAnalyzer(collection_name=collection_name, max_depth=2)
-        schema = analyzer.analyze_bson_file(filepath)
-        analyzer_time = time.time() - analyzer_start
+        print(f"\n  -> Processing Collection: '{collection_name}'")
 
-        # Save intermediate schema JSON file
-        schema_json_path = os.path.join(args.schema_output_dir, f"{collection_name}.json")
-        import json
-        with open(schema_json_path, "w", encoding="utf-8") as sf:
-            json.dump(schema, sf, indent=2)
-
-        print(
-            f"     Schema inferred in {analyzer_time:.2f}s across {len(schema['tables'])} table(s) (Saved to {schema_json_path}):"
-        )
-        for tname in schema["tables"].keys():
-            print(f"       * Table: {tname}")
-
-        # 2. Algorithm 2 & 3: Process Initiation & Worker ETL Load
-        print("  -> Step 2/3: Initializing Schema & Spawning Worker Processes (Algorithm 2)...")
-        if args.recreate_schema:
-            process_initiator.initialize_schema(schema, recreate=True)
-
-        print("  -> Step 3/3: Executing Concurrent Transformation & Loading (Algorithm 3)...")
         etl_start = time.time()
         process_initiator.start_etl_for_file(
             filepath=filepath,
             collection_name=collection_name,
-            schema=schema,
+            schema=file_schema,
         )
         etl_time = time.time() - etl_start
 
         summary_stats.append(
             {
                 "collection": collection_name,
-                "tables": list(schema["tables"].keys()),
-                "analyzer_time": analyzer_time,
+                "tables": [t for t in file_schema["tables"].keys() if not file_schema["tables"][t].get("excluded")],
                 "etl_time": etl_time,
             }
         )
@@ -141,7 +183,7 @@ def run():
     print("==================================================")
     for stat in summary_stats:
         print(
-            f" Collection: {stat['collection']} | Tables: {', '.join(stat['tables'])} | Schema Time: {stat['analyzer_time']:.2f}s | Load Time: {stat['etl_time']:.2f}s"
+            f" Collection: {stat['collection']} | Active Tables: {', '.join(stat['tables'])} | Load Time: {stat['etl_time']:.2f}s"
         )
     print(f"Total Execution Time: {total_time:.2f} seconds")
     print("==================================================")
