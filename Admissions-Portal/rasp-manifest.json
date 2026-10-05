@@ -1,0 +1,3863 @@
+{
+  "service:list_application_documents_svc_nck" : {
+    "irId" : "list_application_documents_svc_nck",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.listApplicationDocuments",
+    "zone" : 1,
+    "hash" : "6c561735",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_preference_svc_4z9" : {
+    "irId" : "hook-after-create_application_preference_svc_4z9",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.afterCreateApplicationPreference",
+    "zone" : 2,
+    "hash" : "715a08de",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_user_by_id_svc_8rw" : {
+    "irId" : "hook-before-get_user_by_id_svc_8rw",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.beforeGetUserById",
+    "zone" : 2,
+    "hash" : "5f3ff602",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_query_svc_vhp" : {
+    "irId" : "hook-before-update_query_svc_vhp",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.beforeUpdateQuery",
+    "zone" : 2,
+    "hash" : "bca8eefd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_query_message_ctrl_nds" : {
+    "irId" : "update_query_message_ctrl_nds",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.updateQueryMessage",
+    "zone" : 1,
+    "hash" : "105d3833",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_exam_score_svc_3gj" : {
+    "irId" : "hook-before-delete_application_exam_score_svc_3gj",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.beforeDeleteApplicationExamScore",
+    "zone" : 2,
+    "hash" : "b40bbacb",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_offer_history_svc_uo4" : {
+    "irId" : "update_application_offer_history_svc_uo4",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.updateApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "5c3aec31",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:inviteCandidatesToOnlineRound_zgm" : {
+    "irId" : "inviteCandidatesToOnlineRound_zgm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.inviteCandidatesToOnlineRound",
+    "zone" : 1,
+    "hash" : "8951f732",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_documents_ctrl_n6r" : {
+    "irId" : "hook-before-list_application_documents_ctrl_n6r",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.beforeListApplicationDocuments",
+    "zone" : 2,
+    "hash" : "ad8ef0b6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:listActiveDrives_m9h" : {
+    "irId" : "listActiveDrives_m9h",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.listActiveDrives",
+    "zone" : 1,
+    "hash" : "2daced74",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_preference_svc_4z9" : {
+    "irId" : "create_application_preference_svc_4z9",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.createApplicationPreference",
+    "zone" : 1,
+    "hash" : "bbd04ee8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_drive_by_id_ctrl_mo5" : {
+    "irId" : "hook-before-get_drive_by_id_ctrl_mo5",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.beforeGetDriveById",
+    "zone" : 2,
+    "hash" : "f8d6fe8b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_educations_ctrl_nq6" : {
+    "irId" : "hook-after-list_application_educations_ctrl_nq6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.afterListApplicationEducations",
+    "zone" : 2,
+    "hash" : "afef07db",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_offer_history_by_id_ctrl_zgc" : {
+    "irId" : "hook-after-get_application_offer_history_by_id_ctrl_zgc",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.afterGetApplicationOfferHistoryById",
+    "zone" : 2,
+    "hash" : "55e1ea00",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_preference_svc_nfy" : {
+    "irId" : "hook-after-delete_application_preference_svc_nfy",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.afterDeleteApplicationPreference",
+    "zone" : 2,
+    "hash" : "bb7a385f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_rounds_svc_1jt" : {
+    "irId" : "hook-after-list_application_rounds_svc_1jt",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.afterListApplicationRounds",
+    "zone" : 2,
+    "hash" : "908cf130",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_education_svc_hpo" : {
+    "irId" : "hook-after-create_application_education_svc_hpo",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.afterCreateApplicationEducation",
+    "zone" : 2,
+    "hash" : "8bdfa898",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_payment_svc_pvo" : {
+    "irId" : "hook-before-create_application_payment_svc_pvo",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.beforeCreateApplicationPayment",
+    "zone" : 2,
+    "hash" : "93eccbce",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_document_by_id_ctrl_pby" : {
+    "irId" : "hook-after-get_application_document_by_id_ctrl_pby",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.afterGetApplicationDocumentById",
+    "zone" : 2,
+    "hash" : "6b8e68fc",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_payment_ctrl_plx" : {
+    "irId" : "hook-before-create_application_payment_ctrl_plx",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.beforeCreateApplicationPayment",
+    "zone" : 2,
+    "hash" : "d7d6278f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_user_svc_nkt" : {
+    "irId" : "hook-before-create_user_svc_nkt",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.beforeCreateUser",
+    "zone" : 2,
+    "hash" : "a77456ff",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_query_svc_gco" : {
+    "irId" : "delete_query_svc_gco",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.deleteQuery",
+    "zone" : 1,
+    "hash" : "24c909ef",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:startNewApplicationForDrive_o9n" : {
+    "irId" : "startNewApplicationForDrive_o9n",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.startNewApplicationForDrive",
+    "zone" : 1,
+    "hash" : "4d126c65",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:generateAndSendTokenForOnlineRound_0z9" : {
+    "irId" : "generateAndSendTokenForOnlineRound_0z9",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.generateAndSendTokenForOnlineRound",
+    "zone" : 1,
+    "hash" : "9f443957",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_query_messages_svc_4wx" : {
+    "irId" : "hook-after-list_query_messages_svc_4wx",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.afterListQueryMessages",
+    "zone" : 2,
+    "hash" : "ac9a737e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findApplicationByUserAndId_ci9" : {
+    "irId" : "findApplicationByUserAndId_ci9",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRepository.java",
+    "symbol" : "ApplicationRepository.findByUserIdAndId",
+    "zone" : 1,
+    "hash" : "fc7ef766",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_query_message_ctrl_11t" : {
+    "irId" : "create_query_message_ctrl_11t",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.createQueryMessage",
+    "zone" : 1,
+    "hash" : "2ac2cfa1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_user_svc_0hz" : {
+    "irId" : "hook-before-update_user_svc_0hz",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.beforeUpdateUser",
+    "zone" : 2,
+    "hash" : "036002a6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_exam_score_svc_3gj" : {
+    "irId" : "delete_application_exam_score_svc_3gj",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.deleteApplicationExamScore",
+    "zone" : 1,
+    "hash" : "3cdf7073",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByApplicationIdOrderByPreferenceOrderAsc_rbs" : {
+    "irId" : "findByApplicationIdOrderByPreferenceOrderAsc_rbs",
+    "file" : "src/main/java/com/example/app/repository/ApplicationPreferenceRepository.java",
+    "symbol" : "ApplicationPreferenceRepository.findByApplicationIdOrderByPreferenceOrderAsc",
+    "zone" : 1,
+    "hash" : "02d5008c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_education_svc_hpo" : {
+    "irId" : "hook-before-create_application_education_svc_hpo",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.beforeCreateApplicationEducation",
+    "zone" : 2,
+    "hash" : "94af23da",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_preference_svc_4z9" : {
+    "irId" : "hook-before-create_application_preference_svc_4z9",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.beforeCreateApplicationPreference",
+    "zone" : 2,
+    "hash" : "1ac9833b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByRoundId_gpd" : {
+    "irId" : "findByRoundId_gpd",
+    "file" : "src/main/java/com/example/app/repository/RoundRepository.java",
+    "symbol" : "RoundRepository.findByRoundId",
+    "zone" : 1,
+    "hash" : "c53d390c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_query_ctrl_2rt" : {
+    "irId" : "delete_query_ctrl_2rt",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.deleteQuery",
+    "zone" : 1,
+    "hash" : "ff695a66",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_querys_ctrl_jge" : {
+    "irId" : "hook-before-list_querys_ctrl_jge",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.beforeListQuerys",
+    "zone" : 2,
+    "hash" : "143fb373",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_rounds_svc_un4" : {
+    "irId" : "list_rounds_svc_un4",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.listRounds",
+    "zone" : 1,
+    "hash" : "955fd7f7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_document_svc_8fj" : {
+    "irId" : "hook-before-update_application_document_svc_8fj",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.beforeUpdateApplicationDocument",
+    "zone" : 2,
+    "hash" : "cf559002",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_exam_score_svc_shp" : {
+    "irId" : "hook-before-create_application_exam_score_svc_shp",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.beforeCreateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "25db8500",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_query_by_id_ctrl_rah" : {
+    "irId" : "hook-before-get_query_by_id_ctrl_rah",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.beforeGetQueryById",
+    "zone" : 2,
+    "hash" : "58ddf18a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_round_ctrl_qgf" : {
+    "irId" : "update_round_ctrl_qgf",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.updateRound",
+    "zone" : 1,
+    "hash" : "925e71ec",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_round_by_id_svc_gdz" : {
+    "irId" : "get_application_round_by_id_svc_gdz",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.getApplicationRoundById",
+    "zone" : 1,
+    "hash" : "41e787eb",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_preference_svc_nfy" : {
+    "irId" : "hook-before-delete_application_preference_svc_nfy",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.beforeDeleteApplicationPreference",
+    "zone" : 2,
+    "hash" : "cfda5cb4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_preference_ctrl_8uq" : {
+    "irId" : "hook-after-delete_application_preference_ctrl_8uq",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.afterDeleteApplicationPreference",
+    "zone" : 2,
+    "hash" : "8f56ae3d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_query_messages_svc_4wx" : {
+    "irId" : "hook-before-list_query_messages_svc_4wx",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.beforeListQueryMessages",
+    "zone" : 2,
+    "hash" : "114667e6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_round_by_id_ctrl_wwh" : {
+    "irId" : "get_application_round_by_id_ctrl_wwh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.getApplicationRoundById",
+    "zone" : 1,
+    "hash" : "1d08c393",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_offer_history_by_id_svc_ief" : {
+    "irId" : "get_application_offer_history_by_id_svc_ief",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.getApplicationOfferHistoryById",
+    "zone" : 1,
+    "hash" : "6b0d170e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_exam_score_ctrl_waa" : {
+    "irId" : "create_application_exam_score_ctrl_waa",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.createApplicationExamScore",
+    "zone" : 1,
+    "hash" : "1e6a3f02",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_users_ctrl_79u" : {
+    "irId" : "hook-before-list_users_ctrl_79u",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.beforeListUsers",
+    "zone" : 2,
+    "hash" : "1cc83613",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_preference_svc_nfy" : {
+    "irId" : "delete_application_preference_svc_nfy",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.deleteApplicationPreference",
+    "zone" : 1,
+    "hash" : "526e02ed",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_offer_historys_ctrl_msh" : {
+    "irId" : "hook-after-list_application_offer_historys_ctrl_msh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.afterListApplicationOfferHistorys",
+    "zone" : 2,
+    "hash" : "adc6a1ef",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findEligibleCandidatesForOfflineRound_zse" : {
+    "irId" : "findEligibleCandidatesForOfflineRound_zse",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRepository.java",
+    "symbol" : "ApplicationRepository.findEligibleCandidatesForOfflineRound",
+    "zone" : 1,
+    "hash" : "8af91edd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_educations_svc_f7b" : {
+    "irId" : "hook-after-list_application_educations_svc_f7b",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.afterListApplicationEducations",
+    "zone" : 2,
+    "hash" : "afef07db",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_offer_history_ctrl_o0j" : {
+    "irId" : "create_application_offer_history_ctrl_o0j",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.createApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "34fa94f0",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_payment_ctrl_18p" : {
+    "irId" : "hook-after-update_application_payment_ctrl_18p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.afterUpdateApplicationPayment",
+    "zone" : 2,
+    "hash" : "6816ad87",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_user_ctrl_8z6" : {
+    "irId" : "update_user_ctrl_8z6",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.updateUser",
+    "zone" : 1,
+    "hash" : "a05d70ed",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_applications_ctrl_x8h" : {
+    "irId" : "hook-after-list_applications_ctrl_x8h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.afterListApplications",
+    "zone" : 2,
+    "hash" : "d5db7e81",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_round_ctrl_vui" : {
+    "irId" : "hook-before-delete_round_ctrl_vui",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.beforeDeleteRound",
+    "zone" : 2,
+    "hash" : "92828679",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_payment_by_id_svc_gcg" : {
+    "irId" : "hook-after-get_application_payment_by_id_svc_gcg",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.afterGetApplicationPaymentById",
+    "zone" : 2,
+    "hash" : "0b86f678",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_user_by_id_svc_8rw" : {
+    "irId" : "hook-after-get_user_by_id_svc_8rw",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.afterGetUserById",
+    "zone" : 2,
+    "hash" : "20272a4d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_exam_score_svc_ncv" : {
+    "irId" : "hook-before-update_application_exam_score_svc_ncv",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.beforeUpdateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "d688dffd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_query_svc_vhp" : {
+    "irId" : "hook-after-update_query_svc_vhp",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.afterUpdateQuery",
+    "zone" : 2,
+    "hash" : "b5bc1bc1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_offer_history_svc_2d5" : {
+    "irId" : "create_application_offer_history_svc_2d5",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.createApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "1d11ea28",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_query_messages_ctrl_dt4" : {
+    "irId" : "hook-before-list_query_messages_ctrl_dt4",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.beforeListQueryMessages",
+    "zone" : 2,
+    "hash" : "114667e6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByApplicationIdInAndRoundId_xq9" : {
+    "irId" : "findByApplicationIdInAndRoundId_xq9",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRoundRepository.java",
+    "symbol" : "ApplicationRoundRepository.findByApplicationIdIn",
+    "zone" : 1,
+    "hash" : "4a9bcc60",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_rounds_svc_un4" : {
+    "irId" : "hook-after-list_rounds_svc_un4",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.afterListRounds",
+    "zone" : 2,
+    "hash" : "438aebe8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_payments_svc_s8b" : {
+    "irId" : "hook-before-list_application_payments_svc_s8b",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.beforeListApplicationPayments",
+    "zone" : 2,
+    "hash" : "6ab21ba3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_education_svc_b0l" : {
+    "irId" : "hook-before-update_application_education_svc_b0l",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.beforeUpdateApplicationEducation",
+    "zone" : 2,
+    "hash" : "84992e36",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_applications_svc_g14" : {
+    "irId" : "list_applications_svc_g14",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.listApplications",
+    "zone" : 1,
+    "hash" : "9aef39b3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_withdrawal_svc_zgi" : {
+    "irId" : "create_application_withdrawal_svc_zgi",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.createApplicationWithdrawal",
+    "zone" : 1,
+    "hash" : "1b317671",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByDriveIdAndStatus_ba5" : {
+    "irId" : "findByDriveIdAndStatus_ba5",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRepository.java",
+    "symbol" : "ApplicationRepository.findByDriveIdAndStatus",
+    "zone" : 1,
+    "hash" : "90421f0f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_exam_score_svc_shp" : {
+    "irId" : "create_application_exam_score_svc_shp",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.createApplicationExamScore",
+    "zone" : 1,
+    "hash" : "e4999561",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_drive_by_id_svc_17y" : {
+    "irId" : "hook-after-get_drive_by_id_svc_17y",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.afterGetDriveById",
+    "zone" : 2,
+    "hash" : "af5d8a74",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_exam_score_ctrl_ths" : {
+    "irId" : "hook-before-update_application_exam_score_ctrl_ths",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.beforeUpdateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "1270b9ea",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_user_ctrl_drs" : {
+    "irId" : "hook-after-delete_user_ctrl_drs",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.afterDeleteUser",
+    "zone" : 2,
+    "hash" : "6b1b0b4c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_payments_svc_s8b" : {
+    "irId" : "list_application_payments_svc_s8b",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.listApplicationPayments",
+    "zone" : 1,
+    "hash" : "c6b0b3fd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:saveDraftApplication_jjb" : {
+    "irId" : "saveDraftApplication_jjb",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.saveDraftApplication",
+    "zone" : 1,
+    "hash" : "de998bf7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_querys_ctrl_jge" : {
+    "irId" : "hook-after-list_querys_ctrl_jge",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.afterListQuerys",
+    "zone" : 2,
+    "hash" : "be5e076e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_education_ctrl_7em" : {
+    "irId" : "hook-before-update_application_education_ctrl_7em",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.beforeUpdateApplicationEducation",
+    "zone" : 2,
+    "hash" : "19185da6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_payment_by_id_ctrl_los" : {
+    "irId" : "hook-after-get_application_payment_by_id_ctrl_los",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.afterGetApplicationPaymentById",
+    "zone" : 2,
+    "hash" : "17c8be54",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_document_svc_8fj" : {
+    "irId" : "hook-after-update_application_document_svc_8fj",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.afterUpdateApplicationDocument",
+    "zone" : 2,
+    "hash" : "3478f135",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_rounds_ctrl_6c4" : {
+    "irId" : "hook-before-list_rounds_ctrl_6c4",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.beforeListRounds",
+    "zone" : 2,
+    "hash" : "e3e7cdee",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_query_by_id_svc_iwa" : {
+    "irId" : "hook-before-get_query_by_id_svc_iwa",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.beforeGetQueryById",
+    "zone" : 2,
+    "hash" : "31927ef7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_users_svc_dq0" : {
+    "irId" : "hook-before-list_users_svc_dq0",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.beforeListUsers",
+    "zone" : 2,
+    "hash" : "1cc83613",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_withdrawal_by_id_svc_e5p" : {
+    "irId" : "hook-after-get_application_withdrawal_by_id_svc_e5p",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.afterGetApplicationWithdrawalById",
+    "zone" : 2,
+    "hash" : "faa1e06a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:createDrive_vyk" : {
+    "irId" : "createDrive_vyk",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.createDrive",
+    "zone" : 1,
+    "hash" : "a09af860",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_query_message_by_id_svc_bz5" : {
+    "irId" : "get_query_message_by_id_svc_bz5",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.getQueryMessageById",
+    "zone" : 1,
+    "hash" : "0a651078",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_query_ctrl_2rt" : {
+    "irId" : "hook-before-delete_query_ctrl_2rt",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.beforeDeleteQuery",
+    "zone" : 2,
+    "hash" : "a5c43203",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_exam_score_ctrl_5et" : {
+    "irId" : "hook-after-delete_application_exam_score_ctrl_5et",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.afterDeleteApplicationExamScore",
+    "zone" : 2,
+    "hash" : "c0312185",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_payments_svc_s8b" : {
+    "irId" : "hook-after-list_application_payments_svc_s8b",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.afterListApplicationPayments",
+    "zone" : 2,
+    "hash" : "e8e4a001",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_query_messages_ctrl_dt4" : {
+    "irId" : "hook-after-list_query_messages_ctrl_dt4",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.afterListQueryMessages",
+    "zone" : 2,
+    "hash" : "ac9a737e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_withdrawal_svc_zgi" : {
+    "irId" : "hook-before-create_application_withdrawal_svc_zgi",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.beforeCreateApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "8f6d07c4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_users_svc_dq0" : {
+    "irId" : "list_users_svc_dq0",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.listUsers",
+    "zone" : 1,
+    "hash" : "ca7cc736",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_exam_score_by_id_ctrl_rr5" : {
+    "irId" : "hook-after-get_application_exam_score_by_id_ctrl_rr5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.afterGetApplicationExamScoreById",
+    "zone" : 2,
+    "hash" : "4c330428",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_query_message_ctrl_11t" : {
+    "irId" : "hook-before-create_query_message_ctrl_11t",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.beforeCreateQueryMessage",
+    "zone" : 2,
+    "hash" : "fd54f991",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_svc_8i2" : {
+    "irId" : "hook-after-delete_application_svc_8i2",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.afterDeleteApplication",
+    "zone" : 2,
+    "hash" : "f5c42558",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_offer_history_svc_zql" : {
+    "irId" : "hook-after-delete_application_offer_history_svc_zql",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.afterDeleteApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "cae5d41a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_round_ctrl_tpm" : {
+    "irId" : "hook-before-create_application_round_ctrl_tpm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.beforeCreateApplicationRound",
+    "zone" : 2,
+    "hash" : "a4447d3c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_drive_svc_s9r" : {
+    "irId" : "hook-after-delete_drive_svc_s9r",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.afterDeleteDrive",
+    "zone" : 2,
+    "hash" : "6dbddad3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_preference_by_id_svc_yy0" : {
+    "irId" : "get_application_preference_by_id_svc_yy0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.getApplicationPreferenceById",
+    "zone" : 1,
+    "hash" : "57c16c8a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_query_message_svc_627" : {
+    "irId" : "hook-before-update_query_message_svc_627",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.beforeUpdateQueryMessage",
+    "zone" : 2,
+    "hash" : "66306200",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByDriveId_39y" : {
+    "irId" : "findByDriveId_39y",
+    "file" : "src/main/java/com/example/app/repository/DriveRepository.java",
+    "symbol" : "DriveRepository.findByDriveId",
+    "zone" : 1,
+    "hash" : "232df412",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_education_by_id_svc_4v3" : {
+    "irId" : "hook-before-get_application_education_by_id_svc_4v3",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.beforeGetApplicationEducationById",
+    "zone" : 2,
+    "hash" : "45cec1d6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_exam_score_by_id_svc_sfs" : {
+    "irId" : "hook-after-get_application_exam_score_by_id_svc_sfs",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.afterGetApplicationExamScoreById",
+    "zone" : 2,
+    "hash" : "846987b9",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_round_svc_g2y" : {
+    "irId" : "hook-after-delete_application_round_svc_g2y",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.afterDeleteApplicationRound",
+    "zone" : 2,
+    "hash" : "595ee0ba",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_preferences_ctrl_5l4" : {
+    "irId" : "list_application_preferences_ctrl_5l4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.listApplicationPreferences",
+    "zone" : 1,
+    "hash" : "344c76f4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_query_message_ctrl_yvq" : {
+    "irId" : "hook-after-delete_query_message_ctrl_yvq",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.afterDeleteQueryMessage",
+    "zone" : 2,
+    "hash" : "662b6153",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_education_ctrl_ypv" : {
+    "irId" : "delete_application_education_ctrl_ypv",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.deleteApplicationEducation",
+    "zone" : 1,
+    "hash" : "03f85a0b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_user_svc_0hz" : {
+    "irId" : "hook-after-update_user_svc_0hz",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.afterUpdateUser",
+    "zone" : 2,
+    "hash" : "84465cd3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_round_ctrl_am2" : {
+    "irId" : "hook-before-update_application_round_ctrl_am2",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.beforeUpdateApplicationRound",
+    "zone" : 2,
+    "hash" : "e6c86671",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_preference_ctrl_j4i" : {
+    "irId" : "hook-before-update_application_preference_ctrl_j4i",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.beforeUpdateApplicationPreference",
+    "zone" : 2,
+    "hash" : "b5864d1f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_payment_svc_1te" : {
+    "irId" : "delete_application_payment_svc_1te",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.deleteApplicationPayment",
+    "zone" : 1,
+    "hash" : "caad5d12",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_drive_ctrl_698" : {
+    "irId" : "hook-before-delete_drive_ctrl_698",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.beforeDeleteDrive",
+    "zone" : 2,
+    "hash" : "6041bfbb",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_round_by_id_svc_n36" : {
+    "irId" : "hook-before-get_round_by_id_svc_n36",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.beforeGetRoundById",
+    "zone" : 2,
+    "hash" : "2b5228b4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_exam_score_svc_ncv" : {
+    "irId" : "update_application_exam_score_svc_ncv",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.updateApplicationExamScore",
+    "zone" : 1,
+    "hash" : "f9c66dbc",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_round_ctrl_61n" : {
+    "irId" : "delete_application_round_ctrl_61n",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.deleteApplicationRound",
+    "zone" : 1,
+    "hash" : "0599595b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_offer_historys_svc_w9n" : {
+    "irId" : "hook-before-list_application_offer_historys_svc_w9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.beforeListApplicationOfferHistorys",
+    "zone" : 2,
+    "hash" : "152e6b20",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_document_by_id_ctrl_pby" : {
+    "irId" : "get_application_document_by_id_ctrl_pby",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.getApplicationDocumentById",
+    "zone" : 1,
+    "hash" : "06f59904",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_preference_svc_tmm" : {
+    "irId" : "hook-after-update_application_preference_svc_tmm",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.afterUpdateApplicationPreference",
+    "zone" : 2,
+    "hash" : "868793e0",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_documents_svc_nck" : {
+    "irId" : "hook-after-list_application_documents_svc_nck",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.afterListApplicationDocuments",
+    "zone" : 2,
+    "hash" : "8ff4537c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_educations_ctrl_nq6" : {
+    "irId" : "hook-before-list_application_educations_ctrl_nq6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.beforeListApplicationEducations",
+    "zone" : 2,
+    "hash" : "e00102a1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_educations_svc_f7b" : {
+    "irId" : "hook-before-list_application_educations_svc_f7b",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.beforeListApplicationEducations",
+    "zone" : 2,
+    "hash" : "e00102a1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_querys_svc_em6" : {
+    "irId" : "hook-before-list_querys_svc_em6",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.beforeListQuerys",
+    "zone" : 2,
+    "hash" : "143fb373",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_round_ctrl_61n" : {
+    "irId" : "hook-before-delete_application_round_ctrl_61n",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.beforeDeleteApplicationRound",
+    "zone" : 2,
+    "hash" : "2b95ddec",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_query_message_by_id_svc_bz5" : {
+    "irId" : "hook-after-get_query_message_by_id_svc_bz5",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.afterGetQueryMessageById",
+    "zone" : 2,
+    "hash" : "52557790",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_withdrawals_ctrl_r2p" : {
+    "irId" : "list_application_withdrawals_ctrl_r2p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.listApplicationWithdrawals",
+    "zone" : 1,
+    "hash" : "25c2cd95",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_payment_svc_g9n" : {
+    "irId" : "hook-before-update_application_payment_svc_g9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.beforeUpdateApplicationPayment",
+    "zone" : 2,
+    "hash" : "bb9e6ed3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_rounds_ctrl_n2v" : {
+    "irId" : "list_application_rounds_ctrl_n2v",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.listApplicationRounds",
+    "zone" : 1,
+    "hash" : "f3002d2e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findPaymentByApplicationAndStatus_tx3" : {
+    "irId" : "findPaymentByApplicationAndStatus_tx3",
+    "file" : "src/main/java/com/example/app/repository/ApplicationPaymentRepository.java",
+    "symbol" : "ApplicationPaymentRepository.findByApplicationIdAndPaymentStatus",
+    "zone" : 1,
+    "hash" : "f0764dd4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_education_svc_hy1" : {
+    "irId" : "hook-before-delete_application_education_svc_hy1",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.beforeDeleteApplicationEducation",
+    "zone" : 2,
+    "hash" : "75133ade",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_exam_scores_ctrl_8h4" : {
+    "irId" : "hook-after-list_application_exam_scores_ctrl_8h4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.afterListApplicationExamScores",
+    "zone" : 2,
+    "hash" : "23bd68dd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_round_svc_snq" : {
+    "irId" : "hook-before-create_application_round_svc_snq",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.beforeCreateApplicationRound",
+    "zone" : 2,
+    "hash" : "3316eb92",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_withdrawals_ctrl_r2p" : {
+    "irId" : "hook-after-list_application_withdrawals_ctrl_r2p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.afterListApplicationWithdrawals",
+    "zone" : 2,
+    "hash" : "bb5256b5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_round_by_id_ctrl_9t5" : {
+    "irId" : "hook-before-get_round_by_id_ctrl_9t5",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.beforeGetRoundById",
+    "zone" : 2,
+    "hash" : "f99c21ad",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_round_svc_4re" : {
+    "irId" : "delete_round_svc_4re",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.deleteRound",
+    "zone" : 1,
+    "hash" : "7e73c08c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_rounds_ctrl_n2v" : {
+    "irId" : "hook-after-list_application_rounds_ctrl_n2v",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.afterListApplicationRounds",
+    "zone" : 2,
+    "hash" : "908cf130",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_by_id_ctrl_zu7" : {
+    "irId" : "hook-after-get_application_by_id_ctrl_zu7",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.afterGetApplicationById",
+    "zone" : 2,
+    "hash" : "75670ac8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_applications_svc_g14" : {
+    "irId" : "hook-before-list_applications_svc_g14",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.beforeListApplications",
+    "zone" : 2,
+    "hash" : "35e05818",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_offer_history_ctrl_sq9" : {
+    "irId" : "hook-after-delete_application_offer_history_ctrl_sq9",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.afterDeleteApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "cbc510c2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_query_ctrl_uo8" : {
+    "irId" : "hook-after-update_query_ctrl_uo8",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.afterUpdateQuery",
+    "zone" : 2,
+    "hash" : "a2d15977",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:getDashboardStatistics_gzs" : {
+    "irId" : "getDashboardStatistics_gzs",
+    "file" : "src/main/java/com/example/app/controller/DashboardController.java",
+    "symbol" : "DashboardController.getDashboardStatistics",
+    "zone" : 1,
+    "hash" : "1cc83c30",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_exam_scores_ctrl_8h4" : {
+    "irId" : "list_application_exam_scores_ctrl_8h4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.listApplicationExamScores",
+    "zone" : 1,
+    "hash" : "a08175a7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_withdrawals_svc_ohs" : {
+    "irId" : "list_application_withdrawals_svc_ohs",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.listApplicationWithdrawals",
+    "zone" : 1,
+    "hash" : "5274042c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_preference_ctrl_v1b" : {
+    "irId" : "hook-before-create_application_preference_ctrl_v1b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.beforeCreateApplicationPreference",
+    "zone" : 2,
+    "hash" : "f23d3c18",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_user_svc_0hz" : {
+    "irId" : "update_user_svc_0hz",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.updateUser",
+    "zone" : 1,
+    "hash" : "b73f636e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_user_svc_nkt" : {
+    "irId" : "hook-after-create_user_svc_nkt",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.afterCreateUser",
+    "zone" : 2,
+    "hash" : "e85b5996",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:a_exists_by_user_and_drive_fz8" : {
+    "irId" : "a_exists_by_user_and_drive_fz8",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRepository.java",
+    "symbol" : "ApplicationRepository.findByUserIdAndDriveId",
+    "zone" : 1,
+    "hash" : "6be3b4cd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_round_by_id_svc_n36" : {
+    "irId" : "hook-after-get_round_by_id_svc_n36",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.afterGetRoundById",
+    "zone" : 2,
+    "hash" : "77ce522f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_preferences_svc_0c0" : {
+    "irId" : "list_application_preferences_svc_0c0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.listApplicationPreferences",
+    "zone" : 1,
+    "hash" : "de84bc83",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:cancelOfferLetter_ukw" : {
+    "irId" : "cancelOfferLetter_ukw",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.cancelOfferLetter",
+    "zone" : 1,
+    "hash" : "c3d267cc",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_payment_ctrl_plx" : {
+    "irId" : "create_application_payment_ctrl_plx",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.createApplicationPayment",
+    "zone" : 1,
+    "hash" : "962771af",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_query_ctrl_uo8" : {
+    "irId" : "hook-before-update_query_ctrl_uo8",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.beforeUpdateQuery",
+    "zone" : 2,
+    "hash" : "29f53898",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_offer_history_by_id_ctrl_zgc" : {
+    "irId" : "hook-before-get_application_offer_history_by_id_ctrl_zgc",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.beforeGetApplicationOfferHistoryById",
+    "zone" : 2,
+    "hash" : "b34347e1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_withdrawal_ctrl_0z6" : {
+    "irId" : "hook-before-delete_application_withdrawal_ctrl_0z6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.beforeDeleteApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "026fbd86",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_education_ctrl_pyz" : {
+    "irId" : "hook-before-create_application_education_ctrl_pyz",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.beforeCreateApplicationEducation",
+    "zone" : 2,
+    "hash" : "33a2c433",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_ctrl_sof" : {
+    "irId" : "hook-before-delete_application_ctrl_sof",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.beforeDeleteApplication",
+    "zone" : 2,
+    "hash" : "26f8db69",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_withdrawal_by_id_ctrl_3vp" : {
+    "irId" : "hook-before-get_application_withdrawal_by_id_ctrl_3vp",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.beforeGetApplicationWithdrawalById",
+    "zone" : 2,
+    "hash" : "e86f853d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_document_ctrl_y2b" : {
+    "irId" : "hook-before-delete_application_document_ctrl_y2b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.beforeDeleteApplicationDocument",
+    "zone" : 2,
+    "hash" : "0fc31331",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_document_svc_122" : {
+    "irId" : "delete_application_document_svc_122",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.deleteApplicationDocument",
+    "zone" : 1,
+    "hash" : "08898e72",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_users_ctrl_79u" : {
+    "irId" : "hook-after-list_users_ctrl_79u",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.afterListUsers",
+    "zone" : 2,
+    "hash" : "b734b73a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_user_ctrl_crg" : {
+    "irId" : "create_user_ctrl_crg",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.createUser",
+    "zone" : 1,
+    "hash" : "b11e0a37",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_payment_ctrl_18p" : {
+    "irId" : "hook-before-update_application_payment_ctrl_18p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.beforeUpdateApplicationPayment",
+    "zone" : 2,
+    "hash" : "3da45771",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_user_svc_yrj" : {
+    "irId" : "hook-after-delete_user_svc_yrj",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.afterDeleteUser",
+    "zone" : 2,
+    "hash" : "7f8f45f2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_preference_ctrl_v1b" : {
+    "irId" : "hook-after-create_application_preference_ctrl_v1b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.afterCreateApplicationPreference",
+    "zone" : 2,
+    "hash" : "c4bcfec4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_withdrawal_ctrl_0z6" : {
+    "irId" : "hook-after-delete_application_withdrawal_ctrl_0z6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.afterDeleteApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "f256ec8c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_exam_scores_svc_qvk" : {
+    "irId" : "hook-after-list_application_exam_scores_svc_qvk",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.afterListApplicationExamScores",
+    "zone" : 2,
+    "hash" : "23bd68dd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_document_ctrl_13h" : {
+    "irId" : "hook-before-create_application_document_ctrl_13h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.beforeCreateApplicationDocument",
+    "zone" : 2,
+    "hash" : "ebdf6cfa",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_document_by_id_ctrl_pby" : {
+    "irId" : "hook-before-get_application_document_by_id_ctrl_pby",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.beforeGetApplicationDocumentById",
+    "zone" : 2,
+    "hash" : "74865dfd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_by_id_ctrl_zu7" : {
+    "irId" : "hook-before-get_application_by_id_ctrl_zu7",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.beforeGetApplicationById",
+    "zone" : 2,
+    "hash" : "64bf0634",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:processSlidingAllocationRound_fmf" : {
+    "irId" : "processSlidingAllocationRound_fmf",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.processSlidingAllocationRound",
+    "zone" : 1,
+    "hash" : "a8b5c43b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_education_by_id_svc_4v3" : {
+    "irId" : "get_application_education_by_id_svc_4v3",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.getApplicationEducationById",
+    "zone" : 1,
+    "hash" : "b56d70b4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_document_svc_6qw" : {
+    "irId" : "hook-before-create_application_document_svc_6qw",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.beforeCreateApplicationDocument",
+    "zone" : 2,
+    "hash" : "fc8a6850",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_document_svc_6qw" : {
+    "irId" : "create_application_document_svc_6qw",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.createApplicationDocument",
+    "zone" : 1,
+    "hash" : "4cb21d4f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_withdrawals_ctrl_r2p" : {
+    "irId" : "hook-before-list_application_withdrawals_ctrl_r2p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.beforeListApplicationWithdrawals",
+    "zone" : 2,
+    "hash" : "462c00e4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_withdrawal_svc_zgi" : {
+    "irId" : "hook-after-create_application_withdrawal_svc_zgi",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.afterCreateApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "0368a08a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_preference_by_id_svc_yy0" : {
+    "irId" : "hook-after-get_application_preference_by_id_svc_yy0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.afterGetApplicationPreferenceById",
+    "zone" : 2,
+    "hash" : "87678a7f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_drive_svc_s9r" : {
+    "irId" : "hook-before-delete_drive_svc_s9r",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.beforeDeleteDrive",
+    "zone" : 2,
+    "hash" : "aa5f24dd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_query_message_svc_kwt" : {
+    "irId" : "hook-after-delete_query_message_svc_kwt",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.afterDeleteQueryMessage",
+    "zone" : 2,
+    "hash" : "b285442d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_offer_historys_svc_w9n" : {
+    "irId" : "list_application_offer_historys_svc_w9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.listApplicationOfferHistorys",
+    "zone" : 1,
+    "hash" : "69e11002",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_round_by_id_ctrl_wwh" : {
+    "irId" : "hook-after-get_application_round_by_id_ctrl_wwh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.afterGetApplicationRoundById",
+    "zone" : 2,
+    "hash" : "4d1c3c93",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_preference_by_id_ctrl_2uu" : {
+    "irId" : "get_application_preference_by_id_ctrl_2uu",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.getApplicationPreferenceById",
+    "zone" : 1,
+    "hash" : "dcf323c3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_withdrawal_by_id_ctrl_3vp" : {
+    "irId" : "get_application_withdrawal_by_id_ctrl_3vp",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.getApplicationWithdrawalById",
+    "zone" : 1,
+    "hash" : "29721b41",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_exam_score_svc_ncv" : {
+    "irId" : "hook-after-update_application_exam_score_svc_ncv",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.afterUpdateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "b63b34cd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_payment_svc_1te" : {
+    "irId" : "hook-before-delete_application_payment_svc_1te",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.beforeDeleteApplicationPayment",
+    "zone" : 2,
+    "hash" : "307297a2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_document_by_id_svc_rwo" : {
+    "irId" : "hook-after-get_application_document_by_id_svc_rwo",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.afterGetApplicationDocumentById",
+    "zone" : 2,
+    "hash" : "1561a574",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_document_ctrl_jwg" : {
+    "irId" : "hook-after-update_application_document_ctrl_jwg",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.afterUpdateApplicationDocument",
+    "zone" : 2,
+    "hash" : "f8d94366",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_drive_by_id_ctrl_mo5" : {
+    "irId" : "hook-after-get_drive_by_id_ctrl_mo5",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.afterGetDriveById",
+    "zone" : 2,
+    "hash" : "c1732408",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_offer_history_ctrl_0rl" : {
+    "irId" : "hook-after-update_application_offer_history_ctrl_0rl",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.afterUpdateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "1d244aa2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_round_svc_dh5" : {
+    "irId" : "hook-after-update_round_svc_dh5",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.afterUpdateRound",
+    "zone" : 2,
+    "hash" : "c6099fd2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_offer_history_svc_2d5" : {
+    "irId" : "hook-after-create_application_offer_history_svc_2d5",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.afterCreateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "dbb09572",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:saveDraftApplication_vjq" : {
+    "irId" : "saveDraftApplication_vjq",
+    "file" : "src/main/java/com/example/app/controller/ ApplicationController.java",
+    "symbol" : " ApplicationController.saveDraftApplication",
+    "zone" : 1,
+    "hash" : "8ef2f63d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:updateDriveConfiguration_pqz" : {
+    "irId" : "updateDriveConfiguration_pqz",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.updateDriveConfiguration",
+    "zone" : 1,
+    "hash" : "a619018c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findMaxRoundNumberByDriveId_z3c" : {
+    "irId" : "findMaxRoundNumberByDriveId_z3c",
+    "file" : "src/main/java/com/example/app/repository/RoundRepository.java",
+    "symbol" : "RoundRepository.findMaxRoundNumberByDriveId",
+    "zone" : 1,
+    "hash" : "963e7f47",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_query_message_by_id_svc_bz5" : {
+    "irId" : "hook-before-get_query_message_by_id_svc_bz5",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.beforeGetQueryMessageById",
+    "zone" : 2,
+    "hash" : "67247435",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_exam_score_svc_3gj" : {
+    "irId" : "hook-after-delete_application_exam_score_svc_3gj",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.afterDeleteApplicationExamScore",
+    "zone" : 2,
+    "hash" : "9337496d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_exam_score_by_id_ctrl_rr5" : {
+    "irId" : "hook-before-get_application_exam_score_by_id_ctrl_rr5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.beforeGetApplicationExamScoreById",
+    "zone" : 2,
+    "hash" : "2f24faab",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_exam_scores_ctrl_8h4" : {
+    "irId" : "hook-before-list_application_exam_scores_ctrl_8h4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.beforeListApplicationExamScores",
+    "zone" : 2,
+    "hash" : "8a1fa589",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:round findByApplicationId_0pu" : {
+    "irId" : "round findByApplicationId_0pu",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRoundRepository.java",
+    "symbol" : "ApplicationRoundRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "ae1d9d69",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_document_svc_8fj" : {
+    "irId" : "update_application_document_svc_8fj",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.updateApplicationDocument",
+    "zone" : 1,
+    "hash" : "9ae6bc90",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_payment_svc_g9n" : {
+    "irId" : "hook-after-update_application_payment_svc_g9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.afterUpdateApplicationPayment",
+    "zone" : 2,
+    "hash" : "ece38fb4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_user_ctrl_crg" : {
+    "irId" : "hook-after-create_user_ctrl_crg",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.afterCreateUser",
+    "zone" : 2,
+    "hash" : "6adb8b13",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_round_by_id_ctrl_9t5" : {
+    "irId" : "get_round_by_id_ctrl_9t5",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.getRoundById",
+    "zone" : 1,
+    "hash" : "a484cb65",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_exam_score_by_id_svc_sfs" : {
+    "irId" : "hook-before-get_application_exam_score_by_id_svc_sfs",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.beforeGetApplicationExamScoreById",
+    "zone" : 2,
+    "hash" : "87dc1d0f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_round_ctrl_am2" : {
+    "irId" : "hook-after-update_application_round_ctrl_am2",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.afterUpdateApplicationRound",
+    "zone" : 2,
+    "hash" : "32e16f20",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:createRound_3bx" : {
+    "irId" : "createRound_3bx",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.createRound",
+    "zone" : 1,
+    "hash" : "bb75f3ed",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_payment_svc_1te" : {
+    "irId" : "hook-after-delete_application_payment_svc_1te",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.afterDeleteApplicationPayment",
+    "zone" : 2,
+    "hash" : "df2de416",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_educations_ctrl_nq6" : {
+    "irId" : "list_application_educations_ctrl_nq6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.listApplicationEducations",
+    "zone" : 1,
+    "hash" : "107cde41",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_document_by_id_svc_rwo" : {
+    "irId" : "hook-before-get_application_document_by_id_svc_rwo",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.beforeGetApplicationDocumentById",
+    "zone" : 2,
+    "hash" : "82e9b28b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_user_svc_nkt" : {
+    "irId" : "create_user_svc_nkt",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.createUser",
+    "zone" : 1,
+    "hash" : "a6e7b443",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_education_ctrl_pyz" : {
+    "irId" : "create_application_education_ctrl_pyz",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.createApplicationEducation",
+    "zone" : 1,
+    "hash" : "45690728",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_payment_ctrl_18p" : {
+    "irId" : "update_application_payment_ctrl_18p",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.updateApplicationPayment",
+    "zone" : 1,
+    "hash" : "2a854563",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_query_message_svc_627" : {
+    "irId" : "update_query_message_svc_627",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.updateQueryMessage",
+    "zone" : 1,
+    "hash" : "8a22b29b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:preference findByApplicationId_lem" : {
+    "irId" : "preference findByApplicationId_lem",
+    "file" : "src/main/java/com/example/app/repository/ApplicationPreferenceRepository.java",
+    "symbol" : "ApplicationPreferenceRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "cbfa436a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_offer_history_svc_zql" : {
+    "irId" : "hook-before-delete_application_offer_history_svc_zql",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.beforeDeleteApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "dccda79e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByRoundIdAndOfferStatusSliding_g4k" : {
+    "irId" : "findByRoundIdAndOfferStatusSliding_g4k",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRoundRepository.java",
+    "symbol" : "ApplicationRoundRepository.findByRoundIdAndOfferStatusSliding",
+    "zone" : 1,
+    "hash" : "5600d4be",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_payments_ctrl_jp5" : {
+    "irId" : "hook-before-list_application_payments_ctrl_jp5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.beforeListApplicationPayments",
+    "zone" : 2,
+    "hash" : "6ab21ba3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:respondToQueryAndUpdateStatus_3sr" : {
+    "irId" : "respondToQueryAndUpdateStatus_3sr",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.respondToQueryAndUpdateStatus",
+    "zone" : 1,
+    "hash" : "f2872252",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_education_ctrl_ypv" : {
+    "irId" : "hook-after-delete_application_education_ctrl_ypv",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.afterDeleteApplicationEducation",
+    "zone" : 2,
+    "hash" : "b768683d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_withdrawal_ctrl_zbm" : {
+    "irId" : "hook-after-create_application_withdrawal_ctrl_zbm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.afterCreateApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "7cf29537",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_query_message_ctrl_nds" : {
+    "irId" : "hook-after-update_query_message_ctrl_nds",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.afterUpdateQueryMessage",
+    "zone" : 2,
+    "hash" : "19886b9e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_document_ctrl_y2b" : {
+    "irId" : "delete_application_document_ctrl_y2b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.deleteApplicationDocument",
+    "zone" : 1,
+    "hash" : "7a6c8297",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_offer_history_ctrl_o0j" : {
+    "irId" : "hook-before-create_application_offer_history_ctrl_o0j",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.beforeCreateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "cb95f938",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_offer_history_ctrl_o0j" : {
+    "irId" : "hook-after-create_application_offer_history_ctrl_o0j",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.afterCreateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "cd9f3c83",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_offer_history_by_id_svc_ief" : {
+    "irId" : "hook-after-get_application_offer_history_by_id_svc_ief",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.afterGetApplicationOfferHistoryById",
+    "zone" : 2,
+    "hash" : "8935ee6c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_documents_ctrl_n6r" : {
+    "irId" : "hook-after-list_application_documents_ctrl_n6r",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.afterListApplicationDocuments",
+    "zone" : 2,
+    "hash" : "8ff4537c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:uploadAndLinkDocumentToApplication_kh5" : {
+    "irId" : "uploadAndLinkDocumentToApplication_kh5",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.uploadAndLinkDocumentToApplication",
+    "zone" : 1,
+    "hash" : "e044ff4d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByApplicationIdAndExamType_otg" : {
+    "irId" : "findByApplicationIdAndExamType_otg",
+    "file" : "src/main/java/com/example/app/repository/ApplicationExamScoreRepository.java",
+    "symbol" : "ApplicationExamScoreRepository.findByApplicationIdAndExamType",
+    "zone" : 1,
+    "hash" : "8ee0aad9",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_preference_ctrl_j4i" : {
+    "irId" : "hook-after-update_application_preference_ctrl_j4i",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.afterUpdateApplicationPreference",
+    "zone" : 2,
+    "hash" : "759be1db",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_document_ctrl_13h" : {
+    "irId" : "create_application_document_ctrl_13h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.createApplicationDocument",
+    "zone" : 1,
+    "hash" : "d6a2f05d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:document findByApplicationId_14y" : {
+    "irId" : "document findByApplicationId_14y",
+    "file" : "src/main/java/com/example/app/repository/ApplicationDocumentRepository.java",
+    "symbol" : "ApplicationDocumentRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "58f8fba5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_education_ctrl_ypv" : {
+    "irId" : "hook-before-delete_application_education_ctrl_ypv",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.beforeDeleteApplicationEducation",
+    "zone" : 2,
+    "hash" : "0b965072",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_withdrawal_ctrl_zbm" : {
+    "irId" : "hook-before-create_application_withdrawal_ctrl_zbm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.beforeCreateApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "81b5c7ff",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_drive_ctrl_698" : {
+    "irId" : "hook-after-delete_drive_ctrl_698",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.afterDeleteDrive",
+    "zone" : 2,
+    "hash" : "4747e79a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_applications_ctrl_x8h" : {
+    "irId" : "list_applications_ctrl_x8h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.listApplications",
+    "zone" : 1,
+    "hash" : "2c95262b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_education_ctrl_7em" : {
+    "irId" : "hook-after-update_application_education_ctrl_7em",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.afterUpdateApplicationEducation",
+    "zone" : 2,
+    "hash" : "232a964a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_round_ctrl_tpm" : {
+    "irId" : "hook-after-create_application_round_ctrl_tpm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.afterCreateApplicationRound",
+    "zone" : 2,
+    "hash" : "49fc4659",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_preference_ctrl_8uq" : {
+    "irId" : "hook-before-delete_application_preference_ctrl_8uq",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.beforeDeleteApplicationPreference",
+    "zone" : 2,
+    "hash" : "71517e74",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_rounds_ctrl_n2v" : {
+    "irId" : "hook-before-list_application_rounds_ctrl_n2v",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.beforeListApplicationRounds",
+    "zone" : 2,
+    "hash" : "77d24fb7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_query_message_svc_w99" : {
+    "irId" : "create_query_message_svc_w99",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.createQueryMessage",
+    "zone" : 1,
+    "hash" : "e4e8cd43",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_documents_svc_nck" : {
+    "irId" : "hook-before-list_application_documents_svc_nck",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.beforeListApplicationDocuments",
+    "zone" : 2,
+    "hash" : "ad8ef0b6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_user_by_id_ctrl_2fk" : {
+    "irId" : "get_user_by_id_ctrl_2fk",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.getUserById",
+    "zone" : 1,
+    "hash" : "c1394f31",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_payment_ctrl_vno" : {
+    "irId" : "delete_application_payment_ctrl_vno",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.deleteApplicationPayment",
+    "zone" : 1,
+    "hash" : "4e8da5ba",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_payment_ctrl_plx" : {
+    "irId" : "hook-after-create_application_payment_ctrl_plx",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.afterCreateApplicationPayment",
+    "zone" : 2,
+    "hash" : "638a4fc5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:registerForOnlineRound_cxe" : {
+    "irId" : "registerForOnlineRound_cxe",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.registerForOnlineRound",
+    "zone" : 1,
+    "hash" : "60c84e97",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_querys_svc_em6" : {
+    "irId" : "list_querys_svc_em6",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.listQuerys",
+    "zone" : 1,
+    "hash" : "7ded3c08",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_by_id_svc_y6l" : {
+    "irId" : "hook-after-get_application_by_id_svc_y6l",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.afterGetApplicationById",
+    "zone" : 2,
+    "hash" : "3dad53ce",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_application_exam_score_ctrl_ths" : {
+    "irId" : "hook-after-update_application_exam_score_ctrl_ths",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.afterUpdateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "466bd39e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:payment findByApplicationId_50u" : {
+    "irId" : "payment findByApplicationId_50u",
+    "file" : "src/main/java/com/example/app/repository/ApplicationPaymentRepository.java",
+    "symbol" : "ApplicationPaymentRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "c4af519f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_education_by_id_ctrl_sj6" : {
+    "irId" : "hook-after-get_application_education_by_id_ctrl_sj6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.afterGetApplicationEducationById",
+    "zone" : 2,
+    "hash" : "449d0405",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_query_svc_gco" : {
+    "irId" : "hook-after-delete_query_svc_gco",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.afterDeleteQuery",
+    "zone" : 2,
+    "hash" : "1c529823",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_user_ctrl_8z6" : {
+    "irId" : "hook-after-update_user_ctrl_8z6",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.afterUpdateUser",
+    "zone" : 2,
+    "hash" : "3966aa79",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_document_ctrl_y2b" : {
+    "irId" : "hook-after-delete_application_document_ctrl_y2b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.afterDeleteApplicationDocument",
+    "zone" : 2,
+    "hash" : "8202218e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_round_by_id_ctrl_9t5" : {
+    "irId" : "hook-after-get_round_by_id_ctrl_9t5",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.afterGetRoundById",
+    "zone" : 2,
+    "hash" : "9dc07482",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_exam_score_by_id_ctrl_rr5" : {
+    "irId" : "get_application_exam_score_by_id_ctrl_rr5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.getApplicationExamScoreById",
+    "zone" : 1,
+    "hash" : "50b6796f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_exam_scores_svc_qvk" : {
+    "irId" : "list_application_exam_scores_svc_qvk",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.listApplicationExamScores",
+    "zone" : 1,
+    "hash" : "61d15de7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_withdrawal_by_id_svc_e5p" : {
+    "irId" : "get_application_withdrawal_by_id_svc_e5p",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.getApplicationWithdrawalById",
+    "zone" : 1,
+    "hash" : "a569c4d4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_ctrl_sof" : {
+    "irId" : "hook-after-delete_application_ctrl_sof",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.afterDeleteApplication",
+    "zone" : 2,
+    "hash" : "5955e601",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_query_by_id_ctrl_rah" : {
+    "irId" : "hook-after-get_query_by_id_ctrl_rah",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.afterGetQueryById",
+    "zone" : 2,
+    "hash" : "5391758a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_education_svc_b0l" : {
+    "irId" : "update_application_education_svc_b0l",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.updateApplicationEducation",
+    "zone" : 1,
+    "hash" : "d5aabf9c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_rounds_ctrl_6c4" : {
+    "irId" : "list_rounds_ctrl_6c4",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.listRounds",
+    "zone" : 1,
+    "hash" : "91e91909",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_user_ctrl_drs" : {
+    "irId" : "delete_user_ctrl_drs",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.deleteUser",
+    "zone" : 1,
+    "hash" : "1e15fa78",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_drive_by_id_svc_17y" : {
+    "irId" : "hook-before-get_drive_by_id_svc_17y",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.beforeGetDriveById",
+    "zone" : 2,
+    "hash" : "67c0d3c6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_query_message_svc_w99" : {
+    "irId" : "hook-after-create_query_message_svc_w99",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.afterCreateQueryMessage",
+    "zone" : 2,
+    "hash" : "c14e2020",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_document_ctrl_13h" : {
+    "irId" : "hook-after-create_application_document_ctrl_13h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.afterCreateApplicationDocument",
+    "zone" : 2,
+    "hash" : "05676bb0",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_round_by_id_svc_gdz" : {
+    "irId" : "hook-before-get_application_round_by_id_svc_gdz",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.beforeGetApplicationRoundById",
+    "zone" : 2,
+    "hash" : "2c1746c1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_query_message_ctrl_yvq" : {
+    "irId" : "delete_query_message_ctrl_yvq",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.deleteQueryMessage",
+    "zone" : 1,
+    "hash" : "0d3dbc2a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:registerForOnlineRound_lxd" : {
+    "irId" : "registerForOnlineRound_lxd",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.registerForOnlineRound",
+    "zone" : 1,
+    "hash" : "92292746",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_query_by_id_svc_iwa" : {
+    "irId" : "hook-after-get_query_by_id_svc_iwa",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.afterGetQueryById",
+    "zone" : 2,
+    "hash" : "8cc3c533",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:submitWithdrawalRequest_3dw" : {
+    "irId" : "submitWithdrawalRequest_3dw",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.submitWithdrawalRequest",
+    "zone" : 1,
+    "hash" : "3b2dc4f8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_query_message_by_id_ctrl_qy1" : {
+    "irId" : "get_query_message_by_id_ctrl_qy1",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.getQueryMessageById",
+    "zone" : 1,
+    "hash" : "899a3d28",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_query_message_svc_w99" : {
+    "irId" : "hook-before-create_query_message_svc_w99",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.beforeCreateQueryMessage",
+    "zone" : 2,
+    "hash" : "d0cd9964",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_withdrawals_svc_ohs" : {
+    "irId" : "hook-after-list_application_withdrawals_svc_ohs",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.afterListApplicationWithdrawals",
+    "zone" : 2,
+    "hash" : "bb5256b5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_preference_ctrl_v1b" : {
+    "irId" : "create_application_preference_ctrl_v1b",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.createApplicationPreference",
+    "zone" : 1,
+    "hash" : "55d68e1f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_document_ctrl_jwg" : {
+    "irId" : "update_application_document_ctrl_jwg",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.updateApplicationDocument",
+    "zone" : 1,
+    "hash" : "e2d10f29",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_user_by_id_ctrl_2fk" : {
+    "irId" : "hook-after-get_user_by_id_ctrl_2fk",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.afterGetUserById",
+    "zone" : 2,
+    "hash" : "a50908aa",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_withdrawal_ctrl_0z6" : {
+    "irId" : "delete_application_withdrawal_ctrl_0z6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.deleteApplicationWithdrawal",
+    "zone" : 1,
+    "hash" : "689f7b16",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_education_ctrl_7em" : {
+    "irId" : "update_application_education_ctrl_7em",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.updateApplicationEducation",
+    "zone" : 1,
+    "hash" : "cbfa76d7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_payment_svc_pvo" : {
+    "irId" : "create_application_payment_svc_pvo",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.createApplicationPayment",
+    "zone" : 1,
+    "hash" : "91aea8f3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_query_message_ctrl_11t" : {
+    "irId" : "hook-after-create_query_message_ctrl_11t",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.afterCreateQueryMessage",
+    "zone" : 2,
+    "hash" : "5c02930b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:getDashboardStatistics_rr1" : {
+    "irId" : "getDashboardStatistics_rr1",
+    "file" : "src/main/java/com/example/app/service/DashboardService.java",
+    "symbol" : "DashboardService.getDashboardStatistics",
+    "zone" : 1,
+    "hash" : "5067c7a2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:submitApplicationAfterPayment_n8o" : {
+    "irId" : "submitApplicationAfterPayment_n8o",
+    "file" : "src/main/java/com/example/app/controller/ ApplicationController.java",
+    "symbol" : " ApplicationController.submitApplicationAfterPayment",
+    "zone" : 1,
+    "hash" : "34dfb1d2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_offer_history_svc_uo4" : {
+    "irId" : "hook-before-update_application_offer_history_svc_uo4",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.beforeUpdateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "78f1686c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_round_svc_snq" : {
+    "irId" : "hook-after-create_application_round_svc_snq",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.afterCreateApplicationRound",
+    "zone" : 2,
+    "hash" : "6db51e0b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:submitWithdrawalRequest_54n" : {
+    "irId" : "submitWithdrawalRequest_54n",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.submitWithdrawalRequest",
+    "zone" : 1,
+    "hash" : "870a62f8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_query_svc_vhp" : {
+    "irId" : "update_query_svc_vhp",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.updateQuery",
+    "zone" : 1,
+    "hash" : "3279740a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_query_messages_svc_4wx" : {
+    "irId" : "list_query_messages_svc_4wx",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.listQueryMessages",
+    "zone" : 1,
+    "hash" : "0f92d663",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_querys_svc_em6" : {
+    "irId" : "hook-after-list_querys_svc_em6",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.afterListQuerys",
+    "zone" : 2,
+    "hash" : "be5e076e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_round_svc_snq" : {
+    "irId" : "create_application_round_svc_snq",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.createApplicationRound",
+    "zone" : 1,
+    "hash" : "3411d94d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_round_svc_z83" : {
+    "irId" : "hook-after-update_application_round_svc_z83",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.afterUpdateApplicationRound",
+    "zone" : 2,
+    "hash" : "d7ebb5d8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_payments_ctrl_jp5" : {
+    "irId" : "list_application_payments_ctrl_jp5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.listApplicationPayments",
+    "zone" : 1,
+    "hash" : "ed9ab792",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_document_svc_122" : {
+    "irId" : "hook-before-delete_application_document_svc_122",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.beforeDeleteApplicationDocument",
+    "zone" : 2,
+    "hash" : "2aa7de57",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_query_ctrl_2rt" : {
+    "irId" : "hook-after-delete_query_ctrl_2rt",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.afterDeleteQuery",
+    "zone" : 2,
+    "hash" : "f69cf6db",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_round_svc_z83" : {
+    "irId" : "update_application_round_svc_z83",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.updateApplicationRound",
+    "zone" : 1,
+    "hash" : "c2c754bf",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_payment_by_id_ctrl_los" : {
+    "irId" : "get_application_payment_by_id_ctrl_los",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.getApplicationPaymentById",
+    "zone" : 1,
+    "hash" : "2430a35a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_rounds_svc_1jt" : {
+    "irId" : "hook-before-list_application_rounds_svc_1jt",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.beforeListApplicationRounds",
+    "zone" : 2,
+    "hash" : "77d24fb7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:respondToQueryAndUpdateStatus_uxw" : {
+    "irId" : "respondToQueryAndUpdateStatus_uxw",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.respondToQueryAndUpdateStatus",
+    "zone" : 1,
+    "hash" : "67097e7e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_offer_historys_ctrl_msh" : {
+    "irId" : "hook-before-list_application_offer_historys_ctrl_msh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.beforeListApplicationOfferHistorys",
+    "zone" : 2,
+    "hash" : "152e6b20",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_applications_ctrl_x8h" : {
+    "irId" : "hook-before-list_applications_ctrl_x8h",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.beforeListApplications",
+    "zone" : 2,
+    "hash" : "35e05818",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:create_application_education_svc_hpo" : {
+    "irId" : "create_application_education_svc_hpo",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.createApplicationEducation",
+    "zone" : 1,
+    "hash" : "3e546c36",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_offer_history_ctrl_0rl" : {
+    "irId" : "hook-before-update_application_offer_history_ctrl_0rl",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.beforeUpdateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "f9c162f8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_preference_by_id_svc_yy0" : {
+    "irId" : "hook-before-get_application_preference_by_id_svc_yy0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.beforeGetApplicationPreferenceById",
+    "zone" : 2,
+    "hash" : "dd87a2da",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_ctrl_sof" : {
+    "irId" : "delete_application_ctrl_sof",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.deleteApplication",
+    "zone" : 1,
+    "hash" : "8f6f16d5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_user_ctrl_crg" : {
+    "irId" : "hook-before-create_user_ctrl_crg",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.beforeCreateUser",
+    "zone" : 2,
+    "hash" : "130764ef",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_query_message_by_id_ctrl_qy1" : {
+    "irId" : "hook-after-get_query_message_by_id_ctrl_qy1",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.afterGetQueryMessageById",
+    "zone" : 2,
+    "hash" : "562f9e2a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_round_by_id_svc_gdz" : {
+    "irId" : "hook-after-get_application_round_by_id_svc_gdz",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.afterGetApplicationRoundById",
+    "zone" : 2,
+    "hash" : "25473487",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_user_svc_yrj" : {
+    "irId" : "delete_user_svc_yrj",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.deleteUser",
+    "zone" : 1,
+    "hash" : "57387f77",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_users_ctrl_79u" : {
+    "irId" : "list_users_ctrl_79u",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.listUsers",
+    "zone" : 1,
+    "hash" : "3062b047",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_education_ctrl_pyz" : {
+    "irId" : "hook-after-create_application_education_ctrl_pyz",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.afterCreateApplicationEducation",
+    "zone" : 2,
+    "hash" : "196b29ed",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_exam_score_ctrl_5et" : {
+    "irId" : "delete_application_exam_score_ctrl_5et",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.deleteApplicationExamScore",
+    "zone" : 1,
+    "hash" : "2161f83c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_drive_by_id_ctrl_mo5" : {
+    "irId" : "get_drive_by_id_ctrl_mo5",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.getDriveById",
+    "zone" : 1,
+    "hash" : "1269db84",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:generateAndSendTokenForOnlineRound_iui" : {
+    "irId" : "generateAndSendTokenForOnlineRound_iui",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.generateAndSendTokenForOnlineRound",
+    "zone" : 1,
+    "hash" : "456cd8e5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_user_ctrl_8z6" : {
+    "irId" : "hook-before-update_user_ctrl_8z6",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.beforeUpdateUser",
+    "zone" : 2,
+    "hash" : "4191e3d1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_query_ctrl_uo8" : {
+    "irId" : "update_query_ctrl_uo8",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.updateQuery",
+    "zone" : 1,
+    "hash" : "bbd9768f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_preference_by_id_ctrl_2uu" : {
+    "irId" : "hook-before-get_application_preference_by_id_ctrl_2uu",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.beforeGetApplicationPreferenceById",
+    "zone" : 2,
+    "hash" : "8727f5ff",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-create_application_offer_history_svc_2d5" : {
+    "irId" : "hook-before-create_application_offer_history_svc_2d5",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.beforeCreateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "f9b53864",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_payment_ctrl_vno" : {
+    "irId" : "hook-before-delete_application_payment_ctrl_vno",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.beforeDeleteApplicationPayment",
+    "zone" : 2,
+    "hash" : "3c495d8a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_education_svc_hy1" : {
+    "irId" : "hook-after-delete_application_education_svc_hy1",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.afterDeleteApplicationEducation",
+    "zone" : 2,
+    "hash" : "b25d0f4d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_query_message_svc_kwt" : {
+    "irId" : "hook-before-delete_query_message_svc_kwt",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.beforeDeleteQueryMessage",
+    "zone" : 2,
+    "hash" : "68d437bb",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_document_svc_122" : {
+    "irId" : "hook-after-delete_application_document_svc_122",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.afterDeleteApplicationDocument",
+    "zone" : 2,
+    "hash" : "9bcd5164",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_querys_ctrl_jge" : {
+    "irId" : "list_querys_ctrl_jge",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.listQuerys",
+    "zone" : 1,
+    "hash" : "b2092607",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_offer_history_by_id_ctrl_zgc" : {
+    "irId" : "get_application_offer_history_by_id_ctrl_zgc",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.getApplicationOfferHistoryById",
+    "zone" : 1,
+    "hash" : "396e8f5b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_round_svc_4re" : {
+    "irId" : "hook-before-delete_round_svc_4re",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.beforeDeleteRound",
+    "zone" : 2,
+    "hash" : "ed17e942",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_round_ctrl_am2" : {
+    "irId" : "update_application_round_ctrl_am2",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.updateApplicationRound",
+    "zone" : 1,
+    "hash" : "97fa3a76",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_round_ctrl_tpm" : {
+    "irId" : "create_application_round_ctrl_tpm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.createApplicationRound",
+    "zone" : 1,
+    "hash" : "6422d420",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_payment_svc_g9n" : {
+    "irId" : "update_application_payment_svc_g9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.updateApplicationPayment",
+    "zone" : 1,
+    "hash" : "a68b1e6f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_education_svc_hy1" : {
+    "irId" : "delete_application_education_svc_hy1",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.deleteApplicationEducation",
+    "zone" : 1,
+    "hash" : "78a31ebf",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_drive_svc_s9r" : {
+    "irId" : "delete_drive_svc_s9r",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.deleteDrive",
+    "zone" : 1,
+    "hash" : "63adfdc8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_round_svc_4re" : {
+    "irId" : "hook-after-delete_round_svc_4re",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.afterDeleteRound",
+    "zone" : 2,
+    "hash" : "ebea4d1d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_round_ctrl_61n" : {
+    "irId" : "hook-after-delete_application_round_ctrl_61n",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.afterDeleteApplicationRound",
+    "zone" : 2,
+    "hash" : "abd4d8fa",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_educations_svc_f7b" : {
+    "irId" : "list_application_educations_svc_f7b",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.listApplicationEducations",
+    "zone" : 1,
+    "hash" : "1a04f1f3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_document_svc_6qw" : {
+    "irId" : "hook-after-create_application_document_svc_6qw",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.afterCreateApplicationDocument",
+    "zone" : 2,
+    "hash" : "d253ff30",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_payment_by_id_ctrl_los" : {
+    "irId" : "hook-before-get_application_payment_by_id_ctrl_los",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.beforeGetApplicationPaymentById",
+    "zone" : 2,
+    "hash" : "aeef25bb",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_query_message_ctrl_yvq" : {
+    "irId" : "hook-before-delete_query_message_ctrl_yvq",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.beforeDeleteQueryMessage",
+    "zone" : 2,
+    "hash" : "a35a1838",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:uploadAndLinkDocumentToApplication_m6w" : {
+    "irId" : "uploadAndLinkDocumentToApplication_m6w",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.uploadAndLinkDocumentToApplication",
+    "zone" : 1,
+    "hash" : "43cfe402",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_user_by_id_svc_8rw" : {
+    "irId" : "get_user_by_id_svc_8rw",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.getUserById",
+    "zone" : 1,
+    "hash" : "0d17722b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_preference_ctrl_j4i" : {
+    "irId" : "update_application_preference_ctrl_j4i",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.updateApplicationPreference",
+    "zone" : 1,
+    "hash" : "06e05de0",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_offer_historys_svc_w9n" : {
+    "irId" : "hook-after-list_application_offer_historys_svc_w9n",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.afterListApplicationOfferHistorys",
+    "zone" : 2,
+    "hash" : "adc6a1ef",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_payment_svc_pvo" : {
+    "irId" : "hook-after-create_application_payment_svc_pvo",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.afterCreateApplicationPayment",
+    "zone" : 2,
+    "hash" : "bc21e0e1",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_round_svc_dh5" : {
+    "irId" : "hook-before-update_round_svc_dh5",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.beforeUpdateRound",
+    "zone" : 2,
+    "hash" : "3b57c549",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:createDrive_1b9" : {
+    "irId" : "createDrive_1b9",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.createDrive",
+    "zone" : 1,
+    "hash" : "f939c4b6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_withdrawal_svc_s5v" : {
+    "irId" : "delete_application_withdrawal_svc_s5v",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.deleteApplicationWithdrawal",
+    "zone" : 1,
+    "hash" : "908b2da8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_svc_8i2" : {
+    "irId" : "delete_application_svc_8i2",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.deleteApplication",
+    "zone" : 1,
+    "hash" : "78ab0b2d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_query_message_svc_kwt" : {
+    "irId" : "delete_query_message_svc_kwt",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.deleteQueryMessage",
+    "zone" : 1,
+    "hash" : "b0ddf40e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_exam_score_by_id_svc_sfs" : {
+    "irId" : "get_application_exam_score_by_id_svc_sfs",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.getApplicationExamScoreById",
+    "zone" : 1,
+    "hash" : "f16b81ba",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:examScore findByApplicationId_ebs" : {
+    "irId" : "examScore findByApplicationId_ebs",
+    "file" : "src/main/java/com/example/app/repository/ApplicationExamScoreRepository.java",
+    "symbol" : "ApplicationExamScoreRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "f44e9c12",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_withdrawal_svc_s5v" : {
+    "irId" : "hook-before-delete_application_withdrawal_svc_s5v",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.beforeDeleteApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "72cc198e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:cancelOfferLetter_cq9" : {
+    "irId" : "cancelOfferLetter_cq9",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.cancelOfferLetter",
+    "zone" : 1,
+    "hash" : "c449bddc",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-update_round_ctrl_qgf" : {
+    "irId" : "hook-after-update_round_ctrl_qgf",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.afterUpdateRound",
+    "zone" : 2,
+    "hash" : "22585ca5",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_offer_history_ctrl_sq9" : {
+    "irId" : "hook-before-delete_application_offer_history_ctrl_sq9",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.beforeDeleteApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "5db02f5b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_applications_svc_g14" : {
+    "irId" : "hook-after-list_applications_svc_g14",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.afterListApplications",
+    "zone" : 2,
+    "hash" : "d5db7e81",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_user_by_id_ctrl_2fk" : {
+    "irId" : "hook-before-get_user_by_id_ctrl_2fk",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.beforeGetUserById",
+    "zone" : 2,
+    "hash" : "e5ebbb62",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_round_by_id_svc_n36" : {
+    "irId" : "get_round_by_id_svc_n36",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.getRoundById",
+    "zone" : 1,
+    "hash" : "2fd61dc2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_drive_ctrl_698" : {
+    "irId" : "delete_drive_ctrl_698",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.deleteDrive",
+    "zone" : 1,
+    "hash" : "ddb87a83",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_exam_score_ctrl_ths" : {
+    "irId" : "update_application_exam_score_ctrl_ths",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.updateApplicationExamScore",
+    "zone" : 1,
+    "hash" : "b48d87c4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_application_preferences_svc_0c0" : {
+    "irId" : "hook-after-list_application_preferences_svc_0c0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.afterListApplicationPreferences",
+    "zone" : 2,
+    "hash" : "b4f0317d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_payment_by_id_svc_gcg" : {
+    "irId" : "hook-before-get_application_payment_by_id_svc_gcg",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.beforeGetApplicationPaymentById",
+    "zone" : 2,
+    "hash" : "68e227fa",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_query_message_ctrl_nds" : {
+    "irId" : "hook-before-update_query_message_ctrl_nds",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.beforeUpdateQueryMessage",
+    "zone" : 2,
+    "hash" : "e354d3f7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_education_svc_b0l" : {
+    "irId" : "hook-after-update_application_education_svc_b0l",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.afterUpdateApplicationEducation",
+    "zone" : 2,
+    "hash" : "a0854110",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_round_svc_g2y" : {
+    "irId" : "delete_application_round_svc_g2y",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.deleteApplicationRound",
+    "zone" : 1,
+    "hash" : "36df4ab8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_user_svc_yrj" : {
+    "irId" : "hook-before-delete_user_svc_yrj",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.beforeDeleteUser",
+    "zone" : 2,
+    "hash" : "5ef88533",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:u_exists_by_email_bia" : {
+    "irId" : "u_exists_by_email_bia",
+    "file" : "src/main/java/com/example/app/repository/UserRepository.java",
+    "symbol" : "UserRepository.existsByEmail",
+    "zone" : 1,
+    "hash" : "3880e5d4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_round_svc_z83" : {
+    "irId" : "hook-before-update_application_round_svc_z83",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.beforeUpdateApplicationRound",
+    "zone" : 2,
+    "hash" : "e8fbcd26",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_documents_ctrl_n6r" : {
+    "irId" : "list_application_documents_ctrl_n6r",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.listApplicationDocuments",
+    "zone" : 1,
+    "hash" : "77d24fe3",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-update_application_preference_svc_tmm" : {
+    "irId" : "hook-before-update_application_preference_svc_tmm",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.beforeUpdateApplicationPreference",
+    "zone" : 2,
+    "hash" : "a9731456",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_svc_8i2" : {
+    "irId" : "hook-before-delete_application_svc_8i2",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.beforeDeleteApplication",
+    "zone" : 2,
+    "hash" : "836c9686",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_application_payment_ctrl_vno" : {
+    "irId" : "hook-after-delete_application_payment_ctrl_vno",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.afterDeleteApplicationPayment",
+    "zone" : 2,
+    "hash" : "f9cd779d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_education_by_id_ctrl_sj6" : {
+    "irId" : "get_application_education_by_id_ctrl_sj6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.getApplicationEducationById",
+    "zone" : 1,
+    "hash" : "f949869e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_preference_ctrl_8uq" : {
+    "irId" : "delete_application_preference_ctrl_8uq",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.deleteApplicationPreference",
+    "zone" : 1,
+    "hash" : "79312e55",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:createRoundWithValidation_i4e" : {
+    "irId" : "createRoundWithValidation_i4e",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.createRound",
+    "zone" : 1,
+    "hash" : "ce26bef0",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_payment_by_id_svc_gcg" : {
+    "irId" : "get_application_payment_by_id_svc_gcg",
+    "file" : "src/main/java/com/example/app/service/ApplicationPaymentService.java",
+    "symbol" : "ApplicationPaymentService.getApplicationPaymentById",
+    "zone" : 1,
+    "hash" : "9835d7c6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_application_preference_svc_tmm" : {
+    "irId" : "update_application_preference_svc_tmm",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.updateApplicationPreference",
+    "zone" : 1,
+    "hash" : "e68c7d60",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_withdrawal_by_id_ctrl_3vp" : {
+    "irId" : "hook-after-get_application_withdrawal_by_id_ctrl_3vp",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.afterGetApplicationWithdrawalById",
+    "zone" : 2,
+    "hash" : "187d6f18",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:education findByApplicationId_6p0" : {
+    "irId" : "education findByApplicationId_6p0",
+    "file" : "src/main/java/com/example/app/repository/ApplicationEducationRepository.java",
+    "symbol" : "ApplicationEducationRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "643fbb66",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-delete_round_ctrl_vui" : {
+    "irId" : "hook-after-delete_round_ctrl_vui",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.afterDeleteRound",
+    "zone" : 2,
+    "hash" : "0441b33f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-list_application_preferences_ctrl_5l4" : {
+    "irId" : "hook-before-list_application_preferences_ctrl_5l4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.beforeListApplicationPreferences",
+    "zone" : 2,
+    "hash" : "4a29a456",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-create_application_exam_score_ctrl_waa" : {
+    "irId" : "hook-after-create_application_exam_score_ctrl_waa",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.afterCreateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "9bd6858a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:updateDriveConfiguration_ng2" : {
+    "irId" : "updateDriveConfiguration_ng2",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.updateDriveConfiguration",
+    "zone" : 1,
+    "hash" : "004da6a2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_application_offer_history_ctrl_sq9" : {
+    "irId" : "delete_application_offer_history_ctrl_sq9",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.deleteApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "3b602aca",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-get_application_education_by_id_svc_4v3" : {
+    "irId" : "hook-after-get_application_education_by_id_svc_4v3",
+    "file" : "src/main/java/com/example/app/service/ApplicationEducationService.java",
+    "symbol" : "ApplicationEducationService.afterGetApplicationEducationById",
+    "zone" : 2,
+    "hash" : "9b6b6f3b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_preferences_svc_0c0" : {
+    "irId" : "hook-before-list_application_preferences_svc_0c0",
+    "file" : "src/main/java/com/example/app/service/ApplicationPreferenceService.java",
+    "symbol" : "ApplicationPreferenceService.beforeListApplicationPreferences",
+    "zone" : 2,
+    "hash" : "4a29a456",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_education_by_id_ctrl_sj6" : {
+    "irId" : "hook-before-get_application_education_by_id_ctrl_sj6",
+    "file" : "src/main/java/com/example/app/controller/ApplicationEducationController.java",
+    "symbol" : "ApplicationEducationController.beforeGetApplicationEducationById",
+    "zone" : 2,
+    "hash" : "199f703f",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_application_round_by_id_ctrl_wwh" : {
+    "irId" : "hook-before-get_application_round_by_id_ctrl_wwh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.beforeGetApplicationRoundById",
+    "zone" : 2,
+    "hash" : "8c4cd14e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:delete_application_offer_history_svc_zql" : {
+    "irId" : "delete_application_offer_history_svc_zql",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.deleteApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "f9a4ae8c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-list_users_svc_dq0" : {
+    "irId" : "hook-after-list_users_svc_dq0",
+    "file" : "src/main/java/com/example/app/service/UserService.java",
+    "symbol" : "UserService.afterListUsers",
+    "zone" : 2,
+    "hash" : "b734b73a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findApplicationRoundByAppAndRound_dtx" : {
+    "irId" : "findApplicationRoundByAppAndRound_dtx",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRoundRepository.java",
+    "symbol" : "ApplicationRoundRepository.findByApplicationIdAndRoundId",
+    "zone" : 1,
+    "hash" : "4ee27eca",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_by_id_svc_y6l" : {
+    "irId" : "hook-before-get_application_by_id_svc_y6l",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.beforeGetApplicationById",
+    "zone" : 2,
+    "hash" : "dfc99b83",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_exam_scores_svc_qvk" : {
+    "irId" : "hook-before-list_application_exam_scores_svc_qvk",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.beforeListApplicationExamScores",
+    "zone" : 2,
+    "hash" : "8a1fa589",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_application_withdrawals_svc_ohs" : {
+    "irId" : "hook-before-list_application_withdrawals_svc_ohs",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.beforeListApplicationWithdrawals",
+    "zone" : 2,
+    "hash" : "462c00e4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_application_round_svc_g2y" : {
+    "irId" : "hook-before-delete_application_round_svc_g2y",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.beforeDeleteApplicationRound",
+    "zone" : 2,
+    "hash" : "37de2e0c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:delete_round_ctrl_vui" : {
+    "irId" : "delete_round_ctrl_vui",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.deleteRound",
+    "zone" : 1,
+    "hash" : "21f1689c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_rounds_ctrl_6c4" : {
+    "irId" : "hook-after-list_rounds_ctrl_6c4",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.afterListRounds",
+    "zone" : 2,
+    "hash" : "438aebe8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_application_document_ctrl_jwg" : {
+    "irId" : "hook-before-update_application_document_ctrl_jwg",
+    "file" : "src/main/java/com/example/app/controller/ApplicationDocumentController.java",
+    "symbol" : "ApplicationDocumentController.beforeUpdateApplicationDocument",
+    "zone" : 2,
+    "hash" : "0a36f937",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-create_application_exam_score_ctrl_waa" : {
+    "irId" : "hook-before-create_application_exam_score_ctrl_waa",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.beforeCreateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "e0614a80",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:offerHistory findByApplicationId_wk7" : {
+    "irId" : "offerHistory findByApplicationId_wk7",
+    "file" : "src/main/java/com/example/app/repository/ApplicationOfferHistoryRepository.java",
+    "symbol" : "ApplicationOfferHistoryRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "e50117bf",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:query findByApplicationId_of2" : {
+    "irId" : "query findByApplicationId_of2",
+    "file" : "src/main/java/com/example/app/repository/QueryRepository.java",
+    "symbol" : "QueryRepository.findByApplicationId",
+    "zone" : 1,
+    "hash" : "dff238d9",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:inviteCandidatesToOnlineRound_j05" : {
+    "irId" : "inviteCandidatesToOnlineRound_j05",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.inviteCandidatesToOnlineRound",
+    "zone" : 1,
+    "hash" : "d693bea8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_document_by_id_svc_rwo" : {
+    "irId" : "get_application_document_by_id_svc_rwo",
+    "file" : "src/main/java/com/example/app/service/ApplicationDocumentService.java",
+    "symbol" : "ApplicationDocumentService.getApplicationDocumentById",
+    "zone" : 1,
+    "hash" : "863c9100",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_withdrawal_by_id_svc_e5p" : {
+    "irId" : "hook-before-get_application_withdrawal_by_id_svc_e5p",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.beforeGetApplicationWithdrawalById",
+    "zone" : 2,
+    "hash" : "de05ea0c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:create_application_withdrawal_ctrl_zbm" : {
+    "irId" : "create_application_withdrawal_ctrl_zbm",
+    "file" : "src/main/java/com/example/app/controller/ApplicationWithdrawalController.java",
+    "symbol" : "ApplicationWithdrawalController.createApplicationWithdrawal",
+    "zone" : 1,
+    "hash" : "22a3c4de",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_query_messages_ctrl_dt4" : {
+    "irId" : "list_query_messages_ctrl_dt4",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.listQueryMessages",
+    "zone" : 1,
+    "hash" : "42200c21",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_application_by_id_svc_y6l" : {
+    "irId" : "get_application_by_id_svc_y6l",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.getApplicationById",
+    "zone" : 1,
+    "hash" : "b496bcac",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_payments_ctrl_jp5" : {
+    "irId" : "hook-after-list_application_payments_ctrl_jp5",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPaymentController.java",
+    "symbol" : "ApplicationPaymentController.afterListApplicationPayments",
+    "zone" : 2,
+    "hash" : "e8e4a001",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-delete_application_withdrawal_svc_s5v" : {
+    "irId" : "hook-after-delete_application_withdrawal_svc_s5v",
+    "file" : "src/main/java/com/example/app/service/ApplicationWithdrawalService.java",
+    "symbol" : "ApplicationWithdrawalService.afterDeleteApplicationWithdrawal",
+    "zone" : 2,
+    "hash" : "af983789",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "repository:findByApplicationIdAndRoundId_applicationRound_3d4" : {
+    "irId" : "findByApplicationIdAndRoundId_applicationRound_3d4",
+    "file" : "src/main/java/com/example/app/repository/ApplicationRoundRepository.java",
+    "symbol" : "ApplicationRoundRepository.findByApplicationIdAndRoundId",
+    "zone" : 1,
+    "hash" : "08662c2e",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-get_application_offer_history_by_id_svc_ief" : {
+    "irId" : "hook-before-get_application_offer_history_by_id_svc_ief",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.beforeGetApplicationOfferHistoryById",
+    "zone" : 2,
+    "hash" : "afa9a20a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:list_application_offer_historys_ctrl_msh" : {
+    "irId" : "list_application_offer_historys_ctrl_msh",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.listApplicationOfferHistorys",
+    "zone" : 1,
+    "hash" : "6fd9f98a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_drive_by_id_svc_17y" : {
+    "irId" : "get_drive_by_id_svc_17y",
+    "file" : "src/main/java/com/example/app/service/DriveService.java",
+    "symbol" : "DriveService.getDriveById",
+    "zone" : 1,
+    "hash" : "cb2921e7",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-update_round_ctrl_qgf" : {
+    "irId" : "hook-before-update_round_ctrl_qgf",
+    "file" : "src/main/java/com/example/app/controller/RoundController.java",
+    "symbol" : "RoundController.beforeUpdateRound",
+    "zone" : 2,
+    "hash" : "78ea483d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_query_by_id_ctrl_rah" : {
+    "irId" : "get_query_by_id_ctrl_rah",
+    "file" : "src/main/java/com/example/app/controller/QueryController.java",
+    "symbol" : "QueryController.getQueryById",
+    "zone" : 1,
+    "hash" : "5af5bcf6",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:listActiveDrives_xer" : {
+    "irId" : "listActiveDrives_xer",
+    "file" : "src/main/java/com/example/app/controller/DriveController.java",
+    "symbol" : "DriveController.listActiveDrives",
+    "zone" : 1,
+    "hash" : "a5fd65e2",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-list_rounds_svc_un4" : {
+    "irId" : "hook-before-list_rounds_svc_un4",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.beforeListRounds",
+    "zone" : 2,
+    "hash" : "e3e7cdee",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_application_offer_history_svc_uo4" : {
+    "irId" : "hook-after-update_application_offer_history_svc_uo4",
+    "file" : "src/main/java/com/example/app/service/ApplicationOfferHistoryService.java",
+    "symbol" : "ApplicationOfferHistoryService.afterUpdateApplicationOfferHistory",
+    "zone" : 2,
+    "hash" : "d1eda3f8",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_user_ctrl_drs" : {
+    "irId" : "hook-before-delete_user_ctrl_drs",
+    "file" : "src/main/java/com/example/app/controller/UserController.java",
+    "symbol" : "UserController.beforeDeleteUser",
+    "zone" : 2,
+    "hash" : "aebc8d08",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:submitApplicationAfterPayment_uf5" : {
+    "irId" : "submitApplicationAfterPayment_uf5",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.submitApplicationAfterPayment",
+    "zone" : 1,
+    "hash" : "9230a84a",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:get_query_by_id_svc_iwa" : {
+    "irId" : "get_query_by_id_svc_iwa",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.getQueryById",
+    "zone" : 1,
+    "hash" : "0137d09c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-before-delete_query_svc_gco" : {
+    "irId" : "hook-before-delete_query_svc_gco",
+    "file" : "src/main/java/com/example/app/service/QueryService.java",
+    "symbol" : "QueryService.beforeDeleteQuery",
+    "zone" : 2,
+    "hash" : "7ca49329",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:startNewApplicationForDrive_gdm" : {
+    "irId" : "startNewApplicationForDrive_gdm",
+    "file" : "src/main/java/com/example/app/service/ApplicationService.java",
+    "symbol" : "ApplicationService.startNewApplicationForDrive",
+    "zone" : 1,
+    "hash" : "e390760d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-get_application_preference_by_id_ctrl_2uu" : {
+    "irId" : "hook-after-get_application_preference_by_id_ctrl_2uu",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.afterGetApplicationPreferenceById",
+    "zone" : 2,
+    "hash" : "1a9bfed4",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:get_application_by_id_ctrl_zu7" : {
+    "irId" : "get_application_by_id_ctrl_zu7",
+    "file" : "src/main/java/com/example/app/controller/ApplicationController.java",
+    "symbol" : "ApplicationController.getApplicationById",
+    "zone" : 1,
+    "hash" : "31736385",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:update_round_svc_dh5" : {
+    "irId" : "update_round_svc_dh5",
+    "file" : "src/main/java/com/example/app/service/RoundService.java",
+    "symbol" : "RoundService.updateRound",
+    "zone" : 1,
+    "hash" : "4ee34c33",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-update_query_message_svc_627" : {
+    "irId" : "hook-after-update_query_message_svc_627",
+    "file" : "src/main/java/com/example/app/service/QueryMessageService.java",
+    "symbol" : "QueryMessageService.afterUpdateQueryMessage",
+    "zone" : 2,
+    "hash" : "72423fdd",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:allocateOnlineRoundSeat_mdz" : {
+    "irId" : "allocateOnlineRoundSeat_mdz",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.allocateOnlineRoundSeat",
+    "zone" : 1,
+    "hash" : "b915688b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:hook-after-create_application_exam_score_svc_shp" : {
+    "irId" : "hook-after-create_application_exam_score_svc_shp",
+    "file" : "src/main/java/com/example/app/service/ApplicationExamScoreService.java",
+    "symbol" : "ApplicationExamScoreService.afterCreateApplicationExamScore",
+    "zone" : 2,
+    "hash" : "fc5e3dac",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:allocateOnlineRoundSeat_47s" : {
+    "irId" : "allocateOnlineRoundSeat_47s",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.allocateOnlineRoundSeat",
+    "zone" : 1,
+    "hash" : "804ca26c",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "service:list_application_rounds_svc_1jt" : {
+    "irId" : "list_application_rounds_svc_1jt",
+    "file" : "src/main/java/com/example/app/service/ApplicationRoundService.java",
+    "symbol" : "ApplicationRoundService.listApplicationRounds",
+    "zone" : 1,
+    "hash" : "17ffde5b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-after-list_application_preferences_ctrl_5l4" : {
+    "irId" : "hook-after-list_application_preferences_ctrl_5l4",
+    "file" : "src/main/java/com/example/app/controller/ApplicationPreferenceController.java",
+    "symbol" : "ApplicationPreferenceController.afterListApplicationPreferences",
+    "zone" : 2,
+    "hash" : "b4f0317d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:update_application_offer_history_ctrl_0rl" : {
+    "irId" : "update_application_offer_history_ctrl_0rl",
+    "file" : "src/main/java/com/example/app/controller/ApplicationOfferHistoryController.java",
+    "symbol" : "ApplicationOfferHistoryController.updateApplicationOfferHistory",
+    "zone" : 1,
+    "hash" : "d2d94e67",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-delete_application_exam_score_ctrl_5et" : {
+    "irId" : "hook-before-delete_application_exam_score_ctrl_5et",
+    "file" : "src/main/java/com/example/app/controller/ApplicationExamScoreController.java",
+    "symbol" : "ApplicationExamScoreController.beforeDeleteApplicationExamScore",
+    "zone" : 2,
+    "hash" : "caff908d",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:hook-before-get_query_message_by_id_ctrl_qy1" : {
+    "irId" : "hook-before-get_query_message_by_id_ctrl_qy1",
+    "file" : "src/main/java/com/example/app/controller/QueryMessageController.java",
+    "symbol" : "QueryMessageController.beforeGetQueryMessageById",
+    "zone" : 2,
+    "hash" : "8064828b",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  },
+  "controller:processSlidingAllocationRound_yhc" : {
+    "irId" : "processSlidingAllocationRound_yhc",
+    "file" : "src/main/java/com/example/app/controller/ApplicationRoundController.java",
+    "symbol" : "ApplicationRoundController.processSlidingAllocationRound",
+    "zone" : 1,
+    "hash" : "56530233",
+    "hashSchema" : "SHA-256-normalized-ast-v1",
+    "irVersion" : "1.0"
+  }
+}
